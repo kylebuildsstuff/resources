@@ -60,8 +60,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_KEY = 'AIzaSyAJfcbzxLo8QFcYX4T2gFxFvu02mCipiqs';
-
 	_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('react-container'));
 
 /***/ },
@@ -20069,10 +20067,16 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
 
-	    _this.state = { videos: [] };
+	    _this.state = {
+	      videos: [],
+	      selectedVideo: null
+	    };
 
 	    (0, _youtubeApiSearch2.default)({ key: API_KEY, term: 'surfboards' }, function (videos) {
-	      _this.setState({ videos: videos });
+	      _this.setState({
+	        videos: videos,
+	        selectedVideo: videos[0]
+	      });
 	    });
 	    return _this;
 	  }
@@ -20080,12 +20084,18 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(_search_bar2.default, null),
-	        _react2.default.createElement(_video_detail2.default, { video: this.state.videos[0] }),
-	        _react2.default.createElement(_video_list2.default, { videos: this.state.videos })
+	        _react2.default.createElement(_video_detail2.default, { video: this.state.selectedVideo }),
+	        _react2.default.createElement(_video_list2.default, {
+	          onVideoSelect: function onVideoSelect(selectedVideo) {
+	            return _this2.setState({ selectedVideo: selectedVideo });
+	          },
+	          videos: this.state.videos })
 	      );
 	    }
 	  }]);
@@ -21118,6 +21128,7 @@
 	var VideoList = function VideoList(props) {
 	  var videoItems = props.videos.map(function (video) {
 	    return _react2.default.createElement(_video_list_item2.default, {
+	      onVideoSelect: props.onVideoSelect,
 	      key: video.etag,
 	      video: video });
 	  });
@@ -21149,12 +21160,15 @@
 
 	var VideoListItem = function VideoListItem(_ref) {
 	  var video = _ref.video;
+	  var onVideoSelect = _ref.onVideoSelect;
 
 	  var imageUrl = video.snippet.thumbnails.default.url;
 
 	  return _react2.default.createElement(
 	    "li",
-	    { className: "list-group-item" },
+	    { onClick: function onClick() {
+	        return onVideoSelect(video);
+	      }, className: "list-group-item" },
 	    _react2.default.createElement(
 	      "div",
 	      { className: "video-list media" },
@@ -21197,7 +21211,15 @@
 	var VideoDetail = function VideoDetail(_ref) {
 	  var video = _ref.video;
 
-	  var videoId = video.id.videoID;
+	  if (!video) {
+	    return _react2.default.createElement(
+	      "div",
+	      null,
+	      "Loading..."
+	    );
+	  }
+
+	  var videoId = video.id.videoId;
 	  var url = "https://www.youtube.com/embed/" + videoId;
 
 	  return _react2.default.createElement(
