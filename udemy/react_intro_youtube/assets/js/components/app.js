@@ -6,6 +6,8 @@ import SearchBar from './search_bar.js';
 import VideoList from './video_list.js';
 import VideoDetail from './video_detail.js';
 
+import '../../styles/styles.scss';
+
 
 const API_KEY = 'AIzaSyAJfcbzxLo8QFcYX4T2gFxFvu02mCipiqs'
 
@@ -18,7 +20,7 @@ export default class App extends Component {
       selectedVideo: null
     };
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+    YTSearch({key: API_KEY, term: 'rainbows'}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0],
