@@ -20047,6 +20047,10 @@
 
 	var _video_list2 = _interopRequireDefault(_video_list);
 
+	var _video_detail = __webpack_require__(184);
+
+	var _video_detail2 = _interopRequireDefault(_video_detail);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20080,6 +20084,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_search_bar2.default, null),
+	        _react2.default.createElement(_video_detail2.default, { video: this.state.videos[0] }),
 	        _react2.default.createElement(_video_list2.default, { videos: this.state.videos })
 	      );
 	    }
@@ -21130,7 +21135,7 @@
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21145,10 +21150,82 @@
 	var VideoListItem = function VideoListItem(_ref) {
 	  var video = _ref.video;
 
-	  return _react2.default.createElement('li', null);
+	  var imageUrl = video.snippet.thumbnails.default.url;
+
+	  return _react2.default.createElement(
+	    "li",
+	    { className: "list-group-item" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "video-list media" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "media-left" },
+	        _react2.default.createElement("img", { className: "media-object", src: imageUrl })
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "media-body" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "media-heading" },
+	          video.snippet.title
+	        )
+	      )
+	    )
+	  );
 	};
 
 	exports.default = VideoListItem;
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var VideoDetail = function VideoDetail(_ref) {
+	  var video = _ref.video;
+
+	  var videoId = video.id.videoID;
+	  var url = "https://www.youtube.com/embed/" + videoId;
+
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "video-detail col-md-8" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "embed-responsive embed-responsive-16by9" },
+	      _react2.default.createElement("iframe", { className: "embed-responsive-item", src: url })
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "details" },
+	      _react2.default.createElement(
+	        "div",
+	        null,
+	        video.snippet.title
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        null,
+	        video.snippet.description
+	      )
+	    )
+	  );
+	};
+
+	exports.default = VideoDetail;
 
 /***/ }
 /******/ ]);
