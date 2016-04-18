@@ -6,4 +6,4 @@ const rootReducer = combineReducers({
   weather: WeatherReducer
 });
 
-export default rootReducer
+export default rootReducer;
