@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default () => {
+export default (props) => {
   return (
     <div>
-      List of blog posts
+      {props.children}
     </div>
   );
 }

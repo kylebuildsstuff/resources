@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>This is the Appsdssdas</h1>
+        <h1>Thiss is the Apssddas</h1>
         <ul>
           <li><NavLink to='/' onlyActiveOnIndex={true}>Main Page</NavLink></li>
           <li><NavLink to='/repos'>Repos</NavLink></li>

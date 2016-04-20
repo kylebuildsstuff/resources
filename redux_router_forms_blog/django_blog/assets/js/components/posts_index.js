@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default (props) => {
+export default () => {
   return (
     <div>
-      {this.props.children}
+      Posts Index
     </div>
   );
 }
