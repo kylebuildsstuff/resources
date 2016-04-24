@@ -2,15 +2,21 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 from hydra.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 
-class SnippetSerializer(serializers.ModelSerializer):
-    """
-    ModelSerializer is to Serializer as ModelForms are to Forms in Django.
-    """
+class SnippetSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
+    highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
 
     class Meta:
         model = Snippet
-        fields = ('id', 'title', 'code', 'linenos', 'language', 'style', 'owner')
+        fields = ('url', 'highlight', 'owner',
+                  'title', 'code', 'linenos', 'language', 'style',)
+
+class UserSerializer(serializers.ModelSerializer):
+    snippets = serializers.HyperlinkedRelatedField(many=True, view_name='snippet-detail', read_only=True)
+
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'snippets')
 
 class OldSnippetSerializer(serializers.Serializer):
     pk = serializers.IntegerField(read_only=True)
@@ -37,10 +43,3 @@ class OldSnippetSerializer(serializers.Serializer):
         instance.style = validated_data.get('style', instance.style)
         instance.save()
         return instance
-
-class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
-
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'snippets')
