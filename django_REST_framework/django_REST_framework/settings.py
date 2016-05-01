@@ -14,10 +14,6 @@ WEBPACK_LOADER = {
     }
 }
 
-REST_FRAMEWORK = {
-    'PAGE_SIZE': 10,
-}
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
