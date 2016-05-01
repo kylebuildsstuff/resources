@@ -7,6 +7,7 @@ class SnippetSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'code', 'linenos', 'language', 'style')
 
 
+# @NOTE: USING BASE SERIALIZERS
 # class SnippetSerializer(serializers.Serializer):
 #     pk = serializers.IntegerField(read_only=True)
 #     title = serializers.CharField(required=False, allow_blank=True, max_length=100)
