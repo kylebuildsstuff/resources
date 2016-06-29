@@ -47,21 +47,6 @@ class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # """
 # @NOTE: Using Mixins with GenericAPIView
 from snippets.models import Snippet
@@ -93,7 +78,7 @@ class SnippetDetail2(mixins.RetrieveModelMixin,
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
 
-    def put(Self, request, *args, **kwargs):
+    def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
