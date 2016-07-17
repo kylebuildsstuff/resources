@@ -1,26 +1,30 @@
+var path = require('path');
+var webpack = require('webpack')
+
 module.exports = {
+  context: __dirname,
+
   entry: [
-    './src/index.js'
+    './emitter_app'
   ],
+
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.resolve('./'),
+    filename: 'backend.js'
   },
+
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-0']
       }
-    }]
+    ]
   },
+
   resolve: {
+    moduleDirectories: ['node_modules'],
     extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './'
   }
-};
+}
