@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  CREATING_TODO,
 } from './constants';
 
-export function defaultAction() {
+export function createTodo() {
+  console.log('actions step 1')
   return {
-    type: DEFAULT_ACTION,
-  };
+    type: CREATING_TODO,
+  }
 }

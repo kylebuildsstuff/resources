@@ -6,22 +6,25 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
 import selectHomePage from './selectors';
 import styles from './styles.css';
+import TodoWrapper from '../TodoWrapper';
+
+import { createTodo } from './actions';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className={styles.homePage}>
-      <Helmet
-        title="HomePage"
-        meta={[
-          { name: 'description', content: 'Description of HomePage' },
-        ]}
-      />
+        <h1 className={styles.h1}>Home Page</h1>
+        <div className={styles.buttonContainer}>
+          <div className="btn btn-primary" onClick={this.props.createTodo.bind(this)}>Create</div>
+        </div>
 
-      <div>Hey</div>
+        <div className={styles.todoWrapper}>
+          <TodoWrapper/>
+        </div>
+
       </div>
     );
   }
@@ -31,6 +34,7 @@ const mapStateToProps = selectHomePage();
 
 function mapDispatchToProps(dispatch) {
   return {
+    createTodo: () => dispatch(createTodo()),
     dispatch,
   };
 }

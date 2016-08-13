@@ -6,15 +6,17 @@
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+  CREATED_TODO,
 } from './constants';
 
 const initialState = fromJS({});
 
 function homePageReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
-      return state;
+    case CREATED_TODO:
+      console.log('hitting reducer');
+      console.log(action.payload.data);
+      return fromJS(Object.assign({}, action.payload.data));
     default:
       return state;
   }
