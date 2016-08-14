@@ -6,7 +6,8 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import selectHomePage from './selectors';
+import { createStructuredSelector } from 'reselect';
+import { selectHomePage } from './selectors';
 import styles from './styles.css';
 import TodoWrapper from '../TodoWrapper';
 
@@ -30,7 +31,9 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   }
 }
 
-const mapStateToProps = selectHomePage();
+const mapStateToProps = createStructuredSelector({
+  data: selectHomePage(),
+})
 
 function mapDispatchToProps(dispatch) {
   return {
