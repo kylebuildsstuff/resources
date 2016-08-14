@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  TODOS_REQUESTING,
 } from './constants';
 
-export function defaultAction() {
+export function requestTodos() {
   return {
-    type: DEFAULT_ACTION,
+    type: TODOS_REQUESTING,
   };
 }

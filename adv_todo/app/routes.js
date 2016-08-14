@@ -25,13 +25,23 @@ export default function createRoutes(store) {
           System.import('containers/HomePage/reducer'),
           System.import('containers/HomePage/sagas'),
           System.import('containers/HomePage'),
+          System.import('containers/TodoWrapper/reducer'),
+          System.import('containers/TodoWrapper/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([reducer, sagas, component]) => {
+        importModules.then(([
+          reducer,
+          sagas,
+          component,
+          todoWrapperReducer,
+          todoWrapperSagas
+        ]) => {
           injectReducer('homePage', reducer.default);
+          injectReducer('todoWrapper', todoWrapperReducer.default);
           injectSagas(sagas.default);
+          injectSagas(todoWrapperSagas.default);
           renderRoute(component);
         });
 

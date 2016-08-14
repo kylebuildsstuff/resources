@@ -7,7 +7,6 @@
 .listWrapper {
   width: 100vw;
   height: auto;
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

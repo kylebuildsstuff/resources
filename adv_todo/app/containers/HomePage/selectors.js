@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 /**
  * Direct selector to the homePage state domain
  */
-const selectHomePageDomain = () => state => state.get('homePage');
+const selectHomePage = () => state => state.get('homePage');
 
 /**
  * Other specific selectors
@@ -14,12 +14,11 @@ const selectHomePageDomain = () => state => state.get('homePage');
  * Default selector used by HomePage
  */
 
-const selectHomePage = () => createSelector(
-  selectHomePageDomain(),
-  (substate) => substate.toJS()
-);
+// const selectHomePage = () => createSelector(
+//   selectHomePage(),
+//   (homePageState) => homePageState
+// );
 
-export default selectHomePage;
 export {
-  selectHomePageDomain,
+  selectHomePage,
 };

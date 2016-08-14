@@ -1,27 +1,33 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Woohoo",
+      "author": "kyle",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "json-server2",
-      "author": "typicode2"
+      "title": "Woohoo",
+      "author": "kyle",
+      "id": 2
     },
     {
+      "title": "Woohoo",
+      "author": "kyle",
       "id": 3
     },
     {
-      "id": 4,
       "title": "Woohoo",
-      "author": "kyle"
+      "author": "kyle",
+      "id": 4
     },
     {
+      "title": "Woohoo",
+      "author": "kyle",
       "id": 5
     },
     {
+      "title": "Woohoo",
+      "author": "kyle",
       "id": 6
     },
     {
@@ -58,51 +64,6 @@
       "title": "Woohoo",
       "author": "kyle",
       "id": 13
-    },
-    {
-      "title": "Woohoo",
-      "author": "kyle",
-      "id": 14
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 15
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 16
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 17
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 18
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 19
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 20
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 21
-    },
-    {
-      "title": "Woohoo",
-      "author": "kylsse",
-      "id": 22
     }
   ],
   "profile": {
