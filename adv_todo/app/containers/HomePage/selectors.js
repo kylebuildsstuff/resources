@@ -5,14 +5,6 @@ import { createSelector } from 'reselect';
  */
 const selectHomePage = () => state => state.get('homePage');
 
-/**
- * Other specific selectors
- */
-
-
-/**
- * Default selector used by HomePage
- */
 
 // const selectHomePage = () => createSelector(
 //   selectHomePage(),

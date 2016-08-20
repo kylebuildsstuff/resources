@@ -4,17 +4,20 @@
  *
  */
 
-import { fromJS } from 'immutable';
+import Immutable, { fromJS } from 'immutable';
+// import Immutable from 'immutable';
 import {
-  TODO_CREATED,
+  TODOS_FETCHED,
 } from './constants';
 
-const initialState = fromJS({});
+const initialState = Immutable.Map({
+  todos: Immutable.List(),
+});
 
 function homePageReducer(state = initialState, action) {
   switch (action.type) {
-    case TODO_CREATED:
-      return state.set('homePage', action.payload.data)
+    case TODOS_FETCHED:
+      return state.update('todos', (val) => val.merge(action.payload));
     default:
       return state;
   }

@@ -9,7 +9,6 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 
 import homePageReducer from './containers/HomePage/reducer';
-import todoWrapperReducer from './containers/TodoWrapper/reducer';
 
 /*
  * routeReducer
@@ -47,7 +46,6 @@ export default function createReducer(asyncReducers) {
     route: routeReducer,
     language: languageProviderReducer,
     homePage: homePageReducer,
-    todoWrapper: todoWrapperReducer,
     ...asyncReducers,
   });
 }
