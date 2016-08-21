@@ -24,6 +24,7 @@ export function* createTodoSaga() {
 
 export function* fetchTodosSaga() {
   const ROOT_URL = `http://localhost:3001`;
+
   try {
     let data = yield call(axios.get, `${ROOT_URL}/todos`);
     yield put({type: TODOS_FETCHED, payload: data});
@@ -32,7 +33,7 @@ export function* fetchTodosSaga() {
   }
 }
 
-// Individual exports for testing
+// Watchers
 export function* watchCreatingTodoSaga() {
   yield* takeEvery(TODO_CREATING, createTodoSaga);
 }
