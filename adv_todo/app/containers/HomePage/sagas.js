@@ -6,22 +6,6 @@ import {
   TODOS_FETCHING, TODOS_FETCHED, TODOS_FETCHING_FAILED,
 } from './constants';
 
-export function* createTodoSaga() {
-  const ROOT_URL = `http://localhost:3001`;
-  const postData = {
-    title: 'Woohoo',
-    author: 'kyle',
-    number: Math.random(),
-  };
-
-  try {
-    let data = yield call(axios.post, `${ROOT_URL}/todos`, postData);
-    yield put({type: TODO_CREATED, payload: data});
-  } catch (error) {
-    yield put({type: TODO_CREATED_FAILED, error});
-  }
-}
-
 export function* fetchTodosSaga() {
   const ROOT_URL = `http://localhost:3001`;
 
@@ -33,13 +17,30 @@ export function* fetchTodosSaga() {
   }
 }
 
-// Watchers
-export function* watchCreatingTodoSaga() {
-  yield* takeEvery(TODO_CREATING, createTodoSaga);
+export function* createTodoSaga() {
+  const ROOT_URL = `http://localhost:3001`;
+  const postData = {
+    title: 'Woohoo',
+    author: 'kyle',
+    number: Math.random(),
+  };
+
+  try {
+    let data = yield call(axios.post, `${ROOT_URL}/todos`, postData);
+    yield put({type:TODOS_FETCHING});
+    yield put({type: TODO_CREATED, payload: data});
+  } catch (error) {
+    yield put({type: TODO_CREATED_FAILED, error});
+  }
 }
 
+// Watchers
 export function* watchFetchingTodosSaga() {
   yield* takeEvery(TODOS_FETCHING, fetchTodosSaga);
+}
+
+export function* watchCreatingTodoSaga() {
+  yield* takeEvery(TODO_CREATING, createTodoSaga);
 }
 
 // All sagas to be loaded
