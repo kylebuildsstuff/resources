@@ -1,0 +1,17 @@
+.homePageWrapper { /* stylelint-ignore */
+  border: 3px solid purple;
+  display: inline-block;
+}
+
+.navbar {
+  text-align: center;
+  border: 1px solid blue;
+}
+
+.sidebar {
+  border: 1px solid blue;
+}
+
+.mainsection {
+  border: 1px solid blue;
+}

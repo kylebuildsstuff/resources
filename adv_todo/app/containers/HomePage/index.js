@@ -8,22 +8,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectHomePage } from './selectors';
+import Immutable, { fromJS, toJS } from 'immutable';
 
-import { createTodo, fetchTodos } from './actions';
+import { createTodo, fetchTodos, deleteTodo } from './actions';
+import HomePageWrapper from '../../components/HomePageWrapper';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props) {
-    super(props)
-
-    this.createTodo = this.props.createTodo.bind(this);
-  }
-
   render() {
     return (
       <div>
-        <h1>Hey</h1>
-
-
+        <HomePageWrapper {...this.props}/>
       </div>
     );
   }
@@ -39,6 +33,7 @@ function mapDispatchToProps(dispatch) {
   return {
     createTodo: () => dispatch(createTodo()),
     fetchTodos: () => dispatch(fetchTodos()),
+    deleteTodo: (id) => dispatch(deleteTodo(id)),
     dispatch,
   };
 }
