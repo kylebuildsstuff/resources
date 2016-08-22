@@ -23,6 +23,7 @@ export function fetchTodos() {
 }
 
 export function deleteTodo(id) {
+  console.log('-- Action --');
   return {
     type: TODO_DELETING,
     payload: id
