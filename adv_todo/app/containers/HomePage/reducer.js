@@ -5,7 +5,6 @@
  */
 
 import Immutable, { fromJS } from 'immutable';
-// import Immutable from 'immutable';
 import {
   TODOS_FETCHED,
 } from './constants';

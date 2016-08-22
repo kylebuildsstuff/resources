@@ -28,6 +28,7 @@ function HomePageWrapper(props) {
         <HomePageMainSection
           todos={props.todos}
           fetchTodos={props.fetchTodos}
+          deleteTodo={props.deleteTodo}
           />
 
       </div>

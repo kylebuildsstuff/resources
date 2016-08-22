@@ -10,7 +10,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectHomePage } from './selectors';
 import Immutable, { fromJS, toJS } from 'immutable';
 
-import { createTodo, fetchTodos } from './actions';
+import { createTodo, fetchTodos, deleteTodo } from './actions';
 import HomePageWrapper from '../../components/HomePageWrapper';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -33,6 +33,7 @@ function mapDispatchToProps(dispatch) {
   return {
     createTodo: () => dispatch(createTodo()),
     fetchTodos: () => dispatch(fetchTodos()),
+    deleteTodo: (id) => dispatch(deleteTodo(id)),
     dispatch,
   };
 }

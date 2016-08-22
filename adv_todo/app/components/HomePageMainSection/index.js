@@ -6,26 +6,30 @@
 
 import React from 'react';
 
-
+import Todo from '../Todo';
 import styles from './styles.css';
 
 class HomePageMainSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderTodos = this.renderTodos.bind(this);
+  }
+
   componentWillMount() {
     this.props.fetchTodos();
   }
 
   renderTodos(todo) {
     if (!todo) {
-      return <div></div>
+      return <div>No Todos</div>
     }
     return (
       <div key={todo.get('number')}>
-        <div>{todo.get('number')}</div>
-        <div>{todo.get('author')}</div>
-        <div>{todo.get('title')}</div>
-        <br />
+        <Todo
+          todo={todo}
+          deleteTodo={this.props.deleteTodo}
+          />
       </div>
-
     );
   }
 
