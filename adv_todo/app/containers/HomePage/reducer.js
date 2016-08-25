@@ -4,7 +4,7 @@
  *
  */
 
-import Immutable, { fromJS } from 'immutable';
+import Immutable from 'immutable';
 import {
   TODOS_FETCHED,
 } from './constants';
@@ -16,10 +16,9 @@ const initialState = Immutable.Map({
 function homePageReducer(state = initialState, action) {
   switch (action.type) {
     case TODOS_FETCHED:
-      console.log('-- Reducer --');
-      return (state.update('todos', (val) => {
-        return val.clear().merge(action.payload.data)
-      }));
+      console.log('%c TODOS_FETCHED Reducer', 'color: green');
+      return (state.update('todos', (val) => val.clear().merge(action.payload.data)
+      ));
     default:
       return state;
   }

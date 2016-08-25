@@ -102,6 +102,7 @@
         2,
         "as-needed"
       ],
+      "new-cap": 0,
       "comma-dangle": [
         2,
         "always-multiline"
