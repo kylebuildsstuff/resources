@@ -12,6 +12,7 @@ import styles from './styles.css';
 class HomePageMainSection extends React.Component {
   constructor(props) {
     super(props);
+
     this.renderTodos = this.renderTodos.bind(this);
   }
 
@@ -20,23 +21,22 @@ class HomePageMainSection extends React.Component {
   }
 
   renderTodos(todo) {
-    console.log('-- Component --');
     if (!todo) {
-      return <div>No Todos</div>
+      return <div>No Todos</div>;
     }
     return (
       <div key={todo.get('number')}>
         <Todo
           todo={todo}
           deleteTodo={this.props.deleteTodo}
-          />
+        />
       </div>
     );
   }
 
   render() {
     if (!this.props.todos) {
-      return <div>No Todos</div>
+      return <div>No Todos</div>;
     }
 
     return (
@@ -49,5 +49,11 @@ class HomePageMainSection extends React.Component {
     );
   }
 }
+
+HomePageMainSection.propTypes = {
+  fetchTodos: React.PropTypes.func,
+  deleteTodo: React.PropTypes.func,
+  todos: React.PropTypes.object,
+};
 
 export default HomePageMainSection;

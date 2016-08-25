@@ -6,7 +6,7 @@
 
 import React from 'react';
 
-import styles from './styles.css';
+// import styles from './styles.css';
 
 class Todo extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
@@ -15,8 +15,8 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
     this.deleteTodo = this.deleteTodo.bind(this);
   }
 
-  deleteTodo(e) {
-    this.props.deleteTodo(this.props.todo.get('id'))
+  deleteTodo() {
+    this.props.deleteTodo(this.props.todo.get('id'));
   }
 
   render() {
@@ -28,7 +28,7 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
         <div
           className="btn btn-danger"
           onClick={this.deleteTodo}
-          >
+        >
           Delete
         </div>
         <br />
@@ -36,5 +36,10 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
     );
   }
 }
+
+Todo.propTypes = {
+  deleteTodo: React.PropTypes.func,
+  todo: React.PropTypes.object,
+};
 
 export default Todo;

@@ -1,15 +1,16 @@
 import axios from 'axios';
 import { takeEvery } from 'redux-saga';
-import { take, call, put, select } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import {
   TODO_CREATING, TODO_CREATED, TODO_CREATED_FAILED,
   TODOS_FETCHING, TODOS_FETCHED, TODOS_FETCHING_FAILED,
-  TODO_DELETING, TODO_DELETED, TODO_DELETING_FAILED
+  TODO_DELETING, TODO_DELETED, TODO_DELETING_FAILED,
 } from './constants';
 
-const ROOT_URL = `http://localhost:3001`;
+const ROOT_URL = 'http://localhost:3001';
 
 export function* createTodoSaga() {
+  console.log('%c createTodoSaga Saga', 'color: green');
   const postData = {
     title: 'Woohoo',
     author: 'kyle',
@@ -17,30 +18,32 @@ export function* createTodoSaga() {
   };
 
   try {
-    let data = yield call(axios.post, `${ROOT_URL}/todos`, postData);
-    yield put({type: TODOS_FETCHING});
-    yield put({type: TODO_CREATED, payload: data});
+    const data = yield call(axios.post, `${ROOT_URL}/todos`, postData);
+    yield put({ type: TODOS_FETCHING });
+    yield put({ type: TODO_CREATED, payload: data });
   } catch (error) {
-    yield put({type: TODO_CREATED_FAILED, error});
+    yield put({ type: TODO_CREATED_FAILED, error });
   }
 }
 
 export function* fetchTodosSaga() {
+  console.log('%c fetchTodos Saga', 'color: green');
   try {
-    let data = yield call(axios.get, `${ROOT_URL}/todos`);
-    yield put({type: TODOS_FETCHED, payload: data});
+    const data = yield call(axios.get, `${ROOT_URL}/todos`);
+    yield put({ type: TODOS_FETCHED, payload: data });
   } catch (error) {
-    yield put({type: TODOS_FETCHING_FAILED, error});
+    yield put({ type: TODOS_FETCHING_FAILED, error });
   }
 }
 
 export function* deleteTodoSaga(action) {
+  console.log('%c deleteTodo Saga', 'color: green');
   try {
-    let data = yield call(axios.delete, `${ROOT_URL}/todos/${action.payload}`)
-    yield put({type: TODOS_FETCHING})
-    yield put({type: TODO_DELETED, payload: data})
+    const data = yield call(axios.delete, `${ROOT_URL}/todos/${action.payload}`);
+    yield put({ type: TODOS_FETCHING });
+    yield put({ type: TODO_DELETED, payload: data });
   } catch (error) {
-    yield put({type: TODO_DELETING_FAILED, error})
+    yield put({ type: TODO_DELETING_FAILED, error });
   }
 }
 
@@ -61,5 +64,5 @@ export function* watchDeletingTodoSaga(action) {
 export default [
   watchCreatingTodoSaga,
   watchFetchingTodosSaga,
-  watchDeletingTodoSaga
+  watchDeletingTodoSaga,
 ];

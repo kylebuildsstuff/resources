@@ -6,9 +6,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { selectHomePage } from './selectors';
-import Immutable, { fromJS, toJS } from 'immutable';
 
 import { createTodo, fetchTodos, deleteTodo } from './actions';
 import HomePageWrapper from '../../components/HomePageWrapper';
@@ -17,15 +15,15 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   render() {
     return (
       <div>
-        <HomePageWrapper {...this.props}/>
+        <HomePageWrapper {...this.props} />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
-    todos: selectHomePage(state)
+    todos: selectHomePage(state),
   };
 }
 
