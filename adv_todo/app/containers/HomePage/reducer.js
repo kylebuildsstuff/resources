@@ -16,7 +16,10 @@ const initialState = Immutable.Map({
 function homePageReducer(state = initialState, action) {
   switch (action.type) {
     case TODOS_FETCHED:
-      return state.update('todos', (val) => val.merge(action.payload.data));
+      console.log('-- Reducer --');
+      return (state.update('todos', (val) => {
+        return val.clear().merge(action.payload.data)
+      }));
     default:
       return state;
   }

@@ -20,6 +20,7 @@ class HomePageMainSection extends React.Component {
   }
 
   renderTodos(todo) {
+    console.log('-- Component --');
     if (!todo) {
       return <div>No Todos</div>
     }

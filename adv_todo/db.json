@@ -3,17 +3,20 @@
     {
       "title": "Woohoo",
       "author": "kyle",
-      "number": 0.4891351998341982,
-      "id": 2
+      "number": 0.7706049165074832,
+      "id": 4
     },
     {
       "title": "Woohoo",
       "author": "kyle",
-      "number": 0.5816137754952054,
-      "id": 4
+      "number": 0.0076213251177075225,
+      "id": 11
+    },
+    {
+      "title": "Woohoo",
+      "author": "kyle",
+      "number": 0.8059625744416261,
+      "id": 12
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
