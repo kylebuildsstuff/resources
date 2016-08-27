@@ -28,6 +28,7 @@ class HomePageMainSection extends React.Component {
       <div key={todo.get('number')}>
         <Todo
           todo={todo}
+          updateTodo={this.props.updateTodo}
           deleteTodo={this.props.deleteTodo}
         />
       </div>
@@ -52,6 +53,7 @@ class HomePageMainSection extends React.Component {
 
 HomePageMainSection.propTypes = {
   fetchTodos: React.PropTypes.func,
+  updateTodo: React.PropTypes.func,
   deleteTodo: React.PropTypes.func,
   todos: React.PropTypes.object,
 };

@@ -27,6 +27,7 @@ function HomePageWrapper(props) {
         <HomePageMainSection
           todos={props.todos}
           fetchTodos={props.fetchTodos}
+          updateTodo={props.updateTodo}
           deleteTodo={props.deleteTodo}
         />
 
@@ -39,8 +40,9 @@ function HomePageWrapper(props) {
 HomePageWrapper.propTypes = {
   createTodo: React.PropTypes.func,
   fetchTodos: React.PropTypes.func,
-  todos: React.PropTypes.object,
+  updateTodo: React.PropTypes.func,
   deleteTodo: React.PropTypes.func,
+  todos: React.PropTypes.object,
 };
 
 export default HomePageWrapper;

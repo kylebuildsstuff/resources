@@ -4,6 +4,7 @@ import { call, put } from 'redux-saga/effects';
 import {
   TODO_CREATING, TODO_CREATED, TODO_CREATED_FAILED,
   TODOS_FETCHING, TODOS_FETCHED, TODOS_FETCHING_FAILED,
+  TODO_UPDATING, TODO_UPDATED, TODO_UPDATING_FAILED,
   TODO_DELETING, TODO_DELETED, TODO_DELETING_FAILED,
 } from './constants';
 
@@ -36,6 +37,18 @@ export function* fetchTodosSaga() {
   }
 }
 
+export function* updateTodoSaga({ payload }) {
+  console.log('%c updateTodo Saga', 'color: green');
+  console.log('data: ', payload);
+  try {
+    const resp = yield call(axios.put, `${ROOT_URL}/todos/${payload.get('id')}`, payload);
+    yield put({ type: TODO_UPDATED, payload: resp });
+    yield put({ type: TODOS_FETCHING });
+  } catch (error) {
+    yield put({ type: TODO_UPDATING_FAILED, error });
+  }
+}
+
 export function* deleteTodoSaga(action) {
   console.log('%c deleteTodo Saga', 'color: green');
   try {
@@ -49,20 +62,29 @@ export function* deleteTodoSaga(action) {
 
 // Watchers
 export function* watchCreatingTodoSaga() {
+  console.log('%c watchCreatingTodo Saga', 'color: green');
   yield* takeEvery(TODO_CREATING, createTodoSaga);
 }
 
 export function* watchFetchingTodosSaga() {
+  console.log('%c watchFetchingTodosSaga Saga', 'color: green');
   yield* takeEvery(TODOS_FETCHING, fetchTodosSaga);
 }
 
+export function* watchUpdatingTodoSaga(data) {
+  console.log('%c watchUpdatingTodoSaga Saga', 'color: green');
+  yield* takeEvery(TODO_UPDATING, updateTodoSaga, ...data);
+}
+
 export function* watchDeletingTodoSaga(action) {
-  yield takeEvery(TODO_DELETING, deleteTodoSaga, ...action);
+  console.log('%c watchDeletingTodoSaga Saga', 'color: green');
+  yield takeEvery(TODO_DELETING, deleteTodoSaga, action);
 }
 
 // All sagas to be loaded
 export default [
   watchCreatingTodoSaga,
   watchFetchingTodosSaga,
+  watchUpdatingTodoSaga,
   watchDeletingTodoSaga,
 ];

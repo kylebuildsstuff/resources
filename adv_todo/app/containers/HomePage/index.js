@@ -8,7 +8,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { selectHomePage } from './selectors';
 
-import { createTodo, fetchTodos, deleteTodo } from './actions';
+import { createTodo, fetchTodos, updateTodo, deleteTodo } from './actions';
 import HomePageWrapper from '../../components/HomePageWrapper';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -31,6 +31,7 @@ function mapDispatchToProps(dispatch) {
   return {
     createTodo: () => dispatch(createTodo()),
     fetchTodos: () => dispatch(fetchTodos()),
+    updateTodo: (data) => dispatch(updateTodo(data)),
     deleteTodo: (id) => dispatch(deleteTodo(id)),
     dispatch,
   };
