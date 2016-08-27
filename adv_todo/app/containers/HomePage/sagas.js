@@ -49,10 +49,10 @@ export function* updateTodoSaga({ payload }) {
   }
 }
 
-export function* deleteTodoSaga(action) {
+export function* deleteTodoSaga({ payload }) {
   console.log('%c deleteTodo Saga', 'color: green');
   try {
-    const data = yield call(axios.delete, `${ROOT_URL}/todos/${action.payload}`);
+    const data = yield call(axios.delete, `${ROOT_URL}/todos/${payload}`);
     yield put({ type: TODOS_FETCHING });
     yield put({ type: TODO_DELETED, payload: data });
   } catch (error) {
@@ -78,7 +78,7 @@ export function* watchUpdatingTodoSaga(data) {
 
 export function* watchDeletingTodoSaga(action) {
   console.log('%c watchDeletingTodoSaga Saga', 'color: green');
-  yield takeEvery(TODO_DELETING, deleteTodoSaga, action);
+  yield takeEvery(TODO_DELETING, deleteTodoSaga, ...action);
 }
 
 // All sagas to be loaded

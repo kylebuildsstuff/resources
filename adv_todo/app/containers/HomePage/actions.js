@@ -26,8 +26,7 @@ export function fetchTodos() {
 }
 
 export function updateTodo(data) {
-  console.log('%c updateTodos Action', 'color: green');
-  console.log('data: ', data);
+  console.log('%c fetchTodos Action', 'color: green');
   return {
     type: TODO_UPDATING,
     payload: data,
