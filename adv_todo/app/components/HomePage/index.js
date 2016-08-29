@@ -1,6 +1,6 @@
 /**
 *
-* HomePageWrapper
+* HomePage
 *
 */
 
@@ -11,7 +11,7 @@ import SideBar from '../SideBar';
 import HomePageMainSection from '../HomePageMainSection';
 import NavBar from '../NavBar';
 
-function HomePageWrapper(props) {
+function HomePage(props) {
   return (
     <div className={styles.homePageWrapper}>
       <div className={`${styles.navbar} col-xs-12`}>
@@ -37,7 +37,7 @@ function HomePageWrapper(props) {
   );
 }
 
-HomePageWrapper.propTypes = {
+HomePage.propTypes = {
   createTodo: React.PropTypes.func,
   fetchTodos: React.PropTypes.func,
   updateTodo: React.PropTypes.func,
@@ -45,4 +45,4 @@ HomePageWrapper.propTypes = {
   todos: React.PropTypes.object,
 };
 
-export default HomePageWrapper;
+export default HomePage;

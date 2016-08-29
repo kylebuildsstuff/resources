@@ -9,13 +9,13 @@ import { connect } from 'react-redux';
 import { selectHomePage } from './selectors';
 
 import { createTodo, fetchTodos, updateTodo, deleteTodo } from './actions';
-import HomePageWrapper from '../../components/HomePageWrapper';
+import HomePage from '../../components/HomePage';
 
-export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class HomePageContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
-        <HomePageWrapper {...this.props} />
+        <HomePage {...this.props} />
       </div>
     );
   }
@@ -37,4 +37,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePageContainer);
