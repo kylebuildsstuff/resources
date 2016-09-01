@@ -5,8 +5,6 @@
 */
 
 import React from 'react';
-
-
 import styles from './styles.css';
 
 class SideBar extends React.Component {
@@ -17,12 +15,16 @@ class SideBar extends React.Component {
         <div
           className="btn btn-primary"
           onClick={this.props.createTodo}
-          >
+        >
           Create Todo
         </div>
       </div>
     );
   }
 }
+
+SideBar.propTypes = {
+  createTodo: React.PropTypes.func,
+};
 
 export default SideBar;

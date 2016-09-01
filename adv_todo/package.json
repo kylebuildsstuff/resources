@@ -98,6 +98,8 @@
       }
     },
     "rules": {
+      "no-global-assign": 0,
+      "no-unsafe-negation" : 0,
       "arrow-body-style": [
         2,
         "as-needed"

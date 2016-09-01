@@ -39,7 +39,6 @@ export function* fetchTodosSaga() {
 
 export function* updateTodoSaga({ payload }) {
   console.log('%c updateTodo Saga', 'color: green');
-  console.log('data: ', payload);
   try {
     const resp = yield call(axios.put, `${ROOT_URL}/todos/${payload.get('id')}`, payload);
     yield put({ type: TODO_UPDATED, payload: resp });
