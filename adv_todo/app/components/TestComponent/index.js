@@ -35,3 +35,21 @@ function TestComponent(props) {
 export default reduxForm({
   form: 'simple',
 })(TestComponent);
+//
+// <form name='simple' onSubmit={handleSubmit(values => console.log(values))}>
+//   <div>
+//     <label htmlFor="firstName">First Name</label>
+//     <div>
+//       <Field name="firstName" component="input" type="text" placeholder="First Name" />
+//     </div>
+//   </div>
+//   <div>
+//     <label htmlFor="lastName">Last Name</label>
+//     <div>
+//       <Field name="lastName" component="input" type="text" placeholder="Last Name" />
+//     </div>
+//   </div>
+//   <div>
+//     <button type="submit" disabled={pristine || submitting}>Submit</button>
+//   </div>
+// </form>
