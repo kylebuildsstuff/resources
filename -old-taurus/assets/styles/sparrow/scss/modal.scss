@@ -1,0 +1,33 @@
+.hide {
+  display: none;
+}
+
+.base-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+  &--inner {
+    @extend .base-flex;
+    width: 80vw;
+    height: 80vh;
+    overflow:auto;
+    background: white;
+    border-radius: 10px;
+  }
+}

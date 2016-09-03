@@ -1,0 +1,1 @@
+web: gunicorn taurus.wsgi --log-file -

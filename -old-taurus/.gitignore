@@ -1,0 +1,7 @@
+/node_modules
+/assets/bundles
+/taurus/__pycache__
+webpack-stats.json
+*.pyc
+staticfiles
+.env

@@ -8,11 +8,19 @@
   <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">adv_todo</a></h3>
   <ul>
     <p>A basic Todo App created with modern tools and concepts for scaling JS applications in mind.</p>
-    <p><a href="https://vimeo.com/168648012"</a>Scaling React.js Applications</p>
+    <p><a href="https://vimeo.com/168648012">Scaling React.js Applications</a></p>
 
     <h6>Tools Used:</h6>
     <p>react, redux, redux-saga, reselect, immutable, redux-forms (v6), webpack, css modules, mxstbr's react-boilerplate</p>
-    <h6>Completed: September 2016</h6>
+    <h6>Completed: August-September 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/-old-taurus">-old-taurus</a></h3>
+  <ul>
+    <p>Prototype for taurus, a modern web app for organizing your goals. Scrapped in order start fresh with best practices and tools as outlined in <a href="https://vimeo.com/168648012">Scaling React.js Applications</a>. Work moved to new taurus repos.</p>
+    <h6>Tools Used:</h6>
+    <p>python, django, django rest framework, jwts, react, redux, webpack</p>
+    <h6>Incomplete: May-July 2016</h6>
   </ul>
 
   <h3><a href="https://github.com/KTruong888/resources/tree/master/DRF">DRF</a></h3>
