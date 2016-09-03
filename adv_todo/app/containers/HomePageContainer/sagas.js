@@ -11,7 +11,7 @@ import {
 const ROOT_URL = 'http://localhost:3001';
 
 export function* createTodoSaga() {
-  console.log('%c createTodoSaga Saga', 'color: green');
+  console.log('%c -- createTodoSaga Saga  --', 'color: green');
   const postData = {
     title: 'Woohoo',
     author: 'kyle',
@@ -28,7 +28,7 @@ export function* createTodoSaga() {
 }
 
 export function* fetchTodosSaga() {
-  console.log('%c fetchTodos Saga', 'color: green');
+  console.log('%c -- fetchTodos Saga  --', 'color: green');
   try {
     const data = yield call(axios.get, `${ROOT_URL}/todos`);
     yield put({ type: TODOS_FETCHED, payload: data });
@@ -38,7 +38,10 @@ export function* fetchTodosSaga() {
 }
 
 export function* updateTodoSaga({ payload }) {
-  console.log('%c updateTodo Saga', 'color: green');
+  console.log('%c -- updateTodo Saga  --', 'color: green');
+  // console.log('');
+  // console.log(payload);
+  // console.log('');
   try {
     const resp = yield call(axios.put, `${ROOT_URL}/todos/${payload.get('id')}`, payload);
     yield put({ type: TODO_UPDATED, payload: resp });
@@ -49,7 +52,7 @@ export function* updateTodoSaga({ payload }) {
 }
 
 export function* deleteTodoSaga({ payload }) {
-  console.log('%c deleteTodo Saga', 'color: green');
+  console.log('%c -- deleteTodo Saga  --', 'color: green');
   try {
     const data = yield call(axios.delete, `${ROOT_URL}/todos/${payload}`);
     yield put({ type: TODOS_FETCHING });
@@ -61,22 +64,22 @@ export function* deleteTodoSaga({ payload }) {
 
 // Watchers
 export function* watchCreatingTodoSaga() {
-  console.log('%c watchCreatingTodo Saga', 'color: green');
+  console.log('%c -- watchCreatingTodo Saga  --', 'color: green');
   yield* takeEvery(TODO_CREATING, createTodoSaga);
 }
 
 export function* watchFetchingTodosSaga() {
-  console.log('%c watchFetchingTodosSaga Saga', 'color: green');
+  console.log('%c -- watchFetchingTodosSaga Saga  --', 'color: green');
   yield* takeEvery(TODOS_FETCHING, fetchTodosSaga);
 }
 
 export function* watchUpdatingTodoSaga(data) {
-  console.log('%c watchUpdatingTodoSaga Saga', 'color: green');
+  console.log('%c -- watchUpdatingTodoSaga Saga  --', 'color: green');
   yield* takeEvery(TODO_UPDATING, updateTodoSaga, ...data);
 }
 
 export function* watchDeletingTodoSaga(action) {
-  console.log('%c watchDeletingTodoSaga Saga', 'color: green');
+  console.log('%c -- watchDeletingTodoSaga Saga  --', 'color: green');
   yield takeEvery(TODO_DELETING, deleteTodoSaga, ...action);
 }
 

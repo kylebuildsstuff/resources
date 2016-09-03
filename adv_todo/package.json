@@ -98,6 +98,9 @@
       }
     },
     "rules": {
+      "arrow-body-style": ["always"],
+      "quotes": 0,
+      "no-underscore-dangle": 0,
       "no-global-assign": 0,
       "no-unsafe-negation" : 0,
       "arrow-body-style": [

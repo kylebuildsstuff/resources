@@ -25,7 +25,7 @@ class HomePageMainSection extends React.Component {
       return <div>No Todos</div>;
     }
     return (
-      <div key={todo.get('number')}>
+      <div key={todo.get('id')}>
         <Todo
           todo={todo}
           updateTodo={this.props.updateTodo}

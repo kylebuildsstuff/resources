@@ -18,6 +18,7 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
 
     this.renderTodo = this.renderTodo.bind(this);
     this.changeTodoEditMode = this.changeTodoEditMode.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   changeTodoEditMode() {
@@ -26,10 +27,18 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
     });
   }
 
+  deleteTodo(e) {
+    e.stopPropagation();
+    this.props.deleteTodo(this.props.todo.get('id'));
+  }
+
   renderTodo() {
     if (this.state.editMode) {
       return (
-        <TodoForm todo={this.props.todo} changeTodoEditMode={this.changeTodoEditMode} />
+        <TodoForm
+          todo={this.props.todo} changeTodoEditMode={this.changeTodoEditMode}
+          updateTodo={this.props.updateTodo}
+        />
       );
     }
 
@@ -38,6 +47,10 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
         <div className="card card-block">
           <h4 className="card-title">{this.props.todo.get('author')}</h4>
           <p className="card-text">{this.props.todo.get('title')}</p>
+          <i
+            className={`${styles.deleteIcon} btn btn-danger fa fa-times`}
+            onClick={this.deleteTodo}
+          ></i>
         </div>
       </div>
     );
@@ -53,8 +66,8 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
 }
 
 Todo.propTypes = {
-  // updateTodo: React.PropTypes.func,
-  // deleteTodo: React.PropTypes.func,
+  updateTodo: React.PropTypes.func,
+  deleteTodo: React.PropTypes.func,
   todo: React.PropTypes.object,
 };
 

@@ -33,8 +33,6 @@ export default function createRoutes(store) {
           reducer,
           sagas,
           component,
-          todoWrapperReducer,
-          todoWrapperSagas
         ]) => {
           injectReducer('homePage', reducer.default);
           injectSagas(sagas.default);
