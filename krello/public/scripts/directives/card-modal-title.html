@@ -1,0 +1,14 @@
+<form name="editCardForm" ng-submit="listCtrl.editCard(card, list, listCtrl);" novalidate>
+  <div class="card-modal-title"
+  ng-click="card.editCardModeTitle=true;"
+  ng-show="!card.editCardModeTitle">{{card.title}}</div>
+
+  <div ng-show="card.editCardModeTitle">
+    <input class="col-xs-11" type="text"
+    ng-model="listCtrl.cardEdits.title" placeholder="{{card.title}}"></input>
+    <input class="col-xs-2 btn btn-success"
+    type="submit" value="Save"></input>
+    <i class="fa fa-close col-xs-2 hover-pointer"
+    ng-click="card.editCardModeTitle=false;"></i>
+  </div>
+</form>

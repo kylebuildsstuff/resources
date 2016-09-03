@@ -1,0 +1,69 @@
+body {
+  padding: 50px;
+  font-size: 170%;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  min-height: 100%;
+  height: 100%;
+  width: auto;
+  overflow: auto;
+}
+
+input {
+  color: black !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.padding-vertical {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.padding-all {
+  padding: 5%;
+}
+
+.padding-horizontal {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.margin-vertical {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.margin-right {
+  margin-right: 5%;
+}
+
+.hover-pointer {
+  cursor:pointer;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+.ng-invalid.ng-dirty {
+  border-color: red;
+};
+
+.ng-valid.ng-dirty {
+  border-color: green;
+}
+
+[ng-cloak] {
+  display: none;
+}
+
+.vertical-padding {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}

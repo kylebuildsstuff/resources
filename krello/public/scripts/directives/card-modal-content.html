@@ -1,0 +1,26 @@
+<div class="card-modal-content--wrapper">
+  <div class="card-modal-content--content">
+
+    <!-- Description -->
+    <div class="card-modal-description"
+    ng-click="card.editCardModeDescription=true;"
+    ng-show="!card.editCardModeDescription">
+    {{card.description}}
+    </div>
+
+    <form ng-submit="listCtrl.editCard(card, list, listCtrl);" novalidate>
+      <div ng-show="card.editCardModeDescription">
+        <input class="col-xs-12"
+        type="text"
+        ng-model="listCtrl.cardEdits.description"
+        placeholder="{{card.description}}"></input>
+        <input class="col-xs-2 btn btn-success"
+        type="submit"
+        value="Save"></input>
+        <i class="fa fa-close col-xs-2 hover-pointer"
+        ng-click="card.editCardModeDescription=false;"></i>
+      </div>
+    </form>
+
+  </div>
+</div>

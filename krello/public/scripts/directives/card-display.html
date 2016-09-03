@@ -1,0 +1,19 @@
+<div class="card--primary-container">
+  <!-- Each individual card within a list -->
+  <div class="card--container" ng-repeat="card in list.cards">
+    <div class="btn btn-primary card--display"
+    ng-click="card.editCardMode = !card.editCardMode"
+    ng-mouseenter="card.hover = !card.hover;"
+    ng-mouseleave="card.hover=!card.hover;">
+      <div>{{ card.title }}</div>
+      <div ng-repeat="label in card.labels">
+        <div>{{label}}</div>
+      </div>
+      <div>{{ card.cardID }}</div>
+      <div class="fa fa-pencil" ng-show="card.hover"></div>
+    </div>
+
+    <card-modal></card-modal>
+
+  </div>
+</div>

@@ -1,0 +1,166 @@
+.card {
+  &--primary-container {
+    max-height: 350px;
+    overflow: auto;
+  }
+  &--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &--display {
+    width: 90%;
+    overflow: auto;
+  }
+  &--adder {
+    width: 100%;
+    align-self: center;
+  }
+  &--buttons { // buttons in the modals
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #888888;
+  }
+  &--buttons:hover {
+    background: #298fca;  // blue
+    border-color: #026aa7; // dark blue
+    cursor: pointer;
+  }
+  &--buttons-header {
+    text-align: center;
+  }
+}
+
+.card-label {
+  &--red {
+    height: 35px;
+    width: 100%;
+    background: #f73131;
+    border: 3px solid #f71616;
+    border-radius: 4px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    cursor: pointer;
+  }
+  &--orange {
+    @extend .card-label--red;
+    background: #f7aa36;
+    border: 2px solid #f79d16;
+  }
+  &--yellow {
+    @extend .card-label--red;
+    background: #f8f131;
+    border: 2px solid #f7f019;
+  }
+  &--green {
+    @extend .card-label--red;
+    background: #49de3e;
+    border: 2px solid #2ade1d;
+  }
+  &--blue {
+    @extend .card-label--red;
+    background: #4054e5;
+    border: 2px solid #253be5;
+  }
+  &--violet {
+    @extend .card-label--red;
+    background: #cd40e5;
+    border: 2px solid #c717e5;
+  }
+}
+
+.card-edit-modal {
+  &--container {
+    @extend .board-edit-modal--container;
+  }
+  &--modal {
+    height: 90vh;
+    width: 50vw;
+    overflow: auto;
+  }
+  &--exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
+
+.card-modal-title {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card-modal-description {
+  cursor: pointer;
+}
+
+.card-modal-content {
+  &--wrapper {
+
+  }
+  &--title {
+
+  }
+  &--content {
+    padding-left: 1vw;
+    margin-top: 1vw;
+  }
+}
+
+.label {
+  &--wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    margin-left: auto;
+    padding: 0 4px 0 4px;
+  }
+  &--hover {
+    align-self: flex-start;
+  }
+}
+
+.label-options {
+  &--wrapper {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 1px #888888;
+    height: auto;
+    width: 90%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+input[id='red-label'] {
+  display: none;
+}
+
+input[id='orange-label'] {
+  display: none;
+}
+
+input[id='yellow-label'] {
+  display: none;
+}
+
+input[id='green-label'] {
+  display: none;
+}
+
+input[id='blue-label'] {
+  display: none;
+}
+
+input[id='violet-label'] {
+  display: none;
+}

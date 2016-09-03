@@ -1,0 +1,17 @@
+<div>
+  <form novalidate name="createCardForm"
+  ng-submit="listCtrl.addCard(list, listCtrl)"
+  ng-show="list.createCardMode">
+    <input type="text" ng-model="listCtrl.cardDetails.title"
+    placeholder="Card Content">
+    <input type="submit" value="Add" style="color: black;">
+    <div class="fa fa-close btn btn-default" 
+    ng-click="list.createCardMode = !list.createCardMode"></div>
+  </form>
+
+  <!-- Add Card Button -->
+  <div class="btn btn-warning card--adder" ng-show="!list.createCardMode"
+  ng-click="list.createCardMode = !list.createCardMode;">
+    <div>Add Card</div>
+  </div>
+</div>

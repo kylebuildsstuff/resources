@@ -1,0 +1,19 @@
+
+<div ng-repeat="board in listCtrl.boards">
+  <h1 ng-show="board.boardID == listCtrl.boardIDParam">
+    {{ board.title }}
+  </h1>
+</div>
+
+<div class="row">
+  <div ui-sortable="listCtrl.sortableOptions;"
+  ng-model="listCtrl.lists">
+    <div class="list--clear-container"
+    ng-repeat="list in listCtrl.lists">
+      <list-display></list-display>
+    </div>
+  </div>
+
+  <!-- Add list button  -->
+  <list-add-button></list-add-button>
+</div>

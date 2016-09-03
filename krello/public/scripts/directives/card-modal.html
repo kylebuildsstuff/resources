@@ -1,0 +1,23 @@
+<div class="card-edit-modal--container" ng-show="card.editCardMode" ng-click="card.editCardMode=false;">
+  <!-- Card modal that pops up when editting cards -->
+  <div class="card-edit-modal--modal col-xs-12 well" ng-click="$event.stopPropagation();">
+    <i class="fa fa-close card-edit-modal--exit" ng-click="card.editCardMode=false;"></i>
+
+    <!-- Card Modal Title & Description -->
+    <div class="row">
+      <div class="col-xs-11">
+        <card-modal-title></card-modal-title>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <card-modal-content></card-modal-content>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <card-modal-sidebar></card-modal-sidebar>
+      </div>
+    </div>
+
+  </div>
+</div>

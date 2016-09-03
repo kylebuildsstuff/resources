@@ -1,0 +1,44 @@
+<div class="card--buttons-wrapper">
+  <!-- Card Modal Side buttons  -->
+  <div class="card--buttons-header bold padding-vertical">Actions</div>
+
+  <!-- Delete Card -->
+  <div class="card--buttons margin-vertical padding-all"
+  ng-click="listCtrl.deleteCard(card, list, listCtrl)">
+  <i class="fa fa-close margin-right"></i>Delete Card
+  </div>
+
+  <!-- Labels -->
+  <div class="card--buttons margin-vertical padding-all"
+   ng-click="card.editCardModeLabels=!card.editCardModeLabels;">
+   <i class="fa fa-tag margin-right"></i>Label
+  </div>
+
+  <div class="label-options--wrapper col-xs-12" ng-show="card.editCardModeLabels">
+    <div ng-repeat="label in listCtrl.labels">
+      <div class="label--wrapper card-label--{{label.colour}}"
+      ng-mouseenter="label.hover=true;" ng-mouseleave="label.hover=false;"
+      ng-click="label.picked=!label.picked;
+      listCtrl.cardEdits[label.colour] = label.colour;">
+        <i class="fa fa-heart-o label--hover" ng-show="label.hover"></i>
+        <i class="fa fa-heart" ng-show="label.picked"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="card--buttons margin-vertical padding-all">
+    <i class="fa fa-check-square-o margin-right"></i>Checklist
+  </div>
+
+  <!-- Due Date -->
+  <div class="card--buttons margin-vertical padding-all">
+    <i class="fa fa-clock-o margin-right"></i>Due date
+  </div>
+
+  <!-- Attachements -->
+  <div class="card--buttons margin-vertical padding-all">
+    <i class="fa fa-paperclip margin-right"></i>Attachment
+  </div>
+
+</div>

@@ -1,0 +1,47 @@
+.list {
+  &--container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    background: #449d44;
+    border-radius: 4px;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  &--adder {
+    @extend .board--adder;
+    height: 75px;
+  }
+  &--text {
+    @extend .board--text;
+    font-size: 1em;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  &--option-button {
+    @extend .board--option-button;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+  }
+  &--option-form {
+    @extend .board--option-form;
+  }
+  &--clear-container:nth-child(4n)::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+};
+
+.list-edit-modal {
+  &--container {
+    @extend .board-edit-modal--container;
+  }
+  &--modal {
+    @extend .board-edit-modal--modal;
+  }
+}

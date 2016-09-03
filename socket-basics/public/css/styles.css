@@ -1,0 +1,26 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+h1 {
+  margin: 24px 0;
+  text-align: center; }
+
+.index--wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+.chat--wrapper {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; }
+.chat--messages {
+  max-height: 100vh;
+  overflow: auto; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,64 @@
+.board {
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 250px;
+  }
+  &--adder {
+    border: 3px solid gray;
+    height: 75px;
+    width: 100%;
+  }
+  &--text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.5em;
+    font-weight: bold;
+    max-width: 80%;
+    overflow: auto;
+  }
+  &--option-button {
+    margin-left: auto;
+    top: 15px;
+    height: 30px;
+  }
+  &--option-form {
+    position: absolute;
+    height: 150px;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    top: 45px;
+    right: 30px;
+    z-index: 1;
+  }
+}
+
+.board-edit-modal {
+  &--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  &--modal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    height: auto;
+    color: black;
+    text-align: center;
+  }
+}

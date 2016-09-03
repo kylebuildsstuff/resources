@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="krelloApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Krello Profile</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="page-header text-center" ng-controller="boardController as boardCtrl">
+        <h1 ng-cloak>Welcome to your main page, {{ boardCtrl.user.local.email }}</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="#/" class="btn btn-default btn-sm">Home</a>
+      </div>
+
+      <div ng-view></div>
+
+    </div>
+
+    <!-- lodash Utility Libarary (core only 4kb)  -->
+    <script src="https://raw.githubusercontent.com/lodash/lodash/4.0.0/dist/lodash.core.min.js"></script>
+
+    <!-- Jquery & Jquery UI -->
+    <script src="../static/scripts/jquery-1.12.0.min.js"></script>
+    <!-- <script src="http://cdn.jsdelivr.net/g/jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29"></script> -->
+    <script src="../static/scripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+    <!-- Angular  -->
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.0/angular-resource.min.js"></script>
+    <script src="../static/scripts/angular-ui-sortable/src/sortable.js"></script>
+    <!-- Custom Angular -->
+    <script src="../static/scripts/client.js"></script>
+    <script src="../static/scripts/routes.js"></script>
+    <script src="../static/scripts/services.js"></script>
+    <script src="../static/scripts/controller.js"></script>
+    <script src="../static/scripts/directives.js"></script>
+
+  </body>
+</html>

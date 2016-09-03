@@ -7,9 +7,11 @@
 <ul>
   <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">adv_todo</a></h3>
   <ul>
-    <p>A basic Todo App created with modern JS tools.</p>
+    <p>A basic Todo App created with modern tools and concepts for scaling JS applications in mind.</p>
+    <p><a href="https://vimeo.com/168648012"</a>Scaling React.js Applications</p>
+
     <h6>Tools Used:</h6>
-    <p>react, redux, redux-saga, reselect, immutable, redux-forms (v6), webpack, mxstbr's react-boilerplate</p>
+    <p>react, redux, redux-saga, reselect, immutable, redux-forms (v6), webpack, css modules, mxstbr's react-boilerplate</p>
     <h6>Completed: September 2016</h6>
   </ul>
 
@@ -61,6 +63,22 @@
     <h6>Completed: April 2016</h6>
   </ul>
 
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/krello">krello</a></h3>
+  <ul>
+    <p>A Trello clone made with node, express, and angular 1.5.</p>
+    <h6>Tools Used:</h6>
+    <p>node, express, angular 1.5, passport.js, mongodb</p>
+    <h6>Incomplete: February 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/socket-basics">socket-basics</a></h3>
+  <ul>
+    <p>Chatrooms made with node, express, and socket.io.</p>
+    <h6>Tools Used:</h6>
+    <p>node, express, socket.io</p>
+    <h6>Completed: December 2015</h6>
+  </ul>
+
 </ul>
 
 <h3>Examples</h3>
@@ -71,7 +89,7 @@
 
 
   <h3><a href="https://github.com/KTruong888/resources/tree/master/higher_order_components">higher_order_components</a></h3>
-  <p>Quick example on inheritance using functional concepts of higher order functions.</p>
+  <p>Quick example on inheritance using functional concept of higher order functions.</p>
   <h6>Completed: July 2016</h6>
 
 </ul>

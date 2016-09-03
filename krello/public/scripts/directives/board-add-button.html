@@ -1,0 +1,16 @@
+<div>
+  <div class="btn btn-default board--adder" ng-click="boardCtrl.createBoardMode = !boardCtrl.createBoardMode">
+    <div>Add Board</div>
+  </div>
+
+  <hr />
+  <!-- Board Add form  -->
+  <form name="createBoardForm" ng-show="boardCtrl.createBoardMode"
+  ng-submit="boardCtrl.addBoard(boardCtrl)" novalidate>
+    <div>{{ boardCtrl.boardDetails.title }}</div>
+
+    <input type="text" ng-model="boardCtrl.boardDetails.title"
+    placeholder="Board Title"></input>
+    <input type="submit" value="Create"></input>
+  </form>
+</div>
