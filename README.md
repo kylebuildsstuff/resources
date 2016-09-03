@@ -1,51 +1,77 @@
 # Resources
 
-<h2>A culmination of basic projects and examples with a focus on React's ecosystem to serve as a reference/resource for future projects.
-</h2>
+<h3>A culmination of my own simple projects and examples with a focus on React's ecosystem to serve as a reference/resource for future projects.
+</h3>
+
+<h3>Projects</h3>
+<ul>
+  <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">adv_todo</a></h3>
+  <ul>
+    <p>A basic Todo App created with modern JS tools.</p>
+    <h6>Tools Used:</h6>
+    <p>react, redux, redux-saga, reselect, immutable, redux-forms (v6), webpack, mxstbr's react-boilerplate</p>
+    <h6>Completed: September 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/DRF">DRF</a></h3>
+  <ul>
+    <p>DRF's tutorial. Work related to taurus has been moved to the new taurus repos.</p>
+    <h6>Tools Used:</h6>
+    <p>Django Rest Framework</p>
+    <h6>Completed: May 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/redux_intro_bookstore">redux_intro_bookstore</a></h3>
+  <ul>
+    <p>A bookstore created with React and Redux</p>
+    <h6>Tools Used:</h6>
+    <p>redux</p>
+    <h6>Completed: April 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/v1/redux_router_forms_blog">redux_router_forms_blog</a></h3>
+  <ul>
+    <p>A blog made with Django and React.</p>
+    <h6>Tools Used:</h6>
+    <p>React, django-webpack-loader, redux-forms (v5), react-router</p>
+    <h6>Completed: April 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/redux_inter_weather">redux_inter_weather</a></h3>
+  <ul>
+    <p>A weather app created with React and Redux.</p>
+    <h6>Tools Used:</h6>
+    <p>axios, lodash, react-google-maps, react-sparklines, redux-promise</p>
+    <h6>Completed: April 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/webpack_hotloader_django1">webpack_hotloader_django1</a></h3>
+  <ul>
+    <p>Attempt as connecting Django, Webpack, Hotloading, and React in one repo.</p>
+    <h6>Tools Used:</h6>
+    <p>react, webpack, django</p>
+    <h6>Incomplete: April 2016</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/react_intro_youtube">react_intro_youtube</a></h3>
+  <ul>
+    <p>A Youtube video player created with vanilla React.</p>
+    <h6>Tools Used:</h6>
+    <p>react, youtube-api-search</p>
+    <h6>Completed: April 2016</h6>
+  </ul>
+
+</ul>
+
+<h3>Examples</h3>
+<ul>
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/nodejs_tuts/anthony_alicea">node_js_tuts</a></h3>
+  <p>Notes on Anthony Alicea's course on Node JS</p>
+  <h6>Incomplete: July 2016</h6>
 
 
-<h4>DRF</h4>
-<p>Covers basic concepts of Django Rest Framework: connecting models to REST views and serializers</p>
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/higher_order_components">higher_order_components</a></h3>
+  <p>Quick example on inheritance using functional concepts of higher order functions.</p>
+  <h6>Completed: July 2016</h6>
 
-<br />
-
-<h4>higher_order_components</h4>
-<p>Covers a more functional approach to inheritance, using higher order components</p>
-
-<br />
-
-<h4>mocha_chai_testing</h4>
-<p>Mocha and Chai testing for basic React/Redux apps</p>
-<p>Testing actions, components, reducers, containers</p>
-
-<br />
-
-<h4>nodejs_tuts</h4>
-<p>How Node works behind the scenes</p>
-<p>Incomplete</p>
-
-<br />
-
-<h4>react_intro_youtube</h4>
-<p>Basic youtube player with vanilla React</p>
-<p>Components, props, this.state, events</p>
-
-<br />
-
-<h4>redux_intro_bookstore</h4>
-<p>Display a list of books and track state of selected books using Redux</p>
-
-<br />
-
-<h4>redux_inter_weather</h4>
-<p>Search for a city and display a line graph, map, and data of its weather information</p>
-<p>Google Maps, Sparklines, AJAX with React, vanilla React forms, and more Redux</p>
-
-<br />
-
-<h4>redux_router_forms_blog</h4>
-<p>Blog</p>
-<p>Connecting React with Django in one repo with Webpack</p>
-<p>Redux Forms, React Router, Webpack</p>
-
-<br />
+</ul>
