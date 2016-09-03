@@ -45,7 +45,7 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
 
   render() {
     return (
-      <div>
+      <div className="col-xs-6 col-sm-4">
         {this.renderTodo()}
       </div>
     );
