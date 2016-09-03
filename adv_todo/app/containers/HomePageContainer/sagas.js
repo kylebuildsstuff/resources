@@ -13,8 +13,7 @@ const ROOT_URL = 'http://localhost:3001';
 export function* createTodoSaga() {
   console.log('%c -- createTodoSaga Saga  --', 'color: green');
   const postData = {
-    title: 'Woohoo',
-    author: 'kyle',
+    title: 'Todo',
     number: Math.random(),
   };
 
@@ -39,9 +38,6 @@ export function* fetchTodosSaga() {
 
 export function* updateTodoSaga({ payload }) {
   console.log('%c -- updateTodo Saga  --', 'color: green');
-  // console.log('');
-  // console.log(payload);
-  // console.log('');
   try {
     const resp = yield call(axios.put, `${ROOT_URL}/todos/${payload.get('id')}`, payload);
     yield put({ type: TODO_UPDATED, payload: resp });

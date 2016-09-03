@@ -7,9 +7,9 @@
 import React from 'react';
 
 import styles from './styles.css';
-import SideBar from '../SideBar';
+import SideBar from '../../SideBar';
 import HomePageMainSection from '../HomePageMainSection';
-import NavBar from '../NavBar';
+import NavBar from '../../NavBar';
 
 function HomePage(props) {
   return (

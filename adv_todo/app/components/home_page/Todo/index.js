@@ -45,8 +45,7 @@ class Todo extends React.Component { // eslint-disable-line react/prefer-statele
     return (
       <div className={styles.Todo} onClick={this.changeTodoEditMode}>
         <div className="card card-block">
-          <h4 className="card-title">{this.props.todo.get('author')}</h4>
-          <p className="card-text">{this.props.todo.get('title')}</p>
+          <p className="card-title">{this.props.todo.get('title')}</p>
           <i
             className={`${styles.deleteIcon} btn btn-danger fa fa-times`}
             onClick={this.deleteTodo}

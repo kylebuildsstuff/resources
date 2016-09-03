@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { selectHomePage } from './selectors';
 
 import { createTodo, fetchTodos, updateTodo, deleteTodo } from './actions';
-import HomePage from '../../components/HomePage';
+import HomePage from '../../components/home_page/HomePage';
 
 export class HomePageContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
