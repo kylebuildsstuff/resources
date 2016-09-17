@@ -24,6 +24,8 @@ class Unit(models.Model):
     tier = models.IntegerField(choices=TIER_CHOICES, default=1, blank=True, null=True)
     faction = models.CharField(max_length=1, choices=FACTION_CHOICES, default='N', blank=True, null=True)
     description = models.TextField()
+    owner = models.ForeignKey('auth.User', related_name='units')
+    # Django always assumes a model's module inside an app (lazy_relations), meaning it will look in auth.models for User.
 
     class Meta:
         ordering = ('-attack',)

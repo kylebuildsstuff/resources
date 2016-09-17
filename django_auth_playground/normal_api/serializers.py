@@ -1,12 +1,27 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
+
 from normal_api.models import Unit
 
 
+class UserSerializer(serializers.ModelSerializer):
+    units = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Unit.objects.all()
+    )
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'units')
+
+
 class UnitSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
     class Meta:
         model = Unit
         fields = ('id', 'created', 'name', 'attack', 'defence', 'health',
-                  'tier', 'faction', 'description')
+                  'tier', 'faction', 'description', 'owner',)
 
 # class UnitSerializer(serializers.Serializer):
 #     pk = serializers.IntegerField(read_only=True)
