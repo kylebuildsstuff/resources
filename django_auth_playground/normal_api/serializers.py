@@ -24,7 +24,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'pk', 'username', 'units')
 
 
-
 # class UnitSerializer(serializers.Serializer):
 #     pk = serializers.IntegerField(read_only=True)
 #     name = serializers.CharField()
