@@ -2,8 +2,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import Http404
-from rest_framework import status, generics, permissions
-from rest_framework.decorators import api_view
+from rest_framework import status, generics, permissions, viewsets
+from rest_framework.decorators import api_view, detail_route
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -11,6 +11,30 @@ from rest_framework.reverse import reverse
 from normal_api.models import Unit
 from normal_api.permissions import IsOwnerOrReadOnly
 from normal_api.serializers import UnitSerializer, UserSerializer
+
+# @NOTE: ViewSets
+# class UserViewSet(viewsets.ReadOnlyModelViewSet):
+#     # This viewset provides 'list' and 'detail' actions
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#
+#
+# class UnitViewSet(viewsets.ModelViewSet):
+#     # This viewset provides 'list', 'create', 'retrieve', 'update', 'destroy' actions
+#     queryset = Unit.objects.all()
+#     serializer_class = UnitSerializer
+#     permission_clases = (permissions.IsAuthenticatedOrReadOnly,
+#                          IsOwnerOrReadOnly,)
+#
+#     def perform_create(self, serializer):
+#         serializer.save(owner=self.request.user)
+#
+#     detail_route is used to create custom actions, adding
+#     any custom endpoints that don't fit into standard CRUD style
+#     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
+#     def highlight(Self, request, *args, **kwargs):
+#         snippet = self.get_object()
+#         REturn Response(snippet.highlighted)
 
 
 # @NOTE: Using CBVs with generic API Views
