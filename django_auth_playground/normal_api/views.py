@@ -2,19 +2,31 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import Http404
-from rest_framework import status, generics
+from rest_framework import status, generics, permissions
+from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.reverse import reverse
 
 from normal_api.models import Unit
+from normal_api.permissions import IsOwnerOrReadOnly
 from normal_api.serializers import UnitSerializer, UserSerializer
 
 
 # @NOTE: Using CBVs with generic API Views
 # Using generic views has built in BrowsableRenderer implemented
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': reverse('user-list', request=request, format=format),
+        'units': reverse('unit-list', request=request, format=format),
+    })
+
+
 class UnitList(generics.ListCreateAPIView):
     queryset = Unit.objects.all()
     serializer_class = UnitSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -23,6 +35,7 @@ class UnitList(generics.ListCreateAPIView):
 class UnitDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Unit.objects.all()
     serializer_class = UnitSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
 
 
 class UserList(generics.ListAPIView):
@@ -78,7 +91,6 @@ class UserDetail(generics.RetrieveAPIView):
 
 # @NOTE: (1) Basic 'GET' APIs with function-based views and @api_view... as simple as you can get with DRF
 
-# from rest_framework.decorators import api_view
 #
 # from rest_framework.renderers import JSONRenderer
 # from rest_framework.parsers import JSONParser

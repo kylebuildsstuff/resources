@@ -4,24 +4,26 @@ from rest_framework import serializers
 from normal_api.models import Unit
 
 
-class UserSerializer(serializers.ModelSerializer):
-    units = serializers.PrimaryKeyRelatedField(
-        many=True,
-        queryset=Unit.objects.all()
-    )
-
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'units')
-
-
-class UnitSerializer(serializers.ModelSerializer):
+class UnitSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Unit
-        fields = ('id', 'created', 'name', 'attack', 'defence', 'health',
-                  'tier', 'faction', 'description', 'owner',)
+        fields = ('url', 'pk', 'created', 'name', 'attack', 'defence', 'health', 'tier', 'faction', 'description', 'owner',)
+
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    units = serializers.HyperlinkedRelatedField(
+        many=True,
+        view_name='unit-detail',
+        read_only=True
+    )
+
+    class Meta:
+        model = User
+        fields = ('url', 'pk', 'username', 'units')
+
+
 
 # class UnitSerializer(serializers.Serializer):
 #     pk = serializers.IntegerField(read_only=True)
