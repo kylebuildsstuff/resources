@@ -5,7 +5,7 @@
 
 <h3>Projects</h3>
 <ul>
-  <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">django_auth_playground</a></h3>
+  <h3><a href="https://github.com/KTruong888/resources/tree/v1/django_auth_playground">django_auth_playground</a></h3>
   <ul>
     <p>A repo to review and experiment with Django Rest Framework, authorization, authentication, and jwts.</p>
 
@@ -106,7 +106,7 @@
 
 </ul>
 
-<h3>Examples</h3>
+<h3>Snippets</h3>
 <ul>
   <h3><a href="https://github.com/KTruong888/resources/tree/master/nodejs_tuts/anthony_alicea">node_js_tuts</a></h3>
   <p>Notes on Anthony Alicea's course on Node JS</p>
