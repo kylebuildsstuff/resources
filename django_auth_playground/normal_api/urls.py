@@ -4,12 +4,13 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from normal_api import views
 
 
-app_name = 'normal_api'
+# app_name = 'normal_api'
 urlpatterns = [
-    url(r'^units/$', views.UnitList.as_view()),
-    url(r'^units/(?P<pk>[0-9]+)/$', views.UnitDetail.as_view()),
-    url(r'^users/$', views.UserList.as_view()),
-    url(r'^users/(?P<pk>[0-9]+)$', views.UserDetail.as_view()),
+    url(r'^$', views.api_root),
+    url(r'^users/$', views.UserList.as_view(), name='user-list'),
+    url(r'^users/(?P<pk>[0-9]+)$', views.UserDetail.as_view(), name='user-detail'),
+    url(r'^units/$', views.UnitList.as_view(), name='unit-list'),
+    url(r'^units/(?P<pk>[0-9]+)/$', views.UnitDetail.as_view(), name='unit-detail'),
 ]
 
 # @NOTE: for (1) basic function-based views

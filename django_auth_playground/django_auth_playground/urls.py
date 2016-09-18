@@ -7,7 +7,6 @@ from normal_api import urls as normal_api_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^users/', include(users_urls)),
-    url(r'^normal_api/', include(normal_api_urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include(normal_api_urls)),
 ]
