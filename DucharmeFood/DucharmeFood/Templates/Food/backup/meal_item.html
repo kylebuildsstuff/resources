@@ -1,0 +1,36 @@
+{% extends 'Food/base.html' %}
+{% load staticfiles %}
+{% block title %}{{ item.name }}{% endblock %}
+{% block body %}
+
+
+
+  <div class="row itemshowcase">
+    <div class="col-sm-5 itemdescription">
+      <p class="name">{{ item.name }}</p>
+      <p class="price">${{ item.price }}</p>
+      <p>{{ item.meal.mealtype }}</p>
+      <hr />
+      <p class="ingredients">{{ item.ingredients }}</p>
+    </div>
+    <div class="col-sm-6 bigmenuitem" style="background-image:url('{{ item.picture.url }}')">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 orderform">
+      <form class="orderfields" id="mealorder" method="post" action="/meals/{{ item.slug }}/">
+        {% csrf_token %}
+        {% for field in form %}
+          <div>
+            <p class="formlabel">{{ field.label }}</p>
+            <p class="formfield">{{ field }}</p>
+          </div>
+        {% endfor %}
+        <input type="submit" name="submit" value="Send"/>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

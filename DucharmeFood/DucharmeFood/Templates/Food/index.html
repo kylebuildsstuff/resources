@@ -1,0 +1,467 @@
+{% extends 'Food/base.html' %}
+{% load staticfiles %}
+{% block title %}MacroFoods{% endblock %}
+{% block body %}
+
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand page-scroll" href="#page-top">Macro Foods</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="page-scroll" href="#home">Home</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#how-it-works">How it Works</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#meals">Meals</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#order">Order</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#faq">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header style="background-image: url('{{ imagesHome.picture.url }}')">
+  <div class="header-content" id="home">
+    <div class="header-content-inner">
+      <img class="brand-image" src="{% static 'images/logo.png' %}"/>
+      <h2>Healthy made easy</p>
+    </div>
+  </div>
+</header>
+
+<!-- HOME CONTENT  -->
+
+<section id="home--content">
+  <div class="container">
+
+    <div class="row section--row">
+      <div class="col-xs-12 col-md-6">
+        <h2 class="section-heading">Healthy. <span class="section-subheading">For all lifestyles.</span></h2>
+        <p class="text--content">
+          Macro Foods is a venue designed for ease and convenience to a healthy lifestyle.
+          We use fresh ingredients to make meals that are never frozen and we cook everything locally right here in Windsor, Ontario.
+          Whether your goals are to slim down, bulk up, or just maintain, our meals are packed with all
+          the necessary macros and micro nutrients to help you out.
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 section--row--image">
+        <img class="home--images" src="{{ imagesHomeHealthy.picture.url }}"/>
+      </div>
+    </div>
+
+    <div class="row section--row">
+      <div class="col-xs-12 col-md-6">
+        <h2 class="section-heading">Simple. <span class="section-subheading">To save you time.</span></h2>
+        <p class="text--content">With days seemingly shorter and schedules more packed,
+          we know it can be hard to find time to make a proper meal that not only fills our macros,
+          but also tastes great. We offer a simple 2-step solution. Simply order your meals with our online form,
+          then wait as we deliver your freshly made meals right to your doorstep.
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 section--row--image">
+        <img class="home--images" src="{{ imagesHomeFlexible.picture.url }}"/>
+      </div>
+    </div>
+
+    <div class="row section--row">
+      <div class="col-xs-12 col-md-6">
+        <h2 class="section-heading">Delicious. <span class="section-subheading">Made with fresh ingredients.</span></h2>
+        <p class="text--content">We make meal prep not only easy, but tasty too!
+          We use fresh ingredients to cook our meals locally in Windsor and we never freeze our meals.
+          We create our own spice blends and sauces with no additives, fillers, preservatives or
+          MSG so what you see is what you get and taste. With new combinations and flavours weekly, our
+          menu keeps up to date and fresh to keep your taste buds guessing.
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-6 section--row--image">
+        <img class="home--images" src="{{ imagesHomeDelicious.picture.url }}"/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="how-it-works--background" id="how-it-works">
+  <div class="container">
+    <div class="row section--row">
+      <div class="col-xs-12 text-center">
+        <h2 class="section-heading">How it Works</h2>
+        <hr>
+        <div class="col-xs-12 col-md-3">
+          <img class="how-it-works--images--explain" src="{{ imagesHowitworks1.picture.url }}"/>
+          <p class="section-heading">Order Online</p>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <img class="how-it-works--images--explain" src="{{ imagesHowitworks2.picture.url }}"/>
+          <p class="section-heading">We Prep</p>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <img class="how-it-works--images--explain" src="{{ imagesHowitworks3.picture.url }}"/>
+          <p class="section-heading">We Deliver</p>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <img class="how-it-works--images--explain" src="{{ imagesHowitworks4.picture.url }}"/>
+          <p class="section-heading">Heat & Enjoy!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container"> -->
+    <!-- <div class="row section--row"> -->
+      <!-- <div class="col-xs-8 text-center">
+        <h2 class="section-heading">What are Macros?</h2>
+        <p class="text--content section--row">Macros are short for macronutrients.
+          They are essential nutrients like proteins, carbohydrates, and fats that provide us
+          with the necessary energy to function and grow. You may hear the saying, “Hitting your macros”
+          when talking about fitness and this means to monitor your intake of these macronutrients to keep
+          the proper balance of nutrients in your body. Macro Foods aims to make it as easy as possible to
+          help you with your fitness goals so you can consistently hit your macros.
+        </p>
+      </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 text-center">
+        <h2 class="section-heading">Proteins</h2>
+        <p class="text--content section--row">
+          Although proteins are mainly known for their function in building big muscles,
+          they also do a lot more in your body like making hormones, enzymes, and immune-system components
+           - all of which are essential to healthy growth. When aiming for protein, try looking for items
+            like fish, meats, beans, and nuts.
+        </p>
+      </div>
+
+      <div class="col-xs-12 col-md-4 text-center">
+        <h2 class="section-heading">Carbohydrates</h2>
+        <p class="text--content section--row">
+        Carbs are incredibly useful for the body because they serve as the primary source of energy.
+        Without enough carbs, your body will begin to utilize your fat and protein stores instead.
+         When packing carbs, try looking for complex carbs like pasta, cereal, bread rather
+          than simple ones like the ones found in sugary foods.
+        </p>
+      </div>
+
+      <div class="col-xs-12 col-md-4 text-center">
+        <h2 class="section-heading">Fats</h2>
+        <p class="text--content section--row">
+           Fats serve the vital functions of being an incredibly
+           efficient energy source for your body, proper cellular function, and regulation of
+           a lot of bodily processes. When balancing fats in your macros, try aiming for less saturated
+           fats like cheese and ice cream, and aim for healthier polyunsaturated fats like the
+           ones found in nuts, avocados, olive oil, and canola oil.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <img class="how-it-works--images--macros" src="{{ imagesHowitworksMacro1.picture.url }}"/>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <img class="how-it-works--images--macros" src="{{ imagesHowitworksMacro2.picture.url }}"/>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <img class="how-it-works--images--macros" src="{{ imagesHowitworksMacro3.picture.url }}"/>
+      </div>
+    </div>
+
+  </div> -->
+</section>
+
+<!-- MEALS -->
+<section id="meals" class="white-background">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 class="section-heading">Meals</h2>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row section--row">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-heading">All of our meals feature</h2>
+        <ul>
+          <li class="normal-list">30g+ of Lean Protein</li>
+          <li class="normal-list">30g+ of Complex Carbohydrates</li>
+          <li class="normal-list">3 Items from the Menu</li>
+          <li class="normal-list">Essential Fats</li>
+          <li class="normal-list">Low Sodium</li>
+          <li class="normal-list">$8 Price (Limited time only)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row section--row">
+      <div class="col-xs-12 col-md-4 text-center">
+        <h2 class="section-heading">Balanced</h2>
+        <div>
+          <img class="meals--piechart-images" src="{{ imagesPiechart1.picture.url }}"/>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 text-center">
+        <h2 class="section-heading">Carb Focused</h2>
+        <div>
+          <img class="meals--piechart-images" src="{{ imagesPiechart2.picture.url }}"/>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 text-center">
+        <h2 class="section-heading">Vegetable Focused</h2>
+        <div>
+          <img class="meals--piechart-images" src="{{ imagesPiechart3.picture.url }}"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row section--row">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-heading">Featured items from the menu</h2>
+      </div>
+    </div>
+    <div class="row meals--sampleimages--wrapper">
+      {% for item in week_items %}
+        <div class="col-xs-8 col-md-3 meals--sampleimages meals--sampleimages--detail-toggler" style="background-image:url('{{ item.picture.url }}');padding:0px;">
+          <div class="meals--sampleimages--details">
+            <p class="section-heading">{{ item.name }}</p>
+            <p class="text--content">{{ item.description }}</p>
+            <!-- <p><span>Proteins</span>   {{ item.proteins }}</p>
+            <p><span>Carbs</span>   {{ item.carbs }}</p>
+            <p><span>Fats</span>   {{ item.fats }}</p> -->
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+
+<section class="grey-background" id="order">
+  <div class="container">
+    <div class="row section--row" style="padding:0;">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-heading">Order</h2>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 text-center" style="padding-bottom: 50px;">
+        <h2 class="section-heading"></h2>
+        <ul>
+          <li class="normal-list">Meals will be crafted by our chefs to include 3 items</li>
+          <li class="normal-list">Requests for
+          specific types of proteins (steak, chicken, shrimp, mexican style ground beef or salmon) can be placed in the request box</li>
+          <li class="normal-list">An invoice via e-mail will be sent once the order form is correctly filled and submitted</li>
+          <li class="normal-list">All meals are $8 each plus taxes and $2.50 delivery fee</li>
+          <li class="normal-list">Please list any allergies or custom requests in the request box (We do Vegetarian and Vegan meals too!)</li>
+          <li class="normal-list">Prices for custom plans may vary</li>
+        </ul>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 text-center">
+        <form class="orderform--wrapper" method="post" action="/" name="orderform">
+          {% csrf_token %}
+          <p>{{ form.mealtype.label }}</p>
+          <p class="orderform--field">{{ form.mealtype }}{{ form.mealtype.errors }}</p>
+          <p>{{ form.mealnumber.label }}</p>
+          <p class="orderform--field orderform--meals-per-order price-input">{{ form.mealnumber }}{{ form.mealnumber.errors }}</p>
+          <p>{{ form.days.label }}</p>
+          <p class="orderform--field orderform--order-number price-input">{{ form.days }}{{ form.days.errors }}{{ form.ValidationError }}</p>
+          <p class="text--content">Total number of meals: <span class="orderform--meal-number-display"></span></p>
+          <p class="text--content">Total cost: <span class="orderform--price-display"></span></p>
+
+
+          <p>{{ form.delivery.label }}</p>
+          <p class="orderform--field text--content">*Deliveries will be split over the next 2 delivery days if you order 4 or more days</p>
+          <p class="orderform--field text--content">*Delivery option only availible for orders with 3 or more meals</p>
+          <p>{{ form.delivery }} {{ form.delivery.errors }}</p>
+          <p>{{ form.name.label }}</p>
+          <p class="orderform--field">{{ form.name }} {{ form.name.errors }}</p>
+          <p>{{ form.lastName.label }}</p>
+          <p class="orderform--field">{{ form.lastName }} {{ form.lastName.errors }}</p>
+
+          <p>{{ form.sender.label }}</p>
+          <p class="orderform--field">{{ form.sender }}{{ form.sender.errors }}</p>
+          <p>{{ form.senderConfirm.label }}</p>
+          <p class="orderform--field">{{ form.senderConfirm }}{{ form.senderConfirm.errors }}</p>
+          <p>{{ form.phone.label }}</p>
+          <p class="orderform--field">{{ form.phone }} {{ form.phone.errors }}</p>
+          <p>{{ form.address.label }}</p>
+          <p class="orderform--field">{{ form.address }} {{ form.address.errors }}</p>
+          <p>{{ form.postal.label }}</p>
+          <p class="orderform--field">{{ form.postal }} {{ form.postal.errors }}</p>
+
+          <!-- <p>{{ form.verificationtype.label }}</p>
+          <p>{{ form.verificationtype }} {{ form.verificationtype.errors }}</p> -->
+          <p>{{ form.safety_consent.label }}</p>
+          <p>{{ form.safety_consent }} {{ form.safety_consent.errors }}</p>
+          <p><b>Note:</b> due to the warmer weather, we will be unable to leave meals outside unless a cooler is left out with ice.</p>
+          <p>{{ form.marketing.label }}</p>
+          <p class="orderform--field">{{ form.marketing }} {{ form.marketing.errors }}</p>
+          <p>{{ form.message.label }}</p>
+          <p class="orderform--field">{{ form.message }} {{ form.message.errors }}</p>
+          <input onclick="return validateForm();" class="submit btn btn-primary btn-lg" type="submit" name="submit" value="Order"/>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="white-background" id="faq">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 faq--question" style="border-radius: 10px 10px 0 0;">
+        Can I pick up my order instead of having it delivered?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">Yes, our kitchen is located at 1389 Wyandotte St. E., N9A 3K8 and we're open from 6pm to 9pm.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        What time will my meal be delivered?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">On Sundays and Wednesdays, we deliver between 12pm and 5pm EST. If the meal was pre-paid for and no one is home, we will leave the meals at the door. </p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        How do I pay for my meal?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10"> We accept cash and credit cards for deliveries and pick ups. If you wish to pre-pay for your meal, please note it in the request section of the form and we will e-mail you an invoice.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        Which locations do you deliver to?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">As of now, we deliver meals to Windsor, LaSalle, Tecumseh, Walkerville, and the Essex area</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        What if I have allergies?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">We can make special accomodations for you as long as you let us know by filling out the request box in the order form.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        What if I want a different plan?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">We definitely cater to customized meal plans. Let us know what you were thinking by filling out the request box, and we'll find something that works for you. </p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        Is there a menu?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">In the traditional sense of the word, we do not have an offical 'menu' to order from.
+        Meals include a combination of three items (proteins, carbohydrates, or vegetables) that are crafted by our chefs.
+        If you want a specific protein (steak, chicken, shrimp or salmon), or to avoid a certain item, please include it in the request box when ordering.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        Do you make vegetarian or vegan meals?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">Yes! If you have specific requests that do not fit our basic meal plans, please fill out the request box in the order form and we will work something out. </p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        How do I warm up my food?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">All of our meals come delivered in handy packages that can be refigerated and microwaved.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        What are Macros?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer">
+        <p class="text--content col-xs-10">Macros are short for macronutrients.
+          They are essential nutrients like proteins, carbohydrates, and fats that provide us
+          with the necessary energy to function and grow. You may hear the saying, “Hitting your macros”
+          when talking about fitness and this means to monitor your intake of these macronutrients to keep
+          the proper balance of nutrients in your body. Macro Foods aims to make it as easy as possible to
+          help you with your fitness goals so you can consistently hit your macros.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        Do you do catering?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer"  style="border-radius: 0 0 10px 10px;">
+        <p class="text--content col-xs-10">Yes! We cater for multiple occasions big and small. Contact us for more details.</p>
+      </div>
+
+      <div class="col-xs-8 col-xs-offset-2 faq--question">
+        How do I get in contact with you?
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 faq--answer"  style="border-radius: 0 0 10px 10px;">
+        <a href="{% url 'contact' %}">Email us here!</a>
+      </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 footer">
+      <img src="{% static 'images/duologo.png' %}">
+      <p>552 Ouellette Ave.</p>
+      <p>Windsor, ON N9A 1B7</p>
+      <p>519-258-8224</p>
+      <a href="{% url 'contact' %}"><p>saraducharme@macrofoods.ca</p></a>
+      <a href="{% url 'contact' %}"><p>chrisjames@macrofoods.ca</p></a>
+      <div>
+        <a target="_blank" href="https://www.facebook.com/local.thai.1">
+          <img  src="{% static 'images/facebook.png' %}" alt="Facebook">
+        </a>
+        <a target="_blank" href="https://www.instagram.com/macrofoods/">
+          <img  src="{% static 'images/instagram.png' %}" alt="Instagram">
+        </a>
+        <a target="_blank" href="https://twitter.com/Macro_Foods">
+          <img  src="{% static 'images/twitter.png' %}" alt="Twitter">
+        </a>
+      </div>
+      <p>Copyright 2016 © Macro Foods</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'Food/base.html' %}
+{% load staticfiles %}
+{% block title %}Meals{% endblock %}
+{% block body %}
+
+
+  <div class="row">
+    <div class="col-xs-12 menutopbg">Meals
+    </div>
+  </div>
+
+<!--Breakfast-->
+  <div class="row">
+    <div class="col-sm-12 menutitle">
+      <h1>Breakfasts</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for meal in breakfasts %}
+      <div class="col-sm-3 menurow">
+        <a class="menuitemlink" href="{% url 'meal_item' meal.slug %}">
+          <div class="menuitem" style="background-image: url('{{ meal.picture.url }}');">
+          </div>
+          <div class="menuitemdescrip">
+            <p>{{ meal.name }}</p>
+            <p class="menuitemprice">${{ meal.price }}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div><!--END Breakfast-->
+
+<!-- LUNCH -->
+  <div class="row">
+    <div class="col-sm-12 menutitle">
+      <h1>Lunches</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% for meal in lunches %}
+      <div class="col-sm-3 menurow">
+        <a class="menuitemlink" href="{% url 'meal_item' meal.slug %}">
+          <div class="menuitem" style="background-image: url('{{ meal.picture.url }}');">
+          </div>
+          <div class="menuitemdescrip">
+            <p>{{ meal.name }}</p>
+            <p class="menuitemprice">${{ meal.price }}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+<!-- END LUNCH -->
+
+
+<!-- DINNER -->
+  <div class="row">
+    <div class="col-sm-12 menutitle">
+      <h1>Dinners</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% for meal in dinners %}
+      <div class="col-sm-3 menurow">
+        <a class="menuitemlink" href="{% url 'meal_item' meal.slug %}">
+          <div class="menuitem" style="background-image: url('{{ meal.picture.url }}');">
+          </div>
+          <div class="menuitemdescrip">
+            <p>{{ meal.name }}</p>
+            <p class="menuitemprice">${{ meal.price }}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+<!-- END DINNER -->
+
+<!-- SALADS -->
+  <div class="row">
+    <div class="col-sm-12 menutitle">
+      <h1>Salads</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% for meal in salads %}
+      <div class="col-sm-3 menurow">
+        <a class="menuitemlink" href="{% url 'meal_item' meal.slug %}">
+          <div class="menuitem" style="background-image: url('{{ meal.picture.url }}');">
+          </div>
+          <div class="menuitemdescrip">
+            <p>{{ meal.name }}</p>
+            <p class="menuitemprice">${{ meal.price }}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+<!-- END SALADS -->
+
+
+
+{% endblock %}

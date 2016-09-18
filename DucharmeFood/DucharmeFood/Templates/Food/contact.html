@@ -1,0 +1,24 @@
+{% extends 'Food/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<section>
+  <div class="container-fluid well contact">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Contact Macro Foods</h1>
+        <a href="{% url 'index' %}">Click here to go back</a>
+        <form class="contactfields" method="post" action="/contact/">
+          {% csrf_token %}
+          {% for field in form %}
+            <p>{{ field.label }}</p>
+            <p>{{ field }} {{ field.errors }}</p>
+          {% endfor %}
+          <input class="submit btn btn-primary btn-lg" type="submit" name="submit" value="Send"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

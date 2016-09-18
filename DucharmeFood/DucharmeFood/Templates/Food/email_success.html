@@ -1,0 +1,12 @@
+{% extends 'Food/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container-fluid email-success">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Email sent successfully!</h1>
+    </div>
+    <a href="{% url 'index' %}">Click here to go back</a>
+  </div>
+</div>
+{% endblock %}

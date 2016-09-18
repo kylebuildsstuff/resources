@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="wrapper">
+
+          <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+          <div class="sidebar-nav">
+
+            <a href="{% url 'index' %}"><img class="brand" src="{% static 'images/logo.png' %}" alt="Logo"></a>
+            <a href="{% url 'index' %}"><div>Home</div></a>
+            <a href="{% url 'about' %}"><div>About Us</div></a>
+            <a href="{% url 'meals' %}"><div>Our Meals</div></a>
+            <a href="{% url 'contact' %}"><div>Contact Us</div></a>
+
+            <a href="https://www.facebook.com/local.thai.1"><div class="facebook"></div></a>
+            <a href="https://www.instagram.com/macrofoods/"><div class="instagram"></div></a>
+          </div>
+        </div>
+        <img id="menu-toggle" src="{% static 'images/menutoggle.png' %}" alt="Menu Toggle">
+
+          <!--Content-->
+        <div id="page-content-wrapper" style="padding:0px;">
+          {% block body %}
+          {% endblock %}
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="footertest">
+              <p>MACRO FOODS</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="{% static 'scripts/main.js' %}"></script>
+  </body>
+</html>
