@@ -3,8 +3,10 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from normal_api import views
 
+# for ViewSets and Routers
 
-# app_name = 'normal_api'
+
+# @NOTE: for standard generic CBV APIs
 urlpatterns = [
     url(r'^$', views.api_root),
     url(r'^users/$', views.UserList.as_view(), name='user-list'),
