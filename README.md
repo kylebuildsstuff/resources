@@ -1,6 +1,6 @@
 # Resources
 
-<h3>A culmination of my own simple projects and examples with a focus on React's ecosystem to serve as a reference/resource for future projects.
+<h3>A culmination of my old projects with an emphasis on Django and React's ecosystem to serve as a reference and resource for future projects.
 </h3>
 
 <h3>Projects</h3>
