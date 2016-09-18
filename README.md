@@ -5,6 +5,15 @@
 
 <h3>Projects</h3>
 <ul>
+  <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">django_auth_playground</a></h3>
+  <ul>
+    <p>A repo to review and experiment with Django Rest Framework, authorization, authentication, and jwts.</p>
+
+    <h6>Tools Used:</h6>
+    <p>django, django-rest-framework, jwt</p>
+    <h6>Incomplete: September 2016</h6>
+  </ul>
+
   <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">adv_todo</a></h3>
   <ul>
     <p>A basic Todo App created with modern tools and concepts for scaling JS applications in mind.</p>
@@ -84,6 +93,14 @@
     <p>Chatrooms made with node, express, and socket.io.</p>
     <h6>Tools Used:</h6>
     <p>node, express, socket.io</p>
+    <h6>Completed: December 2015</h6>
+  </ul>
+
+  <h3><a href="https://github.com/KTruong888/resources/tree/master/DucharmeFood">DucharmeFood</a></h3>
+  <ul>
+    <p>Code used for old Macrofoods website December 2015 - August 2016.</p>
+    <h6>Tools Used:</h6>
+    <p>django, jquery</p>
     <h6>Completed: December 2015</h6>
   </ul>
 
