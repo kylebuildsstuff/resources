@@ -5,7 +5,7 @@
 
 <h3>Projects</h3>
 <ul>
-  <h3><a href="https://github.com/KTruong888/resources/tree/v1/django_auth_playground">django_auth_playground</a></h3>
+  <h3><a href="https://github.com/KTruong888/resources/tree/django_auth_playground">django_auth_playground</a></h3>
   <ul>
     <p>A repo to review and experiment with Django Rest Framework, authorization, authentication, and jwts.</p>
 
@@ -14,7 +14,7 @@
     <h6>Incomplete: September 2016</h6>
   </ul>
 
-  <h3><a href="https://github.com/KTruong888/resources/tree/v1/adv_todo">adv_todo</a></h3>
+  <h3><a href="https://github.com/KTruong888/resources/tree/adv_todo">adv_todo</a></h3>
   <ul>
     <p>A basic Todo App created with modern tools and concepts for scaling JS applications in mind.</p>
     <p><a href="https://vimeo.com/168648012">Scaling React.js Applications</a></p>
@@ -34,7 +34,7 @@
 
   <h3><a href="https://github.com/KTruong888/resources/tree/master/DRF">DRF</a></h3>
   <ul>
-    <p>DRF's tutorial. Work related to taurus has been moved to the new taurus repos.</p>
+    <p>DRF's tutorial.</p>
     <h6>Tools Used:</h6>
     <p>Django Rest Framework</p>
     <h6>Completed: May 2016</h6>

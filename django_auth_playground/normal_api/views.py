@@ -7,34 +7,13 @@ from rest_framework.decorators import api_view, detail_route
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
+# import normal_api
 from normal_api.models import Unit
-from normal_api.permissions import IsOwnerOrReadOnly
+from normal_api.authentications import CsrfExemptAuthentication
+from normal_api.custom_permissions import IsOwnerOrReadOnly, HasUserAndAuthOnRequest
 from normal_api.serializers import UnitSerializer, UserSerializer
-
-# @NOTE: ViewSets
-# class UserViewSet(viewsets.ReadOnlyModelViewSet):
-#     # This viewset provides 'list' and 'detail' actions
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-#
-#
-# class UnitViewSet(viewsets.ModelViewSet):
-#     # This viewset provides 'list', 'create', 'retrieve', 'update', 'destroy' actions
-#     queryset = Unit.objects.all()
-#     serializer_class = UnitSerializer
-#     permission_clases = (permissions.IsAuthenticatedOrReadOnly,
-#                          IsOwnerOrReadOnly,)
-#
-#     def perform_create(self, serializer):
-#         serializer.save(owner=self.request.user)
-#
-#     detail_route is used to create custom actions, adding
-#     any custom endpoints that don't fit into standard CRUD style
-#     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
-#     def highlight(Self, request, *args, **kwargs):
-#         snippet = self.get_object()
-#         REturn Response(snippet.highlighted)
 
 
 # @NOTE: Using CBVs with generic API Views
@@ -50,26 +29,32 @@ def api_root(request, format=None):
 class UnitList(generics.ListCreateAPIView):
     queryset = Unit.objects.all()
     serializer_class = UnitSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    authentication_classes = (JSONWebTokenAuthentication, CsrfExemptAuthentication, )
+    permission_classes = (IsOwnerOrReadOnly, )
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
-class UnitDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Unit.objects.all()
-    serializer_class = UnitSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
-
-
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    authentication_classes = (CsrfExemptAuthentication, JSONWebTokenAuthentication)
+    permission_classes = (HasUserAndAuthOnRequest, )
+
+
+class UnitDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer
+    authentication_classes = (CsrfExemptAuthentication, JSONWebTokenAuthentication, )
+    permission_classes = (HasUserAndAuthOnRequest, )
 
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    authentication_classes = (CsrfExemptAuthentication, JSONWebTokenAuthentication)
+    permission_classes = (HasUserAndAuthOnRequest, )
 
 
 # @NOTE: Using Class-based views with normal API View
@@ -156,3 +141,28 @@ class UserDetail(generics.RetrieveAPIView):
 #     elif request.method == 'DELETE':
 #         unit.delete()
 #         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# @NOTE: ViewSets
+# class UserViewSet(viewsets.ReadOnlyModelViewSet):
+#     # This viewset provides 'list' and 'detail' actions
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#
+#
+# class UnitViewSet(viewsets.ModelViewSet):
+#     # This viewset provides 'list', 'create', 'retrieve', 'update', 'destroy' actions
+#     queryset = Unit.objects.all()
+#     serializer_class = UnitSerializer
+#     permission_clases = (permissions.IsAuthenticatedOrReadOnly,
+#                          IsOwnerOrReadOnly,)
+#
+#     def perform_create(self, serializer):
+#         serializer.save(owner=self.request.user)
+#
+#     detail_route is used to create custom actions, adding
+#     any custom endpoints that don't fit into standard CRUD style
+#     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
+#     def highlight(Self, request, *args, **kwargs):
+#         snippet = self.get_object()
+#         REturn Response(snippet.highlighted)
