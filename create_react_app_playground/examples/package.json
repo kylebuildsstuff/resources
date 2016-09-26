@@ -1,15 +1,11 @@
 {
-  "name": "first",
+  "name": "examples",
   "version": "0.1.0",
   "private": true,
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "devDependencies": {
     "react-scripts": "0.6.0"
   },
   "dependencies": {
-    "history": "^4.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^4.0.0-alpha.3"
