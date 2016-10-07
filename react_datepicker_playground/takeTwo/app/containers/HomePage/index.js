@@ -11,7 +11,7 @@
 
 import React from 'react';
 
-import DatePickerButton from '../DatePickerButton';
+import DatePickerButton from '../../services/date_picker/DatePickerButton';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {

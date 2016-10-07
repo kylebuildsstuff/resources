@@ -7,6 +7,7 @@
 import React from 'react';
 
 import styles from './styles.css';
+import DateForm from '../../../components/date_form/DateForm';
 import DatePickerWrapper from '../DatePickerWrapper';
 
 export class DatePickerButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -36,6 +37,7 @@ export class DatePickerButton extends React.Component { // eslint-disable-line r
     if (!this.state.active) {
       return (
         <div className={styles.datePickerButton}>
+          <DateForm />
           <h1>{`Date is: ${this.state.dateValue.toDateString()}`}</h1>
           <button
             className="btn btn-secondary"
@@ -49,6 +51,7 @@ export class DatePickerButton extends React.Component { // eslint-disable-line r
 
     return (
       <div className={styles.datePickerButton}>
+        <DateForm />
         <h1>{`Date is: ${this.state.dateValue.toDateString()}`}</h1>
         <button
           className="btn btn-secondary"
