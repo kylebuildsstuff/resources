@@ -105,6 +105,10 @@
       }
     },
     "rules": {
+      "prefer-stateless-function": 0,
+      "react/require-extension": 0,
+      "no-underscore-dangle": 0,
+      "new-cap": 0,
       "arrow-parens": [
         "error",
         "always"
@@ -152,7 +156,8 @@
       "react/jsx-no-target-blank": 0,
       "react/require-extension": 0,
       "react/self-closing-comp": 0,
-      "require-yield": 0
+      "require-yield": 0,
+      "prop-types": 0
     },
     "settings": {
       "import/resolver": {

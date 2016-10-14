@@ -7,7 +7,7 @@
 import React from 'react';
 
 import styles from './styles.css';
-import DateForm from '../../../components/date_form/DateForm';
+import DateForm from '../date_form/DateForm';
 import DatePickerWrapper from '../DatePickerWrapper';
 
 export class DatePickerButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
