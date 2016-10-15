@@ -46,7 +46,6 @@ class DateFormInput extends React.Component { // eslint-disable-line react/prefe
           value={this.state.dateValue}
           onClick={() => this.changeActiveDatePicker()}
         />
-        {console.log('actiacitve: ', meta.active)}
         {this.state.activeDatePicker ? (
           <DatePickerWrapper
             changeActiveDatePicker={this.changeActiveDatePicker}
