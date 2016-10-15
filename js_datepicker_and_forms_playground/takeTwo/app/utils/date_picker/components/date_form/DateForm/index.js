@@ -18,8 +18,15 @@ class DateForm extends React.Component { // eslint-disable-line react/prefer-sta
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    console.log('');
+    console.log('-- DateForm componentWillMount--');
+  }
+
   _handleSubmit(formData) {
-    console.log(formData);
+    console.log('');
+    console.log('-- handleSubmit --');
+    console.log(formData.toJS());
   }
 
   render() {
@@ -29,17 +36,24 @@ class DateForm extends React.Component { // eslint-disable-line react/prefer-sta
         className="card"
         onSubmit={handleSubmit(this._handleSubmit)}
       >
-
         <div className="card-block">
           <div className="form-group">
-            <label htmlFor="date"></label>
+            <label htmlFor="date">Label</label>
             <Field
-              name="date"
+              name="dateField"
               component={DateFormInput}
-              type="text"
-              placeholder="Enter new title"
-              className="form-control"
+              activeDatePicker="false"
             />
+          </div>
+
+          <div className="btn-group" role="group">
+            <button
+              className="btn btn-success"
+              type="submit"
+              disabled={pristine || submitting}
+            >
+              Submit
+            </button>
           </div>
         </div>
 

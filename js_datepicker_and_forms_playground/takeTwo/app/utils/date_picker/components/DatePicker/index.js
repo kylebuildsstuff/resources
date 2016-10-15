@@ -28,12 +28,16 @@ export class DatePicker extends React.Component { // eslint-disable-line react/p
   }
 
   handleDayClick(e, day, { disabled }) {
+    console.log('');
+    console.log(day);
+    console.log('');
     if (disabled) {
       return;
     }
-    this.setState({ selectedDay: day });
-    this.props.changeDate(day);
-    this.props.handleClick();
+    this.setState({ selectedDay: day }, () => {
+      this.props.changeDate(day);
+      this.props.changeActiveDatePicker();
+    });
   }
 
   render() {
@@ -51,7 +55,7 @@ export class DatePicker extends React.Component { // eslint-disable-line react/p
 }
 
 DatePicker.propTypes = {
-  handleClick: React.PropTypes.func,
+  changeActiveDatePicker: React.PropTypes.func,
   changeDate: React.PropTypes.func,
   rootDate: React.PropTypes.any,
 };

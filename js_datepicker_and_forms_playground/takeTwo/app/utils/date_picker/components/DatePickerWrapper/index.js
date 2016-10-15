@@ -15,9 +15,11 @@ export class DatePickerWrapper extends React.Component { // eslint-disable-line 
 
   render() {
     return (
-      <div className={styles.datePickerWrapper}>
+      <div
+        className={styles.datePickerWrapper}
+      >
         <DatePicker
-          handleClick={this.props.handleClick}
+          changeActiveDatePicker={this.props.changeActiveDatePicker}
           changeDate={this.props.changeDate}
           rootDate={this.props.rootDate}
         />
@@ -27,7 +29,7 @@ export class DatePickerWrapper extends React.Component { // eslint-disable-line 
 }
 
 DatePickerWrapper.propTypes = {
-  handleClick: React.PropTypes.func,
+  changeActiveDatePicker: React.PropTypes.func,
   changeDate: React.PropTypes.func,
   rootDate: React.PropTypes.any,
 };
