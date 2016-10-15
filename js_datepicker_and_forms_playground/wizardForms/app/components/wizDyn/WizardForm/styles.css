@@ -1,0 +1,8 @@
+.wizardForm { /* stylelint-disable */
+  height: 100vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid green;
+}

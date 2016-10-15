@@ -1,0 +1,13 @@
+.datePicker { /* stylelint-disable */
+  position: absolute;
+  border: 5px solid blue;
+  background: white;
+  z-index: 200;
+}
+
+.dummyDiv {
+  height: 100%;
+  width: 100%;
+  border: 2px solid green;
+  z-index: 1;
+}
