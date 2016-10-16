@@ -96,10 +96,10 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
   }
 }
 
-// DatePicker.propTypes = {
-//   changeDate: React.PropTypes.func,
-//   changeActiveDateWidget: React.PropTypes.func,
-//   dateValue: React.PropTypes.object,
-// };
+DatePicker.propTypes = {
+  changeDate: React.PropTypes.func,
+  changeActiveDateWidget: React.PropTypes.func,
+  dateValue: React.PropTypes.object,
+};
 
 export default DatePicker;

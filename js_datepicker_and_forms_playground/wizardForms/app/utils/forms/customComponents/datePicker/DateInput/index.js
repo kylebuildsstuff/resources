@@ -16,16 +16,16 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
 
     this.state = {
       vanillaDateValue: new Date(),
-      momentDateValue: moment().format('dddd MMM. Do, YYYY'),
+      momentDateValue: moment().format('YYYY-MM-DD'),
       activeDateWidget: false,
     };
   }
 
   changeDate = (date) => {
-    const momentized = moment(Date.parse(date)).format('dddd MMM. Do, YYYY');
+    const momentDate = moment(Date.parse(date)).format('YYYY-MM-DD');
     this.setState({
       vanillaDateValue: date,
-      momentDateValue: momentized,
+      momentDateValue: momentDate,
     });
   }
 
