@@ -11,7 +11,6 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 import styles from './styles.css';
 import disabledDays from './disabledDays';
 
-
 class DatePicker extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
@@ -23,13 +22,32 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
   }
 
   componentDidMount() {
-    if (this._input) {
-      this._input.focus();
+    // Once DatePicker successfully sets a ref, component will mount
+    // and autofocus onto DatePicker's wrapper div.
+    if (this.refComponent) {
+      this.refComponent.focus();
+    }
+  }
+
+  setRefComponent = (e) => {
+    if (e) {
+      this.refComponent = e;
+    }
+  }
+
+  findDatePickerDOMNodes = (element) => {
+    if (element.hasChildNodes()) {
+      this.validElements.push(element);
+      const children = element.childNodes;
+      for (let i = 0; i < children.length; i++) {
+        this.validElements.push(children[i]);
+        this.findDatePickerDOMNodes(children[i]);
+      }
+      return;
     }
   }
 
   handleDayClick = (e, day, { disabled }) => {
-    // e.stopPropagation();
     if (disabled) {
       return;
     }
@@ -39,63 +57,36 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
     });
   }
 
-  focusThisComponent = (e) => {
-    // this._input = e;
-    if (e) {
-      this._input = e;
-    }
-  }
-
-  focusIt = () => {
-    console.log('focusing');
-  }
-
-  recursify = (element) => {
-    if (element.hasChildNodes()) {
-      const children = element.childNodes;
-      for (let i = 0; i < children.length; i++) {
-        this.validElements.push(children[i]);
-        this.recursify(children[i]);
-      }
-      return;
-    }
-  }
-
-  blurIt = () => {
-    console.log('blurring');
+  handleBlur = () => {
+    // Since DatePicker's wrapper div has been autofocused on mount, all
+    // that needs to be done is to blur on anything that's not the DatePicker.
+    // DatePicker has many child divs that handle things like day, week, month...
+    // invoke a recursive function to gather all children of root DatePicker div, then run a test against valid DatePicker elements. If test fails, then changeActiveDateWidget.
     setTimeout(() => {
-      const rootDateElement = document.getElementById('datePicker');
-      this.recursify(rootDateElement);
-      if (this.validElements.includes(document.activeElement)) {
-        console.log('inVAlidElements')
-      } else {
-        console.log('nope')
-      }
-
-
-      if (document.activeElement == document.body) {
+      const rootDatePickerElement = document.getElementById('datePickerWidget');
+      this.findDatePickerDOMNodes(rootDatePickerElement);
+      if (!this.validElements.includes(document.activeElement)) {
         this.props.changeActiveDateWidget();
       }
     }, 1);
   }
 
   render() {
-    const { changeActiveDateWidget } = this.props;
     const { selectedDay } = this.state;
     return (
       <div
         className={styles.datePicker}
-        onFocus={this.focusIt}
-        onBlur={this.blurIt}
+        onBlur={this.handleBlur}
+        // tabIndex necessary for element to be auto-focused.
         tabIndex="1"
-        ref={this.focusThisComponent}
+        ref={this.setRefComponent}
       >
         <DayPicker
           initialMonth={selectedDay}
           disabledDays={disabledDays}
           selectedDays={(day) => DateUtils.isSameDay(selectedDay, day)}
           onDayClick={this.handleDayClick}
-          id="datePicker"
+          id="datePickerWidget"
         />
       </div>
     );

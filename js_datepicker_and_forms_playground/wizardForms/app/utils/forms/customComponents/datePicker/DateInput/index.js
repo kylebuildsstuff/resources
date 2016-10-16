@@ -26,7 +26,6 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
   }
 
   changeActiveDateWidget = () => {
-    // e.stopPropagation();
     this.setState({
       activeDateWidget: !this.state.activeDateWidget,
     });
@@ -42,14 +41,11 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
           className="form-control"
           type="text"
           value={dateValue}
-          onClick={this.changeActiveDateWidget}
-          // onBlur={this.changeActiveDateWidget}
+          onClick={() => { this.setState({ activeDateWidget: true }); }}
         />
 
         {activeDateWidget ? (
           <div>
-            {/* <div onClick={this.changeActiveDateWidget} className={styles.dummyDiv}>
-            </div> */}
             <DatePicker
               changeActiveDateWidget={this.changeActiveDateWidget}
               changeDate={this.changeDate}
