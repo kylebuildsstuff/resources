@@ -8,6 +8,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form/immutable';
 
 import DateInput from '../../utils/forms/customComponents/datePicker/DateInput';
+import { formatDate, parseDate, normalizeDate } from '../../utils/forms/fieldHooks/dateFieldHooks';
 
 function WizardFormPageOne({ handleSubmit }) {
   return (
@@ -18,7 +19,15 @@ function WizardFormPageOne({ handleSubmit }) {
         <div className="card-block">
           <div className="form-group">
             <label htmlFor="first">Label 1</label>
-            <Field type="text" name="first" component={DateInput} className="form-control" />
+            <Field
+              type="date"
+              name="first"
+              format={formatDate}
+              // parse={parseDate}
+              normalize={normalizeDate}
+              component={DateInput}
+              className="form-control"
+            />
           </div>
 
           <div className="form-group">
@@ -43,4 +52,7 @@ WizardFormPageOne.propTypes = {
 export default reduxForm({
   form: 'wizardForm',
   destroyOnUnmount: false,
+  // initialValues: {
+  //   first: new Date(),
+  // },
 })(WizardFormPageOne);

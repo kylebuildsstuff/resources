@@ -7,6 +7,7 @@
 import React from 'react';
 import 'react-day-picker/lib/style.css';
 import DayPicker, { DateUtils } from 'react-day-picker';
+// import moment from 'moment';
 
 import styles from './styles.css';
 import disabledDays from './disabledDays';
@@ -15,7 +16,7 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
   constructor(props) {
     super(props);
     this.state = {
-      selectedDay: new Date(),
+      selectedDay: this.props.dateValue,
     };
 
     this.validElements = [];
@@ -36,10 +37,10 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
   }
 
   findDatePickerDOMNodes = (element) => {
+    this.validElements.push(element);
     if (element.hasChildNodes()) {
-      this.validElements.push(element);
       const children = element.childNodes;
-      for (let i = 0; i < children.length; i++) {
+      for (let i = 0; i < children.length; i += 1) {
         this.validElements.push(children[i]);
         this.findDatePickerDOMNodes(children[i]);
       }
@@ -61,7 +62,9 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
     // Since DatePicker's wrapper div has been autofocused on mount, all
     // that needs to be done is to blur on anything that's not the DatePicker.
     // DatePicker has many child divs that handle things like day, week, month...
-    // invoke a recursive function to gather all children of root DatePicker div, then run a test against valid DatePicker elements. If test fails, then changeActiveDateWidget.
+    // invoke a recursive function to gather all children of root DatePicker
+    // div, then run a test against valid DatePicker elements. If test
+    // fails, then changeActiveDateWidget.
     setTimeout(() => {
       const rootDatePickerElement = document.getElementById('datePickerWidget');
       this.findDatePickerDOMNodes(rootDatePickerElement);
@@ -93,9 +96,10 @@ class DatePicker extends React.Component { // eslint-disable-line react/prefer-s
   }
 }
 
-DatePicker.propTypes = {
-  changeDate: React.PropTypes.func,
-  changeActiveDateWidget: React.PropTypes.func,
-};
+// DatePicker.propTypes = {
+//   changeDate: React.PropTypes.func,
+//   changeActiveDateWidget: React.PropTypes.func,
+//   dateValue: React.PropTypes.object,
+// };
 
 export default DatePicker;
