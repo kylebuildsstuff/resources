@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import moment from 'moment';
 
 import styles from './styles.css';
 import DatePicker from '../DatePicker';
@@ -14,14 +15,17 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
     super(props);
 
     this.state = {
-      dateValue: new Date(),
+      vanillaDateValue: new Date(),
+      momentDateValue: moment().format('YYYY-MM-DD'),
       activeDateWidget: false,
     };
   }
 
   changeDate = (date) => {
+    const momentDate = moment(Date.parse(date)).format('YYYY-MM-DD');
     this.setState({
-      dateValue: date,
+      vanillaDateValue: date,
+      momentDateValue: momentDate,
     });
   }
 
@@ -33,14 +37,14 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
 
   render() {
     const { input, meta } = this.props;
-    const { dateValue, activeDateWidget } = this.state;
+    const { vanillaDateValue, momentDateValue, activeDateWidget } = this.state;
     return (
       <div className={styles.dateInput}>
         <input
           {...input}
           className="form-control"
-          type="text"
-          value={dateValue}
+          type="date"
+          value={momentDateValue}
           onClick={() => { this.setState({ activeDateWidget: true }); }}
         />
 
@@ -49,7 +53,7 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
             <DatePicker
               changeActiveDateWidget={this.changeActiveDateWidget}
               changeDate={this.changeDate}
-              dateValue={dateValue}
+              dateValue={vanillaDateValue}
             />
           </div>
         ) : (

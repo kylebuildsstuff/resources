@@ -70,6 +70,8 @@ module.exports = (options) => ({
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+
+    new webpack.ContextReplacementPlugin(/\.\/locale$/, 'empty-module', false, /js$/),
   ]),
   postcss: () => [
     postcssFocus(), // Add a :focus to every :hover
