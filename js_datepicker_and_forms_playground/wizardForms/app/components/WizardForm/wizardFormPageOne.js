@@ -9,7 +9,7 @@ import { Field, reduxForm } from 'redux-form/immutable';
 
 import { formatDate, normalizeDate } from '../../utils/forms/fieldHooks/dateFieldHooks';
 import DateInput from '../../utils/forms/customComponents/datePicker/DateInput';
-import DropDownSelect from '../../utils/forms/customComponents/DropDownSelect';
+import DropdownInput from '../../utils/forms/customComponents/DropdownInput';
 
 function WizardFormPageOne({ handleSubmit, people = ['Bob', 'Joe', 'Henry'] }) {
   return (
@@ -19,10 +19,10 @@ function WizardFormPageOne({ handleSubmit, people = ['Bob', 'Joe', 'Henry'] }) {
       <div className="card">
         <div className="card-block">
           <div className="form-group">
-            <label htmlFor="effDate">Effective Date</label>
             <Field
               type="date"
               name="effDate"
+              label="Effective Date"
               format={formatDate}
               normalize={normalizeDate}
               component={DateInput}
@@ -31,16 +31,13 @@ function WizardFormPageOne({ handleSubmit, people = ['Bob', 'Joe', 'Henry'] }) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="dropDownSelect">Select an Option</label>
             <Field
               name="dropDownSelect"
-              component="select"
-              // component={DropDownSelect}
-              // people={people}
+              label="Select an Option"
+              component={DropdownInput}
+              people={people}
               className="form-control"
-            >
-              {people.map(DropDownSelect)}
-            </Field>
+            />
           </div>
 
           <div className="btn-group" role="group" aria-label="buttons">
