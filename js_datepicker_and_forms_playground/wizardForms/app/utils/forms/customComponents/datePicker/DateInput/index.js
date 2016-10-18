@@ -36,10 +36,11 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
   }
 
   render() {
-    const { input, meta } = this.props;
+    const { input, meta, label } = this.props;
     const { vanillaDateValue, momentDateValue, activeDateWidget } = this.state;
     return (
       <div className={styles.dateInput}>
+        <label htmlFor={label}>{label}</label>
         <input
           {...input}
           className="form-control"
@@ -67,6 +68,7 @@ class DateInput extends React.Component { // eslint-disable-line react/prefer-st
 DateInput.propTypes = {
   input: React.PropTypes.any,
   meta: React.PropTypes.any,
+  label: React.PropTypes.any,
 };
 
 export default DateInput;
