@@ -15,7 +15,6 @@ const App = () => (
         <li><Link to="/about">About</Link></li>
         <li><Link to="/topics">Topics</Link></li>
       </ul>
-
       <hr />
 
       <Match exactly pattern="/" component={Home} />
