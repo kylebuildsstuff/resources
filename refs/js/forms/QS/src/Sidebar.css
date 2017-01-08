@@ -1,0 +1,19 @@
+.Sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 125px;
+  background: #e1e1e1;
+}
+
+.Sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Sidebar li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+}

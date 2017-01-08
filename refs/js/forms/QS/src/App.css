@@ -1,0 +1,86 @@
+.App {
+  padding-left: 225px;
+}
+
+form fieldset {
+  margin-bottom: 2rem;
+}
+
+form legend {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+form label {
+  display: block;
+}
+
+form input, form select {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.clearfix::after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.required-field {
+  color: red;
+}
+
+.form-group {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: background 197ms ease-out;
+  margin-bottom: 1rem;
+}
+
+.form-group.active {
+  background: #f1f1f1;
+}
+
+.form-group .helpText {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.form-group .fieldError {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: red;
+}
+
+.form-group .required {
+  color: red;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-group.CheckboxField label {
+  font-weight: normal;
+}
+
+.form-group.CheckboxField label:first-child {
+  font-weight: bold;
+}

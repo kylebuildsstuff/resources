@@ -1,0 +1,346 @@
+{
+  "2016": [
+    ["acura", "Acura"],
+    ["buick", "Buick"],
+    ["ford", "Ford"],
+    ["honda", "Honda"],
+    ["toyota", "Toyota"]
+  ],
+  "2016_toyota": [
+    {
+      "label": "PRIUS",
+      "value": "prius"
+    },
+    {
+      "label": "COROLLA",
+      "value": "corolla"
+    },
+    {
+      "label": "CAMRY",
+      "value": "camry"
+    }
+  ],
+  "2016_acura": [
+    {
+      "label": "ILX 4DR",
+      "value": "ilx-4dr"
+    },
+    {
+      "label": "MDX 4DR 4WD",
+      "value": "mdx-4dr-4wd"
+    },
+    {
+      "label": "TLX 4DR",
+      "value": "tlx-4dr"
+    }
+  ],
+  "2016_ford": [
+    {
+      "label": "FORD MODEL 1",
+      "value": "ford-model-1"
+    },
+    {
+      "label": "FORD MODEL 2",
+      "value": "ford-model-2"
+    },
+    {
+      "label": "FORD MODEL 3",
+      "value": "ford-model-3"
+    }
+  ],
+  "2000_toyota": [
+    {
+      "label": "PRIUS",
+      "value": "prius"
+    }
+  ],
+  "2000_acura": [
+    {
+      "label": "ILX 4DR",
+      "value": "ilx-4dr"
+    }
+  ],
+  "2000_ford": [
+    {
+      "label": "FORD MODEL 1",
+      "value": "ford-model-1"
+    },
+    {
+      "label": "FORD MODEL 3",
+      "value": "ford-model-3"
+    }
+  ],
+  "policies": [{
+    "address1": "264 Poplar St.",
+    "address2": "",
+    "carrier": "Scottish & York",
+    "carrier_code": "SR",
+    "city": "Oshawa",
+    "created": "2016-09-27",
+    "days_left_on_policy": 212,
+    "description": null,
+    "driver": [
+      {
+        "date_of_birth": "1945-08-21",
+        "driver_training_code": "N",
+        "first_name": "Albert",
+        "grid_determination_date": null,
+        "grid_level": "",
+        "id": 14728,
+        "last_name": "Adair",
+        "licence": null,
+        "licences": [{
+          "driver_id": 14728,
+          "first_licensed_current_state_prov_date": "1965-06-21",
+          "id": 27054,
+          "licence_class": "G",
+          "licence_date": "1965-06-21",
+          "licence_number": "A17850173450821",
+          "licensed_state_prov_code": "ON",
+          "tier": 3
+        }],
+        "marital_status_code": "M",
+        "number": "001"
+      },
+      {
+        "date_of_birth": "1961-08-08",
+        "driver_training_code": "N",
+        "first_name": "Jane",
+        "grid_determination_date": null,
+        "grid_level": "",
+        "id": 12821,
+        "last_name": "Adair",
+        "licence": null,
+        "licences": [{
+          "driver_id": 12821,
+          "first_licensed_current_state_prov_date": "1965-06-21",
+          "id": 23701,
+          "licence_class": "G",
+          "licence_date": "1981-06-21",
+          "licence_number": "A72850128450812",
+          "licensed_state_prov_code": "ON",
+          "tier": 3
+        }],
+        "marital_status_code": "M",
+        "number": "001"
+      }
+    ],
+    "effective_date": "2016-07-09",
+    "expiration_date": "2017-07-09",
+    "id": "0x0000000000000684",
+    "line_of_business": "auto",
+    "modified": "2016-09-27",
+    "named_insured": "Albert Adair & Emily Adair",
+    "pink_slip_allowed": true,
+    "policy_coverage_liability": 1000000,
+    "policy_number": "A40308742PLA",
+    "postal_code": "L1H 6P7",
+    "province": "ON",
+    "renewal_effective_date": null,
+    "renewal_expiration_date": null,
+    "renewal_id": null,
+    "service_requests": "Not in place yet",
+    "type": "auto",
+    "vehicle": [
+      {
+        "annual_distance": 12000,
+        "commute_distance": 0,
+        "coverages": [
+          {
+            "code": "COL",
+            "deductible_amount": 1000,
+            "deductible_percentage": "",
+            "description": "Collision or Upset",
+            "floater_id": null,
+            "id": 203066,
+            "limit_amount": null,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "CMP",
+            "deductible_amount": 500,
+            "deductible_percentage": "",
+            "description": "Comprehensive",
+            "floater_id": null,
+            "id": 203067,
+            "limit_amount": null,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "TPBI",
+            "deductible_amount": null,
+            "deductible_percentage": "",
+            "description": "Third Party Liability - Bodily Injury",
+            "floater_id": null,
+            "id": 203068,
+            "limit_amount": 1000000,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "TPPD",
+            "deductible_amount": null,
+            "deductible_percentage": "",
+            "description": "Third Party Liability - Property Damage",
+            "floater_id": null,
+            "id": 203069,
+            "limit_amount": 1000000,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "TPDC",
+            "deductible_amount": 0,
+            "deductible_percentage": "",
+            "description": "Third Party Liability - Direct Compensation",
+            "floater_id": null,
+            "id": 203070,
+            "limit_amount": null,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "AB",
+            "deductible_amount": null,
+            "deductible_percentage": "",
+            "description": "Accident Benefits",
+            "floater_id": null,
+            "id": 203071,
+            "limit_amount": null,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "UA",
+            "deductible_amount": null,
+            "deductible_percentage": "",
+            "description": "Uninsured Automobile",
+            "floater_id": null,
+            "id": 203072,
+            "limit_amount": null,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "44R",
+            "deductible_amount": 0,
+            "deductible_percentage": "",
+            "description": "Family Protection",
+            "floater_id": null,
+            "id": 203073,
+            "limit_amount": 0,
+            "location_id": null,
+            "type": "coverage",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          },
+          {
+            "code": "20",
+            "deductible_amount": 0,
+            "deductible_percentage": "",
+            "description": "Loss of Use Coverage",
+            "floater_id": null,
+            "id": 203074,
+            "limit_amount": 1200,
+            "location_id": null,
+            "type": "endorsement",
+            "vehicle_id": 13383,
+            "watercraft_id": null
+          }
+        ],
+        "id": 13383,
+        "leased_ind": false,
+        "liability_slip": "https://dev-cornbread.cyphercrm.com/smartcov/Contact/44ca52e3-52dc-415a-b6eb-8aeb6e089c53/Policy/0x0000000000000684/Vehicle/13383/LiabilitySlip",
+        "licence_province_cd": "ON",
+        "new_used_cd": "new",
+        "pink_slip_allowed": true,
+        "policy_id": 13852,
+        "purchase_dt": "2014-10-01T00:00:00",
+        "vehicle_cd": "5725",
+        "vehicle_make": "GMC TRUCK/",
+        "vehicle_model": "YUKON XL/SL/SLE",
+        "vehicle_no": "01",
+        "vehicle_use_cd": "P",
+        "vehicle_vicc": "5725",
+        "vehicle_vin": "1GKS2LE70ER194353",
+        "vehicle_year": 2014
+      }
+    ]
+  },
+  {
+      "id": "0x0000000000018036",
+      "renewal_expiration_date": null,
+      "carrier": "Scottish & York",
+      "address2": "",
+      "modified": "2016-01-08",
+      "address1": "99 Armadale Ave",
+      "renewal_id": null,
+      "effective_date": "2016-02-28",
+      "service_requests": {
+          "vehicle_add": "https://oss-api.csgwebapps.com/smartcov/contact/01c10614-f531-4138-be68-4fd71681dc39/policies/0x0000000000016032/requests/vehicle_add/",
+          "address_change": "https://oss-api.csgwebapps.com/smartcov/contact/01c10614-f531-4138-be68-4fd71681dc39/policies/0x0000000000016032/requests/address_change/",
+          "vehicle_sub": "https://oss-api.csgwebapps.com/smartcov/contact/01c10614-f531-4138-be68-4fd71681dc39/policies/0x0000000000016032/requests/vehicle_sub/"
+      },
+      "created": "2016-01-08",
+      "line_of_business": "hab",
+      "province": "ON",
+      "postal_code": "M6S 3X3",
+      "named_insured": "Ross Andrew",
+      "renewal_effective_date": null,
+      "expiration_date": "2017-02-28",
+      "policy_number": "P40300584HAB",
+      "description": null,
+      "type": "tenants",
+      "days_left_on_policy": 83,
+      "carrier_code": "SR",
+      "city": "Toronto"
+  }],
+  "contact": [
+    {
+        "email": "gandrew@cyphersystems.com",
+        "id": "01c10614-f531-4138-be68-4fd71681dc39",
+        "communication_preference": "",
+        "first_name": "Ross",
+        "modified": "2016-12-06",
+        "last_name": "Andrew",
+        "active": true,
+        "business": "smartcov",
+        "home_phone": "(416)604-7765",
+        "created": "2015-09-26",
+        "gender": "",
+        "province": "ON",
+        "postal_code": "M6S 3X3",
+        "policy": "https://oss-api.csgwebapps.com/smartcov/contact/01c10614-f531-4138-be68-4fd71681dc39/policies/",
+        "username": "",
+        "country": "",
+        "business_phone_ext": "",
+        "address_2": "",
+        "last_login": "",
+        "address_1": "99 ARMADALE AVE",
+        "pivotal_id": "0x000000000009DD99",
+        "date_of_birth": null,
+        "business_phone": "",
+        "city": "Toronto",
+        "mobile_phone": ""
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
