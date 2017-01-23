@@ -11,8 +11,9 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn run clean && webpack",
-    "serve": "webpack-dev-server"
+    "build": "NODE_ENV=production yarn run clean && webpack -p",
+    "serve": "webpack-dev-server",
+    "deploy": "yarn run build && git subtree push --prefix dist origin gh-pages"
   },
   "repository": "https://github.com/StephenGrider/WebpackProject",
   "author": "",
