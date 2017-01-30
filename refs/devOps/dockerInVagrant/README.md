@@ -1,4 +1,6 @@
-# A VM to play with Docker in a linux VM
+# A VM to play with Docker
+
+<p>Make sure Vagrant and VirtualBox is installed</p>
 
 <li>vagrant up</li>
 <li>vagrant ssh</li>
