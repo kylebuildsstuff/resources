@@ -14,11 +14,12 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
 
-  config.vm.network "forwarded_port", guest: 80, host: 8000
+  config.vm.network "forwarded_port", guest: 8081, host: 8081
+  config.vm.network "forwarded_port", guest: 8082, host: 8082
   config.vm.network "forwarded_port", guest: 443, host: 8443
   config.vm.network "forwarded_port", guest: 5432, host: 5432
 
-  config.vm.synced_folder "src/", "/dockerwww/"
+  config.vm.synced_folder "src/", "/dockergit/"
 
   # config.ssh.insert_key = false
   # config.ssh.username = 'vagrant'
