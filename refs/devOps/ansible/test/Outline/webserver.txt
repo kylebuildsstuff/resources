@@ -1,0 +1,18 @@
+- webservers
+- test user
+- sudo rights
+
+- date/time stamp for when the playbook starts
+
+- install the apache web server
+- start the web service
+
+- verify that the web service is running
+
+- install client software
+  - telnet
+  - lynx
+
+- log all the packages installed on the system
+
+- date/time stamp for when the playbook ends

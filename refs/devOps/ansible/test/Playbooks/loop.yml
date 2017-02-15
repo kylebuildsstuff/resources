@@ -1,0 +1,13 @@
+--- # LOOP Playbook Example
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  connection: ssh
+  gather_facts: false
+  tasks:
+    - name: Add a list of users
+      user: name={{ item }} state=present
+      with_items:
+        - user1
+        - user2
+        - user3
