@@ -601,3 +601,595 @@ cd ..
 ls
 pwd
 cp -r /home/test /home/resources/refs/devOps/ansible
+sudo cp -r /home/test /home/resources/refs/devOps/ansible
+cd /home/resources/refs/devOps/ansible
+ls
+cd test
+ls
+sudo sudo chmod 755 -R /home/resources/refs/devOps/ansible/test
+cd test
+ls
+cd ..
+ls
+git remote
+git status
+cd ..
+ls
+git status
+git add .
+sudo git add .
+git status
+sudo git commit -m "Add ansible playbook examples pulled form vps following linuxacademy tutorials"
+git push origin
+sudo git push origin
+git --help
+git user
+ansible all --list-hosts
+cat /etc/ansible/hosts
+ls
+cd Playbooks
+ls
+nano when.yml
+ansible apacheweb -m setup -a 'filter=ansible_os_family'
+nano when.yml
+ansible apacheweb -m setup -a 'filter=ansible_os_family'
+ansible apacheweb -m ping
+cd ..
+ls
+cd ..
+ls
+sudo chmod 600 tests
+sudo chmod 755 test
+ls
+cd test
+ls
+cd Playbooks/
+ls
+ansible apacheweb -m ping
+ansible --version
+cat /etc/ansible/hosts
+ansible all --list-hosts
+ls
+ansible-playbook myfirstplaybook.yml
+ls
+cd ..
+ls
+cd ..
+ls
+rm -rf resources
+ls
+sudo rm -rf resources
+ls
+cd ..
+ls
+cd home
+ls
+cd test
+ls
+cd Playbooks/
+ls
+ansible all -m ping
+ansible apacheweb -m setup -a 'filter=ansible_os_family'
+ansible all -m setup -a 'filter=ansible_os_family'
+ansible-playbook when.yml
+sudo nano when.yml
+ansible-playbook when.yml
+sudo nano when.yml
+git status
+cd ..
+ls
+cd ..
+ls
+git status
+cd test
+ls
+cd Playbooks
+ls
+systemctl status httpd
+sudo yum remove httpd
+systemctl status httpd
+nano until.yml
+ansible-playbook until.yml
+nano until.yml
+ansible-playbook until.yml
+ls
+pwd
+nano myfirstplaybook.yml
+ansible-playbook myfirstplaybook.yml
+nano myfirstplaybook.yml
+ansible-playbook myfirstplaybook.yml
+nano myfirstplaybook.yml
+ansible-playbook myfirstplaybook.yml
+ansible all --list-host
+cat /etc/ansible/hosts
+ls
+cd Playbooks/
+ls
+nano accounts.yml
+ansible-vault create secure.yml
+cat secure.ym
+cat secure.yml
+ansible-vault edit secure.yml
+ansible-vault decrypt secure.yml
+ls
+cat secure.yml
+cat accounts.yml
+ansible-vault encrypt accounts.yml secure.yml
+nano prompt.yml
+ansible-playbook prompt.yml
+nano prompt.yml
+ansible-playbook prompt.yml
+ls
+pwd
+mkdir plays
+cd plays
+ls
+nano packages.yml
+cd ..
+ls
+nano include.yml
+ls
+pwd
+ansible-playbook include.yml
+nano include.yml
+ls
+cd plays
+ls
+nano packages.yml 
+cd ..
+ls
+nano include.yml
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+ls
+cd plays
+ls
+nano packages.yml
+cd ..
+ls
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+cat /etc/ansible/hosts
+nano include.yml
+cat /etc/ansible/hosts
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+ls
+cd plays
+ls
+cd ..
+ls
+nano include.yml
+ansible-playbook include.yml
+nano include.yml
+ansible-playbook include.yml
+ls
+cd ..
+ls
+cd ..
+ls
+git
+ls
+git clone https://github.com/KTruong888/resources.git
+sudo git clone https://github.com/KTruong888/resources.git
+ls
+cd test
+cd ..
+ls
+cd resources
+ls
+git status
+git remote
+git remote --help
+git remote -v
+ls
+cd refs
+ls
+cd devOps/
+ls
+cd ansible
+ls
+cd ..
+ls
+cd dockerInVagrant
+ls
+cd ..
+ls
+cd ansible
+ls
+cd test
+ls
+cd ..
+ls
+cd ~
+ls
+pwd
+ls
+cd Playbooks/
+ls
+pwd
+cat /etc/ansible/hosts
+ll
+nano tags.yml
+ansible-playbook tags.yml --check
+ansible-playbook tags.yml
+ansible-playbook tags.yml --tags "verification"
+ansible-playbook tags.yml --tags 
+ansible-playbook tags.yml --skip-tags "verification"
+ansible-playbook tags.yml --list-tags
+nano tags.yml
+ansible-playbook tags.yml --tags "verification"
+ls
+nano failure.yml
+ansible-playbook failure.yml --check
+ansible-playbook failure.yml
+nano failure.yml
+ansible-playbook failure.yml
+ls
+mkdir includes
+ls
+rmdir includes
+ls
+cd plays
+ls
+mkdir packages
+mkdir commands
+mkdir variables
+ls
+pwd
+ls
+ll
+mkdir handlers
+ls
+pwd
+ls
+pwd
+cd packages
+nano packages.yml
+cd ..
+cd variables
+nano variables.yml
+cd ..
+ls
+cd commands
+nano commands.yml
+cd ..
+cd handler
+cd handlers
+nano handlers.yml
+cd ..
+ls
+cd ..
+ls
+cd packages
+cd plays
+cd packages
+ls
+nano packages.yml 
+cd ..
+ls
+cd handlers
+ls
+nano handlers.yml
+ls
+cd ..
+ls
+cd packages
+ls
+nano packages.yml 
+cd ..
+ls
+cd ..
+ls
+cd plays
+ls
+pwd
+ls
+pwd
+nano webstuff.yml
+ls
+cd ..
+ls
+nano include2.yml
+pwd
+ls
+ansible-playbook include2 --check
+ansible-playbook include2.yml --check
+ls
+cd plays
+ls
+cd variables
+ls
+nano variables.yml 
+y
+cd ..
+ls
+pwd
+ls
+pwd
+c d..
+cd ..
+ls
+pwd
+ansible-playbook include2.yml
+ls
+nano include2
+nano include2.yml
+ls
+nano startat.yml
+ansible-playbook startat.yml --check
+ansible-playbook start.yml --start-at-task='Install Lynx'
+ansible-playbook startat.yml --start-at-task='Install Lynx'
+ansible-playbook startat.yml --step
+ls
+nano fromcomdline.yml
+ansible-playbook fromcmdline.yml
+ansible-playbook fromcomdline.yml
+ansible-playbook fromcomdline.yml --extra-vars "hosts=apacheweb user=test pkg=telnet"
+ls
+mv fromcomdline.yml fromcmdline.yml
+ls
+nano fromcmdline.yml 
+ansible-playbook fromcomdline.yml --extra-vars "hosts=apacheweb user=test pkg=telnet"
+ansible-playbook fromcmdline.yml --extra-vars "hosts=apacheweb user=test pkg=telnet"
+ls
+cd files
+mkdir files
+cd files
+ls
+pwd
+ls
+nano test.conf.j2
+cat test.conf.j2
+cd ..l
+cd ..
+ls
+pwd
+cd files
+ls
+pwd
+nano test.yml
+nano /etc/ansible/hosts
+sudo nano /etc/ansible/hosts
+cat /etc/ansible/hosts
+ansible all --list-hosts
+ls
+nano test.yml
+ls
+pwd
+ansible-playbook test.yml
+nano test.yml
+ansible-playbook test.yml
+ls
+cd Playbooks/
+ls
+nano localaction.yml
+ls
+pwd
+ansible-playbook localaction.yml
+ansible all -m ping
+nano localaction.yml
+ls
+pwd
+ansible-playbook localaction.yml
+cat /etc/ansible/hosts
+nano localaction.yml
+ls
+ pwd
+ansible-playbook localaction.yml
+ansible all --list-hosts
+nano localaction.yml
+ansible all --list-hosts
+ansible-playbook localaction.yml
+nano localaction.yml
+ls
+pwd
+ansible-playbook localaction.yml
+ansible all --list-hosts
+cat /etc/ansible/hosts
+ls
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+pwd
+ls
+nano delegateto.yml
+ansible appserver -m ping
+nano delegateto.yml
+ansible appserver -m ping
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano ping.out
+ls
+touch ping.out
+pwd
+nano delegateto.yml
+ls
+pwd
+ansible-playbook delegateto.yml
+rm ping.out
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+ls
+ansible-playbook localaction.yml
+nano localaction.yml
+nano delegateto.yml
+ansible-playbook localaction.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+ls
+cat ping.out
+ansible-playbook delegateto.yml
+ls
+cd ..
+ls
+cd Playbooks/
+ls
+cat ping.pout
+nano delegateto.yml
+ansible-playbook delegateto.yml
+ls
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+ls
+cat ping.out
+nano delegateto.yml
+ansible-playbook delegateto.yml
+nano delegateto.yml
+ansible-playbook delegateto.yml
+ls
+nano delegateto.yml
+ansible-playbook delegateto.yml
+cat /etc/ansible/hosts
+ansible all --list-hosts
+nano delegateto.yml
+ansible all --list-hosts
+ansible-playbook delegateto.yml
+ansible all -m ping
+ansible all
+ansible apacheweb -m setup -a "filter=ansible_*"
+ansible apacheweb -m setup -a 'filter=ansible_architecture'
+ansible setup
+ansible setup --help
+ansible apacheweb
+ansible --help
+ansible-docs
+ansible man
+man ansible
+man ansible-docs
+man ansible-module
+man ansible-mod
+man ansible-doc
+man ansible-doc setup
+man ansible-doc-setup
+man ansible-doc setup
+ansible-doc setup
+man ansible-playbook
+man ansible-vault
+man ansible-doc
+ansible apacheweb -m setup -a 'filter=ansible_dist*'
+ansible apacheweb -m setup -a 'filter=ansible_doman'
+ansible apacheweb -m file -a 'path=/etc/fstab'
+ansible apacheweb -m file -a 'path=/tmp/etc=directory mode=0700 owner=root'
+ansible apacheweb -m file -a 'path=/tmp/etc state=directory mode=0700 owner=root'
+ansible apacheweb -s -m file -a 'path=/tmp/etc state=directory mode=0700 owner=root'
+ansible apacheweb -m copy -a 'src=/etc/fstab dest=/tmp/etc/fstab'
+ansible apacheweb -s -m copy -a 'src=/etc/fstab dest=/tmp/etc/fstab'
+ansible apacheweb -s -m command -a 'rm -rf /tmp/etc removCCCCCes=/tmp/etc'
+ansible apacheweb -s -m command -a 'rm -rf /tmp/etc removes=/tmp/etc'
+ansible all -m ping
+ls
+cd ..
+ls
+pwd
+cd resource
+ls
+cd resources/
+ls
+cd refs
+ls
+cd devOps/
+ls
+cd ansible
+ls
+rm -rf test
+sudo rm -rf test
+ls
+pwd
+cp /home/test .
+ls
+pwd
+cd ~
+ls
+cd ..
+ls
+cd test /home/resources/refs/devOps/ansible
+cd resources
+ls
+cd ..
+ls
+cd resources/
+ls
+cd re
+cd refs
+ls
+cd devOps/
+ls
+cd ansible
+ls
+pwd
+cd ~
+ls
+cd ..
+ls
+pwd
+cp /home/test /home/resources/refs/devOps/ansible
+sudo cp /home/test /home/resources/refs/devOps/ansible
+cd test
+ls
+pwd
+c d..
+cd ..l
+ls
+pwd
+cd ..
+ls
+cd resources
+ls
+cd refs
+ls
+cd devOps/
+ls
+cd ansible
+ls
+pwd
+git status
+git
+git rm
+ls
+pwd
+ls
+pwd
+ls
+cd ~
+ls
+cd ..
+ls
+pwd
+cp /home/test /home/resources/refs/devOps/ansible
+cp -r /home/test /home/resources/refs/devOps/ansible

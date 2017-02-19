@@ -1,0 +1,17 @@
+--- # PROMPT For User Package Example
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: false
+  vars: 
+    playbook_version: 0.01b
+  vars_prompt:
+    - name: pkgtoinstall
+      prompt: Install which package?
+      default: telnet
+      private: false
+  tasks:
+    - name: Install the indicated package
+      yum: pkg={{ pkgtoinstall }} state=latest

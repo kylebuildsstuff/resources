@@ -1,0 +1,13 @@
+--- # Includes example part 2
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  vars_files:
+    - plays/variables/variables.yml
+  tasks:
+    - include: plays/packages/packages.yml
+    - include: plays/commands/commands.yml
+  handlers:
+    - include: plays/handlers/handlers.yml

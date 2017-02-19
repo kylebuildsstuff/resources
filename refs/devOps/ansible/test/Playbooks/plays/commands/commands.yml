@@ -1,0 +1,2 @@
+- name: Make sure Lynx is installed and then log it
+  raw: yum list installed | grep lynx > /home/test/install.log

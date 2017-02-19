@@ -1,0 +1,11 @@
+--- # Passing variables through the command line example
+- hosts: '{{ hosts }}'
+  remote_user: '{{ user }}'
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: false
+  tasks:
+    - name: Install some software
+      yum: pkg={{ pkg }} state=latest
+  

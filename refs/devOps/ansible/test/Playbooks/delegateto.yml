@@ -1,0 +1,14 @@
+--- # Delegate To function demo
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: true
+  tasks:
+    - name: Run a remote ping on the application server
+      command: ping -c 4 ktruong0083.mylabserver.com
+      delegate_to: 127.0.0.1
+    - name: Install a package
+      yum: pkg=lynx state=latest
+    
