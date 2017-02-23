@@ -1193,3 +1193,739 @@ ls
 pwd
 cp /home/test /home/resources/refs/devOps/ansible
 cp -r /home/test /home/resources/refs/devOps/ansible
+sudo cp -rf /home/test /home/resources/refs/devOps/ansible
+cd 
+ls
+cd ..
+ls
+cd resources
+ls
+git status
+git add .
+ls
+git diff
+git status
+git add .
+sudo git add .
+ls
+sudo git commit -m "more examples on ansible-playbook"
+git push origin
+git config --global user.name "Ktruong888"
+git config --global user.email "Ktruong008@gmail.com"
+git add .
+sudo git push
+sudo git push origin
+cd ~
+ls
+cd hosts
+ls
+cd ..
+ls
+cd resources
+ls
+cd ..
+ls
+cd test
+ls
+cd Playbooks/
+ls
+nano pause.yml
+ansible-playbook pause.yml
+nano pause.yml
+nano waitfor.yml
+ansible-playbook waitfor.yml
+nano waitfor.yml
+ansible-playbook waitfor.yml
+nano yum.yml
+ansible-playbook yum.yml --check
+nano yum.yml
+nano apt.yml
+nano service.yml
+ansible-playbook service.yml
+nano copy.yml
+ansible-playbook copy.yml
+ls
+cd files
+ls
+echo "test1 example" > test1.txt
+ls
+cd ..
+ls
+ansible-playbook copy.yml
+nano copy.yml
+ansible all -m ping
+ls
+git config user
+cd ,,
+ls
+cd ..
+ls
+cd ..
+ls
+cd resources
+ls
+cd git status
+git status
+git config
+git config user
+git config --global
+git config
+git configt --help
+git config --help
+git config user.name
+git config user.email
+git config user.name KTruong888
+sudo git config user.name KTruong888
+git config user.name
+ls
+cd ..
+ls
+cd test
+ls
+cd Playbooks
+ls
+nano command.yml
+ansible-playbook command.yml
+nano command.yml
+ansible-playbook command.yml
+nano command.yml
+ansible-playbook command.yml
+nano cron.yml
+ansible-playbook cron.yml
+nano cron.yml
+ansible-playbook cron.yml
+nano cron.yml
+ansible-playbook cron.yml
+nano cron.yml
+ls
+nano debug.yml
+nano fetch.yml
+nano user.yml
+nano at.yml
+nano set_fact.yml
+nano stat.yml
+y
+nano script.yml
+ls
+cd files
+ls
+pwd
+nano test.conf
+ls
+nano test.conf.j2 
+cd ..
+ls
+nano template.yml
+ls
+cd Playbooks/
+ls
+nano postgresqldb.yml
+ls
+nano postgresqldb.yml
+nano postgresqluser.yml
+nano kernel_blacklist.yml
+ansible all -m ping
+ls
+cd Playbooks
+ls
+mkdir roles
+ls
+cd roles
+ls
+pwd
+cd ..
+ls
+rm roles
+rmdir roles
+ls
+cd roles
+mkdir -p Roles/roles
+ls
+cd Roles
+ls
+cd roles
+mkdir common webservers appservers cachingservers
+ls
+pwd
+ls
+pwd
+ls
+pwd
+ls
+pwd
+ansible all --list-hosts
+cat /etc/ansible/hosts
+ls
+cd common
+ls
+mkdir files templates tasks handlers vars defaults meta
+ls
+pwd
+cd ..
+ls
+pwd
+cd common
+ls
+man cp
+ansible all -m ping
+ls
+ansible all -m ping
+ls
+cd ..
+ls
+cp -a ./common/. appservers
+cp -a ./common/. cachingservers
+cp -a ./common/. webservers
+ls
+cd appservers
+ls
+cd ..
+ls
+cd cachingservers/
+ls
+cd ..
+ls
+cd webservers/
+ls
+ansible all -m ping
+ls
+cd ..
+ls
+cd appservers
+ls
+pwd
+cd files
+ls
+cd ..
+ls
+pwd
+ls
+cd ..
+ls
+pwd
+cd appservers
+ls
+cd ..
+asd
+ansible apacheweb -m ping
+ansible all --list-hosts
+ls
+cd Playbooks
+ls
+cd Roles
+ls
+cd roles
+ls
+cd webservers
+ls
+cd tasks
+ls
+pwd
+nano main.yml
+cd ,,
+cd ..
+ls
+cd handlers
+ls
+pwd
+nano main.yml
+cd ..
+ls
+cd vars
+ls
+pwd
+nano main.yml
+cd ..
+ls
+cd ..
+ls
+pwd
+nano webservers.yml
+ls
+pwd
+ansible-playbook webservers.yml
+ansible apacheweb -m ping
+nano webservers.yml
+ls
+pwd
+ansible-playbook webservers.yml
+ls
+man sco
+man scp
+ls
+cd Playbooks
+ls
+cd Roles
+ls
+cd roles
+ls
+nano webservers.yml
+ansible-playbook webservers.yml
+sudo nano /etc/ansible/hosts
+cat /etc/ansible/hosts
+ls
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml 
+ls
+pwd
+cd ..
+ls
+pwd
+ls
+cd ..
+ls
+pwd
+cat webservers.yml
+ansible-playbook webservers.yml
+cat /etc/ansible/hosts
+lsa
+ls
+cd webservers
+ls
+cd vars
+ls
+pwd
+nano main.yml 
+ls
+pwd
+cd ..
+ls
+cd tasks
+ls
+nano main.yml 
+cd ..
+ls
+cd ..
+ls
+pwd
+cat webservers.yml
+ls
+cd webservers
+ls
+cd handlers
+ls
+nano main.yml 
+cd ..
+ls
+cd ..
+ls
+nano webservers.yml
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml
+ls
+cd ..
+ls
+cd handlers
+ls
+nano main.yml
+ls
+cd ..
+ls
+cat /etc/ansible/hosts
+ls
+cd ..
+cd webservers
+ls
+cd handlers
+ls
+nano main.yml 
+cd ..
+ls
+cd ..
+ls
+cd webservers
+ls
+cd tasks
+ls
+pwd
+nano main.yml 
+cd ..
+ls
+cd ..
+ls
+pwd
+ansible-playbook webservers.yml
+cd ..
+ls
+cd roles
+ls
+cd webserver
+ls
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml 
+cd ..
+ls
+cd ,,
+cd ..
+ls
+ansible-playbook webservers.yml
+ls
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml 
+cd ..
+ls
+ansible-playbook webservers.yml
+ls
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml 
+cd ..
+lscd ..
+lcd
+cd ..
+ls
+ansible-playbook webservers.yml
+ls
+cd webservers
+ls
+cd vars
+ls
+nano main.yml 
+ls
+cd ..
+ls
+cd tasks
+ls
+nano main.yml
+ls
+cd ..
+ls
+cd handlers
+ls
+nano main.yml
+ls
+cd ..
+ls
+cd tasks
+ls
+ nano main.yml 
+ls
+cd ..
+ls
+ansible-playbook webservers.yml
+ls
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml 
+ls
+cd ..
+l
+ls
+cd ..
+ls
+ansible-playbook webservers.yml
+cd ..
+ls
+cd roles
+ls
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml 
+cd ..
+ls
+cd handlers
+ls
+nano webservers.yml
+nano main.yml
+cd ..
+ls
+ansible-playbook webservers.yml
+cd webservers
+ls
+cd tasks
+ls
+nano main.yml
+cd ..
+ls
+cd ..
+ls
+ansible-playbook webservers.yml
+ls
+mv webservers.yml ..
+ls
+rm webservers.retry
+rm webservers.yml.save
+ls
+cd ..
+ls
+ansible-playbook webservers.yml
+cd roles
+ls
+cd ..
+ls
+sudo nano /etc/ansible/ansible.cfg
+y
+ls
+cd roles
+ls
+mkdir rehat_webservers debian_webservers
+ls
+pwd
+cp -a webservers debian_webservers/
+cp -a webservers rehat_webservers/
+mv rehat_webservers/ redhat_webservers
+ls
+cd redhat_webservers/
+ls
+cd ..
+cd redhat_webservers/
+ls
+rm -rf webservers
+cd ..
+ls
+cd debian
+ls
+cd debian_webservers/
+ls
+rm -rf webservers/
+ls
+cd ..
+ls
+cp -a webserver/. redhat_webservers/
+cp -a webservers/. redhat_webservers/
+cp -a webservers/. debian_webservers/
+ls
+cd debian_webservers/
+ls
+cd ..
+ls
+cd ..
+ls
+pwd
+cp webservers.yml redhatonly.yml
+cp webservers.yml debianonly.yml
+ls
+nano redhatonly.yml 
+nano debianonly.yml 
+ls
+nano webservers.yml 
+ls
+cd roles
+ls
+cd ..
+ls
+ansible-playbook webservers.yml
+ls
+cat redhatonly.yml 
+ls
+cd roles
+ls
+cd redhat_webservers/
+ls
+pwd
+ls
+cd tasks
+ls
+nano main.yml
+ls
+pwd
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+nano redhatonly.yml 
+ls
+ansible-playbook redhatonly.yml --check
+ls
+cd roles
+ls
+cd redhat_webservers/
+pwd
+ls
+cd ..
+ls
+pwd
+cd redhat_webservers/
+ls
+cd tasks
+ls
+nano main.yml 
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd roles
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd Playbooks
+ls
+cd Roles
+ls
+pwd
+ls
+cd roles
+ls
+pwd
+ls
+mkdir testrole
+ls
+cp -a redhat_webservers/. testrole
+cd testrole
+ls
+pwd
+ls
+cp /home/test/Outline/webserver.yml testrole.yml
+ls
+cd ..
+ls
+cat testrole.yml
+cd ..
+ls
+nano testrole.yml
+ls
+touch testrole.yml
+ls
+ansible all -m ping
+man ansible
+ls
+cd Playbooks
+ls
+mkdir usecases
+ls
+cd usecases
+ls
+nano mywebserver.txt
+ls
+pwd
+ls
+cp mywebserver.txt mywebserver.yml
+ls
+nano mywebserver.yml
+ls
+pwd
+ls
+mv mywebserver.yml mywebservermvp.yml
+ls
+mkdir roles
+ls
+cd roles
+mkdir defaults files handlers meta tasks templates vars
+cd ..
+ls
+cd ..
+ls
+cd Roles
+ls
+cd roles
+ls
+cd ..
+ls
+cd ..
+ls
+cd usecases
+ls
+cd roles
+ls
+cd ..
+ls
+cd ..
+ls
+cd Roles
+ls
+cd roles
+ls
+cd commomn
+cd common
+ls
+cd ..
+ls
+cd ..
+ls
+cd usecases
+ls
+cd roles
+ls
+mkdir apachewebserver
+ls
+pwd
+mv defaults apachewebserver/defaults
+ls
+cd apachewebserver/
+ls
+cd ..
+ls
+mv files apachewebserver/files
+mv handlers apachewebserver//handlers
+mv meta apachewebserver/meta
+mv tasks apachewebserver/tasks
+mv templates apachewebserver/templates
+mv vars apachewebserver/vars
+ls
+cd apachewebserver/
+ls
+cd files
+ls
+touch default.conf.template httpd.conf.template sitecode.tar.gz
+cd ..
+ls
+cd handlers
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd Playbooks
+ls
+cd usecases
+ls
+mv mywebservermvp.yml mywebserver.yml
+ls
+cd roles
+ls
+cd ..
+ls
+nano mydbserver.txt
+cat mywebserver.yml
+ls
+cp mydbserver.txt mydbserver.yml
+ls
+nano mydbserver.yml
+cd ..
+lscd ..
+cd ..
+ls
+cd ..
+ls
+pwd
+cd resources
+ls
+cd refs
+ls
+cd devOPs
+cd devOps/
+ls
+cd ansible
+ls
+git status
+sudo rm -rf refs/devOps/ansible/test/.ssh
+sudo rm -rf test
+sudo cp /home/test .

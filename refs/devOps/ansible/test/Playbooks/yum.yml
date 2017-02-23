@@ -1,0 +1,14 @@
+--- # Yum module example
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: false
+  tasks:
+    - name: Install Apache Web Server
+      yum:
+        name: httpd
+        state: installed
+
+

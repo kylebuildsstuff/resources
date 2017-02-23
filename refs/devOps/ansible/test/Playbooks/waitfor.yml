@@ -1,0 +1,15 @@
+--- # The WaitFor Module
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  gather_facts: false
+  tasks:
+    - name: Installing Apache Tomcat
+      action: yum pkg=tomcat state=installed
+    - name: Waiting for Port 8080 to Listen
+      wait_for: 
+        port: 8080
+        state: started
+    - name: verifying lynx installation
+      action: yum name=lynx state=present

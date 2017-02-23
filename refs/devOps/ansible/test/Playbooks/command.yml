@@ -1,0 +1,10 @@
+--- # Command Module Example
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: false
+  tasks:
+    - name: Check for python packages
+      command: /home/test/test.sh 

@@ -1,0 +1,14 @@
+--- # Cron Module Example
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: false
+  tasks:
+    - name: Add a CRON Job to the test user
+      cron:
+        name: 'list files'
+        minute: '0'
+        hour: '1'
+        job: 'ls -al /etc > /home/test/cronresult.log'

@@ -1,0 +1,13 @@
+--- # Apt Module Example
+- hosts: aptserver
+  remote_user: test
+  become: true
+  become_method: true
+  connection: ssh
+  gather_facts: true
+  tasks:
+    - name: Install Apache Web Server
+      apt:
+        name: apache2
+        state: present
+

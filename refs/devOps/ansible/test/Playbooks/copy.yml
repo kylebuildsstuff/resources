@@ -1,0 +1,16 @@
+--- # Copy Module Example
+- hosts: apacheweb
+  remote_user: test
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: false
+  tasks:
+    - name: Copy from the files directory test file
+      copy:
+        src: files/test2.txt
+        dest: /home/test/test2.txt
+        mode: 0655
+        owner: test
+        group: test
+        backup: yes
