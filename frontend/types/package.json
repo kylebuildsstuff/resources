@@ -1,0 +1,33 @@
+{
+  "name": "types",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.43.0",
+    "react-scripts": "0.9.5"
+  },
+  "dependencies": {
+    "enzyme": "^2.8.0",
+    "enzyme-to-json": "^1.5.0",
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.0.0",
+    "styled-components": "^1.4.4"
+  },
+  "babel": {
+    "presets": [
+      "flow"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow"
+  }
+}
