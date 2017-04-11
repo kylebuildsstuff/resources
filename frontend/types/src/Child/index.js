@@ -2,6 +2,7 @@
 import React from 'react';
 
 import GenericStyles from './styles/GenericStyles';
+import { concat } from '../services'
 
 type Props = {
     testFunction: function,
@@ -10,10 +11,10 @@ type Props = {
 }
 
 export class Child extends React.Component {
+  props: Props
   constructor(props: Props) {
     super(props);
   }
-  props: Props
 
   // props: {
   //   testFunction: function,
@@ -25,6 +26,9 @@ export class Child extends React.Component {
     this.props.testFunction();
     console.log(this.props.propString);
     console.log(this.props.propNumber);
+
+    concat('a', 'b');
+    concat(1, 2);
   }
 
   genericMethod = () => {
