@@ -9,14 +9,15 @@ import {
 import Child from '../Child';
 
 type Props = {}
+type State = {
+  testString: string,
+  testNumber: number,
+  testBoolean: boolean,
+}
 
 class App extends React.Component {
-  state: {
-    testString: string,
-    testNumber: number,
-    testBoolean: boolean,
-  }
-
+  state: State
+  props: Props
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -31,6 +32,7 @@ class App extends React.Component {
     serviceReturnNumber('NUMBER OR RIOT');
     serviceReturnNumber(5);
     this.takeNumberReturnNumber('I WANT TO BE A NUMBER')
+    this.takeNumberReturnNumber(8765)
     this.genericMethod();
   }
 
@@ -39,7 +41,7 @@ class App extends React.Component {
   }
 
   genericMethod = () => {
-    console.log('Im a method');
+    console.log('Im a method and I return nothing');
   }
 
   returnNumber = () => {
@@ -51,9 +53,6 @@ class App extends React.Component {
   }
 
   returnBoolean = () => {
-    var what = {
-       what: 'sdads'
-    };
     return true;
   }
 
@@ -70,7 +69,7 @@ class App extends React.Component {
       <GenericStyles>
         <div>Using JavaScript with Flow</div>
         <div>I am the App component</div>
-        <Child
+        <Child // This whole block errors: Props of React Element 'Child' are not compatible
           testString={this.state.testString}
           testNumber={this.state.testNumber}
           testBoolean={this.state.testBoolean}
