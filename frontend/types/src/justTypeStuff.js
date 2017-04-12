@@ -6,6 +6,23 @@
 
 // https://flow.org/en/docs/types/
 
+// NOTE This file covers notes and examples from 'Primitive Types' to 'Type Aliases'
+// Primitive
+// Literal
+// Mixed
+// Any
+// Maybe
+// Variable
+// Function
+// Object
+// Array
+// Tuple
+// Class
+// Type Aliases
+
+
+var thing: number = Math.random();
+thing.toLowercase();
 // We could use a group of different possible types
 function stringifyBasicValue(value: string | number | boolean) {
   return '' + value; // errors because value cannot be coerced to boolean. Need to put it like String(value)
@@ -314,6 +331,14 @@ let vals: MyObject = { // error: property foo not found in type
   ahah: true,
 }
 
+type testObject50 = {
+  what: number | string,
+}
+
+let varrr: testObject50 = {
+  what: 50, // works... object types properties seem to be readable and writable by default. But invariant properties are read-only by default
+}
+
 function methodTest(val: MyObject) { /* ... */ }
 class FooTest { constructor(val: MyObject) { /* ... */ } }
 // Type aliases can be used anywhere a type can be used
@@ -324,8 +349,8 @@ class FooTest { constructor(val: MyObject) { /* ... */ } }
 type NumberAlias = number;
 type ObjectAlias = {
   property: string,
-  method: () => string, // This is the same as above
-  // method(): number, // wtf?... same as above
+  method: () => string,
+  // method(): string, // wtf?... same as above... almost... this way makes it covariant. the above way makes it invariant (by default in dictionaries for object properties)
 };
 type UnionAlias = 1 | 2 | 3;
 type AliasAlias = ObjectAlias;
@@ -333,9 +358,9 @@ type AliasAlias = ObjectAlias;
 let tester: ObjectAlias = {
   property: 'as',
   // method: 1, // error
-  method: () => 'asd',
+  // method: () => 'asd',  // works
+  method() { return 'asd' }, // works
 };
-
 
 // Type Alias Generics
 // Type aliases can have their own generics too
@@ -357,7 +382,3 @@ let val5: MyObject3<number, boolean, string> = {
   bar: true,
   baz: 'three',
 };
-
-// //////////////////////////////////////////////
-// Interface Types =============================
-// ///////////////////////////////////////////
