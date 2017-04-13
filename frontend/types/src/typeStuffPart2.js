@@ -264,3 +264,40 @@ type Boths = Onee & Twoe;
 var values: Boths = {
   prop: 1 // Error!
 };
+
+// /////////////////////////////////////////////////////////
+// Typeof Types ==========================================
+// //////////////////////////////////////////////////////
+
+// in javascript, typeof is not that specific as it will spit out object for {}, [],
+let num1 = 42;
+let num2: typeof num1 = 3.14;
+let num3: typeof num1 = 'world'; // error
+
+// Flow lets you use any value with typeof
+let obj1 = {
+  foo: 1,
+  bar: true,
+  baz: 'three',
+};
+let obj2: typeof obj1 = {
+  foo: 51,  // type == number
+  bar: false, // type == boolean
+  baz: 'sgsdfgsdg', // type == string
+};
+
+// /////////////////////////////////////////////////////////
+// Type Casting Expressions ===============================
+// ////////////////////////////////////////////////////////
+
+// Kind of like a personal assert
+let valuez = 42;
+(valuez: 42);
+(valuez: number);
+(valuez: string); // error
+
+// ////////////////////////////////////////////////////
+// Utility Types =====================================
+// ////////////////////////////////////////////////////
+
+// ....
