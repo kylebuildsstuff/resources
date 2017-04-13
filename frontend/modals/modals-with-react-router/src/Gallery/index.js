@@ -15,7 +15,7 @@ export const Gallery = () => {
             key={i.id}
             to={{
               pathname: `/img/${i.id}`,
-              state: { modal: true }
+              state: { modal: true } // This is the trick!
             }}
           >
             <Thumbnail color={i.color} />

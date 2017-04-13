@@ -10,7 +10,7 @@ import Gallery from '../Gallery';
 import ImageView from '../ImageView';
 
 export class ModalSwitch extends React.Component {
-  // previousLocation = this.props.location;
+  previousLocation = this.props.location; // ES8 or ES9 stuff... object properties, the same as defining methods on classes like method = () => {...}
 
   componentWillUpdate(nextProps) {
     const { location } = this.props;
@@ -18,7 +18,7 @@ export class ModalSwitch extends React.Component {
       nextProps.history.action !== 'POP' &&
       (!location.state || !location.state.modal)
     ) {
-      this.previousLocation = this.props.location;
+      this.previousLocation = this.props.location; // not initial render
     }
   }
 
