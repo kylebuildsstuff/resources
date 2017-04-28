@@ -1,0 +1,17 @@
+version: '2'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+# Confirmed Docker Compose Up works with Django and editing shared files real time
+# with Docker for Mac
+# no manual -v flag required.
