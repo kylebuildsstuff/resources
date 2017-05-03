@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web-load-balancer:
+    image: nginx
+  web-1:
+    build: .
+
+  api-load-balancer:
+    build: nginx
+  api-1:
+    build: .
+  db:
+    image: postgres
