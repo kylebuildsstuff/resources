@@ -3,16 +3,47 @@ services:
   web:
     image: ktruong008/learning:getstarted2
     deploy:
-      replicas: 3
+      replicas: 5
+      restart_policy:
+        condition: on-failure
       resources:
         limits:
           cpus: "0.1"
           memory: 50M
-      restart_policy:
-        condition: on-failure
     ports:
       - "80:80"
     networks:
       - webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
 networks:
   webnet:
+
+
+# version: "3"
+# services:
+#   web:
+#     image: ktruong008/learning:getstarted2
+#     deploy:
+#       replicas: 3
+#       resources:
+#         limits:
+#           cpus: "0.1"
+#           memory: 50M
+#       restart_policy:
+#         condition: on-failure
+#     ports:
+#       - "80:80"
+#     networks:
+#       - webnet
+# networks:
+#   webnet:
