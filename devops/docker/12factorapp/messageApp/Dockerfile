@@ -1,0 +1,13 @@
+FROM node:4.4.5
+ENV LAST_UPDATED 20160617T185400
+
+COPY . /app
+
+WORKDIR /app
+
+RUN npm install
+
+ENV PORT 80
+EXPOSE 80
+
+CMD ['npm', 'start']
