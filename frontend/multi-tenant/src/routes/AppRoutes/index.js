@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 // import LazyLoad from '../../services/LazyLoad';
+import constants from 'constants/app';
 import LazyLoad from 'services/LazyLoad';
 // import HomePage from '../../pages/HomePage';
 
@@ -16,10 +17,11 @@ export class AppRoutes extends React.Component {
           exact path="/"
           // component={HomePage}
           render={(matchProps) => (
-            // <LazyLoad absoluteModulePath='pages/default/HomePage' {...matchProps} />
             <LazyLoad
-              absoluteModulePath='pages/default/HomePage'
-              getComponent={() => import('pages/default/HomePage')}
+              tenantName={constants.TENANT_NAME}
+              moduleName='HomePage'
+              // absoluteModulePath='pages/default/HomePage'
+              // getComponent={() => import('pages/default/HomePage')}
               {...matchProps}
             />
           )}

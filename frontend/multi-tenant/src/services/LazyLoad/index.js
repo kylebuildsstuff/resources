@@ -2,6 +2,7 @@ import React from 'react';
 
 // import { asyncImportFromPath } from 'services/modules';
 // import { loadModule } from 'services/moduleHelpers';
+import { loadTenantModule } from 'services/moduleHelpers';
 
 export class LazyLoad extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ export class LazyLoad extends React.Component {
 
   componentDidMount() {
     // this.props.getComponent()  // getComponent={() => import('./someFile.js')}
-    import(this.props.absoluteModulePath)  // Critical dependency: the request of a dependency is an expression
+    // import(this.props.absoluteModulePath)  // Critical dependency: the request of a dependency is an expression
+    loadTenantModule(this.props.tenantName, this.props.moduleName)
       .then(module => module.default)
       .then(AsyncModule => this.setState({AsyncModule}))
   }
