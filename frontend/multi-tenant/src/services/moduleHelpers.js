@@ -1,21 +1,25 @@
-export const loadTenantModule = (tenantName, moduleName) => {
-  switch (tenantName) {
-    case 'smartcov':
-      console.warn(tenantName, moduleName)
-      return import(`pages/tenants/smartcov/HomePage`)
-      // return import(`pages/tenants/smartcov/${moduleName}`)
+export const loadDefaultModule = (moduleName) => {
+  switch (moduleName) {
+    case 'HomePage':
+      return import(`pages/default/HomePage`);
     default:
       return import('pages/default/ErrorPage');
   }
 }
 
-// export const loadModule = (name) => {
-//   console.log('name: ', name)
-//   require.ensure([], require => {
-//     const module = require(name);
-//     console.warn(module);
-//   })
-// }
+export const loadTenantModule = (tenantName, moduleName) => {
+  switch (tenantName) {
+    case 'smartcov':
+      switch (moduleName) {
+        case 'HomePage':
+          return import(`pages/tenants/smartcov/HomePage`);
+        default:
+          return loadDefaultModule(moduleName);
+      }
+    default:
+      return loadDefaultModule(moduleName);
+  }
+}
 
 // export class TenantLoad extends React.Component {
 //

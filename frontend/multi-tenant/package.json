@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.1",
+    "bundle-loader": "^0.5.5",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
     "font-awesome": "^4.7.0",
@@ -15,13 +16,13 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "reselect": "^3.0.1",
-    "styled-components": "^1.4.6",
+    "styled-components": "^2.0.0",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-styled-components": "^0.1.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.6"
+    "react-scripts": "^1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
