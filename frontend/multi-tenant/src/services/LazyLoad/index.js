@@ -26,7 +26,7 @@ export class LazyLoad extends React.Component {
     const { AsyncModule } = this.state;
 
     if (AsyncModule) {
-      return <AsyncModule {...childProps} />;
+      return <AsyncModule {...this.props} {...childProps} />;
     }
 
     if (loader) {

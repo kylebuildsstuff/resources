@@ -4,14 +4,13 @@ import HomePageStyles from './styles/HomePageStyles'
 
 import Navbar from './components/Navbar';
 import Body from './components/Body';
-import PhoneNumbers from 'components/PhoneNumbers';
+// import UniqueDrisi from './components/UniqueDrisi'
 
-export const HomePage = (props) => {
+export const HomePage = () => {
   return (
     <HomePageStyles>
       <Navbar />
       <Body />
-      <PhoneNumbers numbers={props.data} />
     </HomePageStyles>
   );
 }

@@ -20,6 +20,7 @@ export class AppRoutes extends React.Component {
             <LazyLoad
               tenantName={constants.TENANT_NAME}
               moduleName='HomePage'
+              data={this.props.data}
               // tenantName={process.env.REACT_APP_TENANT_NAME}
               // absoluteModulePath='pages/default/HomePage'
               // getComponent={() => import('pages/default/HomePage')}

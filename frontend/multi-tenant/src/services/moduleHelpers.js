@@ -17,18 +17,14 @@ export const loadTenantModule = (tenantName, moduleName) => {
         default:
           return loadDefaultModule(moduleName);
       }
+    case 'drisi':
+      switch (moduleName) {
+        case 'HomePage':
+          return import(`pages/tenants/drisi/HomePage`);
+        default:
+          return loadDefaultModule(moduleName);
+      }
     default:
       return loadDefaultModule(moduleName);
   }
 }
-
-// export class TenantLoad extends React.Component {
-//
-// }
-
-// export const asyncImportFromPath = (modulePath) => {
-//   console.warn('what: ', modulePath)
-//   return (
-//     () => import('../' + modulePath)
-//   );
-// }
