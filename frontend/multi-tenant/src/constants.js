@@ -10,7 +10,7 @@ export const constants = ((environment = 'local') => {
 
   return {
     // App-wide
-    // TENANT_NAME: 'smartcov',  //
+    TENANT_NAME: 'smartcov',
   };
 })();
 

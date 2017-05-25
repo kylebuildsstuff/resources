@@ -1,10 +1,16 @@
 import React from 'react';
 
+import HomePageStyles from './styles/HomePageStyles'
+
+import Navbar from './components/Navbar';
+import Body from './components/Body';
+
 export const HomePage = () => {
   return (
-    <div>
-      Im the Smartcov HomePage
-    </div>
+    <HomePageStyles>
+      <Navbar />
+      <Body />
+    </HomePageStyles>
   );
 }
 

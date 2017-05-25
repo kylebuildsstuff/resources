@@ -2,10 +2,14 @@ import React from 'react';
 
 import HomePageStyles from './styles/HomePageStyles'
 
+import Navbar from './components/Navbar';
+import Body from './components/Body';
+
 export const HomePage = () => {
   return (
     <HomePageStyles>
-      I'm the default HomePage
+      <Navbar />
+      <Body />
     </HomePageStyles>
   );
 }

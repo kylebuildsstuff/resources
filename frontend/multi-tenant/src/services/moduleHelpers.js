@@ -8,6 +8,7 @@ export const loadDefaultModule = (moduleName) => {
 }
 
 export const loadTenantModule = (tenantName, moduleName) => {
+  console.log(tenantName)
   switch (tenantName) {
     case 'smartcov':
       switch (moduleName) {

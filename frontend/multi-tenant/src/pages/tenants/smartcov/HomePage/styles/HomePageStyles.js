@@ -1,10 +1,6 @@
-import styled from 'styled-components';
+import { HomePageStyles as Default } from 'pages/default/HomePage/styles/HomePageStyles'
 
-export const HomePageStyles = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid blue;
+export const HomePageStyles = Default.extend`
 `
 
 export default HomePageStyles;
