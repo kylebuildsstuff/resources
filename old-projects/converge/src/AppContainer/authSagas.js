@@ -41,6 +41,7 @@ export function* loginSaga(action: Object) {
     localStorage.setItem('jwt', response.data.token);
     const decodedToken = yield call(jwtDecode, response.data.token);
     yield put(fetchUser(decodedToken.user_id, response.data.token));
+    // Can redirect based on this flag in redux state
     yield put(switchAuthenticatedFlag(true));
   }
   yield put(switchAuthenticatingFlag(false));
