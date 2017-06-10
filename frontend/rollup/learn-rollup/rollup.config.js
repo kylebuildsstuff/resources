@@ -5,6 +5,13 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
+import postcss from 'rollup-plugin-postcss';
+
+// PostCSS plugins
+import simplevars from 'postcss-simple-vars';
+import nested from 'postcss-nested';
+import cssnext from 'postcss-cssnext';
+import cssnano from 'cssnano';
 
 // Run this in the CLI like this: NODE_ENV=production rollup -c
 export default {
@@ -13,6 +20,15 @@ export default {
   format: 'iife',
   sourceMap: 'inline',
   plugins: [
+    postcss({
+      extensions: ['.css'],
+      plugins: [
+        simplevars(),
+        nested(),
+        cssnext({ warnForDuplicated: false }),
+        cssnano(),
+      ],
+    }),
     // 3rd-party libraries may not support es6 modules...
     resolve({
       jsnext: true,  // packages that try to ease the transition to es6 modules use this option

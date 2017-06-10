@@ -1,3 +1,6 @@
+// Load a stylesheet
+import '../styles/main.css';
+
 // Import a couple modules for testing.
 import { sayHelloTo } from './modules/mod1';
 // NOTE: modules/mod1 has two functions, but TREE-SHAKING imports only sayHelloTo in the final build,
