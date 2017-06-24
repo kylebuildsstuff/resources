@@ -18,6 +18,8 @@ if (ENV !== 'production') {
   // therefore when you bundle it, it treates debug as an external dependency (assumes it will be passed into the global window).
   // so we need some rollup plugins that will load node packages from the node_modules (rollup-plugin-node-resolve)
   // and another module that transpiles commonJS modules to es2015 modules without choking (rollup-plugin-commonjs)
+  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+  ':35729/livereload.js?snipver=1"></' + 'script>');
 } else {
   debug.disable();
 }
@@ -29,5 +31,5 @@ const result2 = addArray([1, 2, 3, 4]);
 // Print the results on the page.
 const printTarget = document.getElementsByClassName('debug__output')[0];
 
-printTarget.innerText = `sayHelloTo('Jason') => ${result1}\n\n`;
+printTarget.innerText = `sayHellosssTo('Jason') => ${result1}\n\n`;
 printTarget.innerText += `addArray([1, 2, 3, 4]) => ${result2}`;
