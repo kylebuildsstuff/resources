@@ -1,4 +1,10 @@
+# Standard Library
+import os
+import sys
+import argparse
 import datetime
+
+# 3rd-Party Libraries
 from dateutil.parser import parse
 
 """
@@ -66,7 +72,7 @@ def calculate_time_range(b_time_range, transient_time_ranges, a_start=None, a_en
 
 
 def return_answer(a_time_ranges, b_time_ranges):
-    time_ranges_answer = []
+    final_time_ranges = []
     if a_time_ranges and b_time_ranges:
         for a_time_range in a_time_ranges:
             a_start = parse(a_time_range[0])
@@ -77,31 +83,34 @@ def return_answer(a_time_ranges, b_time_ranges):
                 transient_time_ranges = new_time_range if new_time_range else transient_time_ranges
 
             for time_range in transient_time_ranges:
-                time_ranges_answer.append(time_range)
+                final_time_ranges.append(time_range)
 
-    return time_ranges_answer
+    return final_time_ranges
 
-# a_time_ranges = [['9:00', '10:00']]
-# b_time_ranges = [['9:00', '9:30']]
-
-# a_time_ranges = [['9:00', '10:00']]
-# b_time_ranges = [['9:00', '10:00']]
-
-# a_time_ranges = [['9:00', '9:30']]
-# b_time_ranges = [['9:30', '15:00']]
-
-# a_time_ranges = [['9:00', '9:30'], ['10:00', '10:30']]
-# b_time_ranges = [['9:15', '10:15']]
-
-# a_time_ranges = [['9:00', '11:00']]
-# b_time_ranges = [['9:00', '9:15'], ['10:00', '10:15'], ['12:30', '16:00']]
-
-# a_time_ranges = [['13:00', '15:00']]
-# b_time_ranges = [['9:00', '9:15'], ['10:00', '10:15'], ['12:30', '16:00']]
-
-a_time_ranges = [['9:00', '11:00'], ['13:00', '15:00']]
-b_time_ranges = [['9:00', '9:15'], ['10:00', '10:15'], ['12:30', '16:00']]
 
 if __name__ == "__main__":
-    answer = return_answer(a_time_ranges, b_time_ranges)
-    print(answer)
+    if sys.argv:
+        parser = argparse.ArgumentParser(description='Process some arguments.')
+        parser.add_argument('--filename', type=str, required=True, help='A file containing time ranges to parse. Parses one set of a_time_ranges and one set of b_time_ranges. Separate a_time_ranges from b_time_ranges with a single new line. See time_ranges.txt for example')
+        parsed_args = parser.parse_args()
+
+    with open(parsed_args.filename, 'r') as f:
+        lines = f.readlines()
+        for index in range(len(lines)):
+            if lines[index] == '\n':
+                raw_a_ranges = lines[:index]
+                raw_b_ranges = lines[index + 1:]
+        for a_index in range(len(raw_a_ranges)):
+            raw_a_ranges[a_index] = raw_a_ranges[a_index].strip('\n')
+        for b_index in range(len(raw_b_ranges)):
+            raw_b_ranges[b_index] = raw_b_ranges[b_index].strip('\n')
+
+        a_time_ranges = []
+        b_time_ranges = []
+
+        for a in raw_a_ranges:
+            a_time_ranges.append(a.split(','))
+        for b in raw_b_ranges:
+            b_time_ranges.append(b.split(','))
+
+        print(return_answer(a_time_ranges, b_time_ranges))
