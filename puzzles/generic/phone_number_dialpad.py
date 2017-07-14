@@ -23,7 +23,6 @@ def solution(n):
         inputs = list(str(n))
         combinations = []
         for i in inputs:
-
     return
 
 
