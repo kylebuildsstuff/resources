@@ -1,13 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
+
+import RootRoutes from 'routes/RootRoutes';
 
 export class GlobalContainer extends React.Component {
   render() {
     return (
-      <div>
-        GlobalContainer
-      </div>
-    )
+      <RootRoutes />
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export Sidebar = (prop) => {
+export const Sidebar = (prop) => {
   return (
     <div>
       Sidebar

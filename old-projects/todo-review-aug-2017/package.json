@@ -10,15 +10,16 @@
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",
     "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "eject": "NODE_PATH=src/ react-scripts eject"
   }
 }
