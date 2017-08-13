@@ -134,7 +134,9 @@ function method3(func: Function) {
 // Object Types ===========================================
 // ///////////////////////////////////////////////////////
 
-var obj1: { foo?: ?boolean } = { foo: true};
+var obj1: { foo?: ?boolean } = { foo: true, sup: 'aaa' }; // but note that at object creation type, I was able to add an unspecified property
+obj1.what = 'asdas'; // error
+obj1.ab = 'nnope'; // error: // Sealed objects will know all of the properties you declared but you cannot add new properties to them
 
 // Sealed Objects
 // creating an object with its properties, you create a sealed object
@@ -148,6 +150,7 @@ var obj = {
 var foo: number = obj.foo;
 var bar: boolean = obj.bar;
 var baz: null = obj.baz; // error: string is incompatible with null
+var baz: number = obj.baz; // error: string is incompatible with number
 var bat: string = obj.bat // error: bat not found in object literal
 
 // Unsealed objects
