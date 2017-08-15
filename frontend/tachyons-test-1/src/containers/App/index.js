@@ -1,4 +1,5 @@
 import React from 'react';
+import 'tachyons';
 
 import Body from 'components/Body';
 import Footer from 'components/Footer';
