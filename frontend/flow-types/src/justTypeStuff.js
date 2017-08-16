@@ -33,6 +33,11 @@ stringifyBasicValue('what');
 stringifyBasicValue(false);
 stringifyBasicValue(); // error
 
+
+// LITERAL TYPES
+const uhhWhat: string = 'maybe';
+let whatt: typeof uhhWhat = 1;
+
 // or maybe a type based on another type
 // the return type will be the same as the type of whatever value is passed into the function
 function identity<T>(value: T): T { // The 'T' in this case is arbitrary and could be anything like ABC because it's just a name
