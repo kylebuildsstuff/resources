@@ -1,0 +1,29 @@
+{
+  "name": "aug-2017-with-redux-first-router",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "history": "^4.6.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.11",
+    "redux": "^3.7.2",
+    "redux-first-router": "^1.9.18",
+    "redux-first-router-link": "^1.2.0",
+    "redux-form": "^7.0.3",
+    "reselect": "^3.0.1",
+    "tachyons": "^4.8.1"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "eject": "NODE_PATH=src/ react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "prettier": "^1.5.3"
+  }
+}
