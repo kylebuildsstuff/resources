@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 
-import appReducer from "modules/app/app.reducers";
+import appReducer from "core/app/app.reducers";
 
 export default function createReducer(extraReducerObjects) {
   return combineReducers({

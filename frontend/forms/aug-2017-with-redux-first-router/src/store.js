@@ -3,7 +3,7 @@ import { connectRoutes } from "redux-first-router";
 import createHistory from "history/createBrowserHistory";
 
 import createReducer from "reducer";
-import routesMap from "routes";
+import { routePathMap } from "core/location/location.constants";
 
 const composeEnhancers =
   typeof window === "object" &&
@@ -16,7 +16,7 @@ const {
   reducer: routesReducer,
   middleware: routeMiddleware,
   enhancer: routeEnhancer
-} = connectRoutes(history, routesMap);
+} = connectRoutes(history, routePathMap);
 
 export function configureStore() {
   const middlewares = [routeMiddleware];

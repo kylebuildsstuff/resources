@@ -7,19 +7,13 @@ export const Header = () => {
   return (
     <div className={classes}>
       Header
-
       <div className={classes2}>
         whatwhat
-        <div>
-          whaaat
-        </div>
+        <div>whaaat</div>
       </div>
-
-      <div>
-        But whattt
-      </div>
+      <div>But whattt</div>
     </div>
   );
-}
+};
 
 export default Header;
