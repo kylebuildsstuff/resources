@@ -14,6 +14,7 @@ export const Home = () => {
         <div className="flex flex-column">
           HomeBody
           <Link to={{ type: LOCATION.ABOUT }}>ABOUT</Link>
+          <Link to={{ type: LOCATION.VEHICLE_ADD }}>VEHICLE ADD FORM</Link>
         </div>
       </div>
     </div>

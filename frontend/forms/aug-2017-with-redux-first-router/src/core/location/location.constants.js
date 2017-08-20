@@ -1,21 +1,23 @@
 import Home from "pages/home/home.component";
 import About from "pages/about/about.component";
+import VehicleAdd from "pages/vehicle-add/vehicle-add.container";
 
 export const LOCATION = {
   HOME: "ROUTE_HOME",
   ABOUT: "ROUTE_ABOUT",
-  ADD_VEHICLE: "ROUTE_ADD_VEHICLE",
-  CHANGE_ADDRESS: "ROUTE_CHANGE_ADDRESS"
+  VEHICLE_ADD: "ROUTE_VEHICLE_ADD",
+  ADDRESS_CHANGE: "ROUTE_ADDRESS_CHANGE"
 };
 
 export const routePathMap = {
   [LOCATION.HOME]: "/",
   [LOCATION.ABOUT]: "/about",
-  [LOCATION.ADD_VEHICLE]: "/add-vehicle",
-  [LOCATION.CHANGE_ADDRESS]: "/change-address"
+  [LOCATION.VEHICLE_ADD]: "/add-vehicle",
+  [LOCATION.ADDRESS_CHANGE]: "/change-address"
 };
 
 export const routeComponentMap = {
   [LOCATION.HOME]: Home,
-  [LOCATION.ABOUT]: About
+  [LOCATION.ABOUT]: About,
+  [LOCATION.VEHICLE_ADD]: VehicleAdd
 };
