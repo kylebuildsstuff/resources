@@ -1,0 +1,17 @@
+.datePicker { /* stylelint-disable */
+  /*position: absolute;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
+  outline: none;
+  border-radius: 5px;
+  background: white;
+  z-index: 200;
+  & span {
+    &:first-child {
+      border: 1px solid blue;
+    }
+    &:last-child {
+      border: 1px solid red;
+    }
+  }*/
+}
