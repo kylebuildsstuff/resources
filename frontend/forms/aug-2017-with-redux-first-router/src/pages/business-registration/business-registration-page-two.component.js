@@ -7,6 +7,8 @@ import { required } from "./validators";
 import Header from "components/header";
 import Text from "components/form-fields/text";
 import Dropdown from "components/form-fields/dropdown";
+import Checkbox from "components/form-fields/checkbox";
+import Radio from "components/form-fields/radio";
 
 const BusinessRegistrationFormPageTwo = props => {
   const { handleSubmit, onSubmit, formValues } = props;
@@ -17,40 +19,40 @@ const BusinessRegistrationFormPageTwo = props => {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
-          name="firstName"
-          label="First Name2"
+          name="businessName"
+          label="Business Name"
           component={Text}
-          type="text"
-          validate={required}
+          // validate={required}
         />
         <Field
-          name="lastName"
-          label="Last Name"
+          name="domainName"
+          label="Domain Name"
           component={Text}
-          type="text"
-          validate={required}
+          // validate={required}
         />
         <Field
-          name="email"
-          label="Email"
-          component={Text}
-          type="text"
-          validate={required}
+          name="logoProvider"
+          label="Logo Provider"
+          component={Checkbox}
+          // validate={required}
         />
         <Field
-          name="bestPokemon"
-          label="Best Pokemon"
-          component={Dropdown}
-          options={["Charmander", "Squirtle", "Bulbasaur"]}
+          name="websiteProvider"
+          label="website Provider"
+          component={Radio}
+          radioValues={{
+            wix: "Wix",
+            squarespace: "Squarespace",
+            wordpress: "Wordpress",
+            none: "None"
+          }}
         />
-        {formValues && formValues.bestPokemon
-          ? <Field
-              name="quiz"
-              label={`What does ${formValues.bestPokemon} evolve into?`}
-              component={Text}
-              type="text"
-            />
-          : ""}
+        <Field
+          name="businessAddress"
+          label="Business Address"
+          component={Text}
+          // validate={required}
+        />
         <button type="submit">Submit</button>
       </form>
     </div>

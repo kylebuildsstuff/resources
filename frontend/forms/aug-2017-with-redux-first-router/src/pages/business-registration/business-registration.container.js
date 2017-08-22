@@ -78,10 +78,6 @@ const formConfiguration = {
   forceUnregisterOnUnmount: true
 };
 
-let BusinessRegistrationFormContainer = reduxForm(formConfiguration)(
-  BusinessRegistration
-);
-
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(
-  BusinessRegistrationFormContainer
+  reduxForm(formConfiguration)(BusinessRegistration)
 );

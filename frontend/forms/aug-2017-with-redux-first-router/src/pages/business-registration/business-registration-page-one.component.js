@@ -18,26 +18,29 @@ const BusinessRegistrationFormPageOne = props => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
           name="firstName"
-          label="First Name1"
+          label="First Name"
           component={Text}
-          type="text"
-          validate={required}
+          // validate={required}
         />
         <Field
           name="lastName"
           label="Last Name"
           component={Text}
-          type="text"
-          validate={required}
+          // validate={required}
         />
         <Field
           name="email"
           label="Email"
           component={Text}
-          type="text"
-          validate={required}
+          // validate={required}
         />
         <Field
+          name="phoneNumber"
+          label="Phone Number"
+          component={Text}
+          // validate={required}
+        />
+        {/* <Field
           name="bestPokemon"
           label="Best Pokemon"
           component={Dropdown}
@@ -48,9 +51,8 @@ const BusinessRegistrationFormPageOne = props => {
               name="quiz"
               label={`What does ${formValues.bestPokemon} evolve into?`}
               component={Text}
-              type="text"
             />
-          : ""}
+          : ""} */}
         <button type="submit">Submit</button>
       </form>
     </div>
