@@ -1,13 +1,15 @@
 {
-  "extends": ["prettier"],
-  "plugins": ["prettier"],
+  "extends": ["prettier", "prettier/react"],
+  "plugins": ["react", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2017,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
       "modules": true,
-      "experimentalObjectRestSpread": true
+      "experimentalObjectRestSpread": true,
+      "trailingComma": "all",
+      "singleQuote": true
     }
   },
   "rules": {

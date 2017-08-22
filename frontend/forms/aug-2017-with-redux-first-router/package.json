@@ -25,6 +25,7 @@
     "eject": "NODE_PATH=src/ react-scripts eject"
   },
   "devDependencies": {
+    "eslint-config-google": "^0.9.1",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.2.0",
     "prettier": "^1.5.3"

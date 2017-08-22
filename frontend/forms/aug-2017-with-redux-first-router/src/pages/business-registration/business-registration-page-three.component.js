@@ -8,7 +8,7 @@ import Header from "components/header";
 import Text from "components/form-fields/text";
 import Dropdown from "components/form-fields/dropdown";
 
-const VehicleAddForm = props => {
+const BusinessRegistrationFormPageThree = props => {
   const { handleSubmit, onSubmit, formValues } = props;
   return (
     <div>
@@ -18,7 +18,7 @@ const VehicleAddForm = props => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
           name="firstName"
-          label="First Name"
+          label="First Name3"
           component={Text}
           type="text"
           validate={required}
@@ -34,7 +34,7 @@ const VehicleAddForm = props => {
           name="email"
           label="Email"
           component={Text}
-          type="email"
+          type="text"
           validate={required}
         />
         <Field
@@ -57,4 +57,4 @@ const VehicleAddForm = props => {
   );
 };
 
-export default VehicleAddForm;
+export default BusinessRegistrationFormPageThree;
