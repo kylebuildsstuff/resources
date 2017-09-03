@@ -154,3 +154,8 @@ let strLength: number = (<string> someValue).length; // Note, this does not work
 // or the 'as' -syntax
 let someValue2: any = 'this is a string';
 let strLength2: number = (someValue2 as string).length;
+
+// React =========================================================
+
+// https://stackoverflow.com/documentation/reactjs/1419/using-reactjs-with-typescript#t=201709031521179651241
+// https://stackoverflow.com/questions/44375759/how-should-i-declare-a-stateless-functional-component-with-typescript-in-react
