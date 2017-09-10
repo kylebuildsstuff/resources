@@ -1,3 +1,3 @@
 # old-projects
 
-<h3>Beware... this repo contains 1+ year old code.</h3>
+<p>The code dumpster</p>
