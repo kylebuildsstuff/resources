@@ -1,19 +1,27 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import Text from '../components/text';
 
-export const FormComponent = ({ handleSubmit, onSubmit }) => {
+import Text from '../components/text';
+import Select from '../components/select';
+import Radio from '../components/radio';
+import Checkbox from '../components/checkbox';
+import Datepicker from '../components/datepicker';
+
+import { required } from './form.validators'
+
+export const FormComponent = ({ handleSubmit, onSubmit, formValues, change }) => {
   return (
-    <div>
+    <div className="flex flex-column justify-center items-center">
       <h1>My Very own Form</h1>
       <form
-        className="w-100"
+        className="w-80"
         onSubmit={handleSubmit(onSubmit)}
       >
         <Field
           name="firstName"
           label="First Named"
           component={Text}
+          validate={required}
         />
         <Field
           name="lastName"
@@ -26,11 +34,45 @@ export const FormComponent = ({ handleSubmit, onSubmit }) => {
           component={Text}
         />
         <Field
-          name="password"
-          label="password"
-          component={Text}
+          name="meatChoice"
+          label="Meat Choice"
+          component={Select}
+          options={{
+            pork: 'Pork',
+            beef: 'Beef',
+            chicken: 'Chicken'
+          }}
         />
-        <button type="submit">Submit</button>
+        <Field
+          name="spiceLevel"
+          label="Spice Level"
+          component={Radio}
+          options={{
+            mild: 'Mild',
+            medium: 'Medium',
+            hot: 'hot'
+          }}
+        />
+        {formValues && formValues.spiceLevel === 'hot' ? (
+          <Field
+            name="wantsFries"
+            label="Would you like fries with that?"
+            component={Checkbox}
+          />
+        ) : ''}
+        <Field
+          name="orderDate"
+          label="Order Date"
+          component={Datepicker}
+          change={change}
+        />
+
+        <button
+          type="submit"
+          className="link br2 bg-blue white dim pa3 f6 sans-serif b--blue ba"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
