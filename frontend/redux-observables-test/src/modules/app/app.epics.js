@@ -1,10 +1,20 @@
 import { combineEpics } from "redux-observable";
 import { map } from "rxjs/add/operator/map";
 
-const appEpic = (action$, store) => {
-  return action$.ofType("USER/LOGIN").map(() => {
-    return { type: "WHATWHAT" };
+import APP from "./app.constants";
+import appActions from "./app.actions";
+
+const watchCountIncreaseEpic = (action$, store) => {
+  return action$.ofType(APP.COUNT_INCREASE).map(() => {
+    return appActions.broadcastIncreasedCount();
   });
 };
 
-export default combineEpics(appEpic);
+const watchCountDecreaseEpic = (action$, store) => {
+  return action$.ofType(APP.COUNT_DECREASE).map(action$ => {
+    console.log("sup: ", action$);
+    return appActions.broadcastDecreasedCount();
+  });
+};
+
+export default combineEpics(watchCountIncreaseEpic, watchCountDecreaseEpic);

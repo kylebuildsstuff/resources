@@ -3,7 +3,7 @@ import { connectRoutes } from "redux-first-router";
 import createHistory from "history/createBrowserHistory";
 import { createEpicMiddleware } from "redux-observable";
 
-import createRootReducer from "reducer";
+import createRootReducer from "reducers";
 import createRootEpic from "epics";
 import { routePathMap } from "modules/location/location.constants";
 
