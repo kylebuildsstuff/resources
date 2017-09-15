@@ -1,0 +1,24 @@
+.modalDialog {
+  position: fixed;
+  top: 101%;
+  left: 50%;
+  width: 270px;
+  padding: 0.5rem 1rem;
+  transform: translateX(-135px) scale(0.1);
+  border: 1px solid var(--primary);
+  background: #fff;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 1rem 0 #000;
+  transition: all 169ms ease-in-out;
+  & h4 {
+    margin: 0;
+    border-bottom: 1px solid #e1e1e1;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem 0.25rem 1rem;
+  }
+  &.modalActive {
+    top: 30vh;
+    transform: translateX(-135px) scale(1);
+  }
+}

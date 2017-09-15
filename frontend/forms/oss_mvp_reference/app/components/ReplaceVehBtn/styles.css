@@ -1,0 +1,63 @@
+.replaceVehBtn {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  background: #fff;
+  top: 2.4rem;
+  right: 0;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 8px 0 color(#000 alpha(35%));
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+
+    & li {
+      & a,
+      & button {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e1e1e1;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+      &:last-child {
+        & a,
+        & button {
+          border: none;
+        }
+      }
+    }
+    &::before {
+      position: absolute;
+      top: -9px;
+      right: 0.6rem;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 8px solid var(--primary);
+    }
+    &::after {
+      position: absolute;
+      top: -8px;
+      right: 0.6rem;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 8px solid white;
+    }
+  }
+}

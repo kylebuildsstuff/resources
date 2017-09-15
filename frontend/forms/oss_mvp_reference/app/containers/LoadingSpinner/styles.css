@@ -1,0 +1,9 @@
+.loadingSpinner {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+
+  & span {
+    color: var(--secondary);
+  }
+}

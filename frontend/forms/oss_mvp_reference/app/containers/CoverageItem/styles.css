@@ -1,0 +1,55 @@
+.coverageItem {
+  border-top: 1px solid #f1f1f1;
+  clear: both;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  &:first-child {
+
+  }
+  & > div {
+    width: 52%;
+    font-size: 0.8rem;
+    text-align: right;
+    float: left;
+
+    & div {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 163ms ease-out;
+      & p {
+        margin: 0 0 0.75rem;
+        font-style: italic;
+        color: #999;
+      }
+    }
+  }
+  & span {
+    width: 40%;
+    float: right;
+  }
+  & .check {
+    color: #4DA35D;
+  }
+  & small {
+    color: #bbb;
+  }
+  &.toggled {
+    & > div {
+      & div {
+        max-height: 250px;
+      }
+    }
+  }
+
+  &.hasText {
+    & > div {
+      & strong {
+        border-bottom: 1px dashed #ccc;
+
+        &:hover {
+          cursor: help;
+        }
+      }
+    }
+  }
+}

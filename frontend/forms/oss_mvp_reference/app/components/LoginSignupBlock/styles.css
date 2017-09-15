@@ -1,0 +1,13 @@
+.loginSignupBlock {
+  padding-top: 2rem;
+  & .half {
+    text-align: center;
+    @media (min-width: 750px) {
+      width: 50%;
+      float: left;
+      &:first-child {
+        border-right: 1px solid #e1e1e1;
+      }
+    }
+  }
+}

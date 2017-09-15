@@ -1,0 +1,59 @@
+.promoBlock {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  & img {
+    width: 100%;
+  }
+  & .content {
+    background: var(--primary);
+
+    & h3 {
+      color: #fff;
+      margin: 0 0 0.5rem;
+    }
+  }
+
+  & form {
+    padding: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    & .content {
+      position: absolute;
+      width: 100%;
+      background: transparent;
+      padding-top: 3rem;
+
+      & form {
+        float: right;
+        width: 300px;
+        background: var(--primary);
+        border-radius: 0.25rem;
+        box-shadow: 0 1px 5px 0 color(#000 alpha(50%));
+      }
+    }
+  }
+
+  /* height adjust for outer box */
+  @media (min-width: 768px) { max-height: 400px; }
+  @media (min-width: 992px) { max-height: 450px; }
+  @media (min-width: 1200px) { max-height: 500px; }
+  @media (min-width: 1400px) { max-height: 550px; }
+  @media (min-width: 1600px) { max-height: 600px; }
+  @media (min-width: 1725px) { max-height: 650px; }
+
+  & .inner {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (min-width: 768px) {
+      max-width: 768px;
+      padding: 0 1rem;
+    }
+    @media (min-width: 900px) {
+      max-width: 900px;
+    }
+  }
+}

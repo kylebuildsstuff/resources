@@ -1,0 +1,17 @@
+.accountNotify { /* stylelint-disable */
+  display: inline-block;
+  font-size: 0.8rem;
+  border: 1px solid color(#e84a4a alpha(25%));
+  color: #e84a4a;
+  border-radius: 0.2rem;
+  padding: 2px 8px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  &::before {
+    font-family: FontAwesome;
+    content: '\f071';
+    margin-right: 0.5rem;
+  }
+}

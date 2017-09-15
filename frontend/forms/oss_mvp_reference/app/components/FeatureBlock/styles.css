@@ -1,0 +1,37 @@
+.featureBlock { /* stylelint-disable */
+  margin-top: 50px;
+  text-align: center;
+  & .feature {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+
+    @media (max-width: 767px) {
+      width: 47%;
+      margin-right: 3%;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
+    & .icon {
+      & span {
+        border-radius: 50%;
+        padding: 30px;
+        border: 1px solid #ccc;
+        color: var(--secondary);
+        font-size: 50px;
+
+        &:hover {
+          color: #fff;
+          background: var(--secondary);
+          transition: all 300ms ease-in-out;
+        }
+      }
+    }
+  }
+}

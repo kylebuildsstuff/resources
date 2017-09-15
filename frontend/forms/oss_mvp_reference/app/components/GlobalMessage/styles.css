@@ -1,0 +1,24 @@
+.globalMessage {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: color(var(--secondary) alpha(-30%));
+  opacity: 0;
+  &.active {
+    animation: pulse 7s ease 1 alternate;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+
+}

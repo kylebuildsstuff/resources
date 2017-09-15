@@ -1,0 +1,12 @@
+.accountHeader {
+  text-align: center;
+  border-bottom: 1px solid var(--secondary);
+  height: 2.25rem;
+  margin: 10px 10% 30px 10%;
+  & h3 {
+    background: #fafafc;
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

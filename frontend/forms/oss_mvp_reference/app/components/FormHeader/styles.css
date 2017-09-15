@@ -1,0 +1,4 @@
+.formHeader {
+  color: var(--primary);
+  border-bottom: 1px solid #666;
+}

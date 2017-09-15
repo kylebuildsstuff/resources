@@ -1,0 +1,174 @@
+.card {
+  position: relative;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px 0 color(#000 alpha(25%));
+
+  & .hdr {
+    height: 2rem;
+    line-height: 2rem;
+    background-color: color(var(--primary) alpha(70%));
+    margin: 0;
+
+    & div {
+      width: 36%;
+      max-width: 200px;
+      float: left;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      & img {
+        display: block;
+        width: 100%;
+        border-right: 1px solid var(--primary);
+        border-bottom: 1px solid var(--primary);
+        border-top-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    & ul {
+      float: left;
+      width: 60%;
+      list-style: none;
+      margin: 0 0 2rem;
+      padding: 0 0 0 0.75rem;
+      line-height: 1.25rem;
+    }
+
+    & h3 {
+      color: #fff;
+      font-size: 0.9rem;
+      line-height: 2rem;
+      margin: 0 0 0.5rem;
+    }
+  }
+
+  & h4.hdr {
+    padding-left: 0.75rem;
+    color: #fff;
+  }
+
+  & .cardTitle {
+    clear: both;
+    background: color(var(--primary) alpha(8%));
+    border-top: 1px solid color(var(--primary) alpha(25%));
+    border-bottom: 1px solid color(var(--primary) alpha(25%));
+    color: #555;
+    padding: 0.35rem 0.75rem;
+    margin: 0.5rem 0;
+
+    & button,
+    & a {
+      float: right;
+
+      &:nth-child(2) {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  & .cardItem {
+    padding: 0.5rem 0.75rem;
+
+    &::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: '';
+      clear: both;
+      height: 0;
+    }
+
+    & .toggleTitle {
+      margin: 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e1e1e1;
+      cursor: pointer;
+      transition: color 103ms ease-out;
+
+      &:hover {
+        color: color(var(--primary) lightness(50%));
+      }
+
+      &::after {
+        font-family: FontAwesome;
+        color: color(var(--primary) alpha(40%));
+        content: '\f01a';
+        float: right;
+      }
+    }
+
+    & > div {
+      max-height: 0;
+      overflow: hidden;
+
+      & > * {
+        padding-top: 1rem;
+      }
+    }
+
+    & div.left,
+    & div.right {
+      max-height: none;
+    }
+
+    @media (min-width: 768px) {
+      & div.left {
+        width: 48%;
+        float: left;
+      }
+
+      & div.right {
+        width: 48%;
+        float: right;
+      }
+    }
+
+    &.toggled {
+      & > div {
+        max-height: 2000px;
+      }
+
+      & .toggleTitle {
+        color: color(var(--primary) lightness(50%));
+      }
+    }
+
+    &:last-child {
+      & h4 {
+        border: none;
+      }
+    }
+  }
+
+  & .editBtn {
+    position: absolute;
+    right: 0;
+    line-height: calc(2rem - 1px);
+    background: color(var(--primary) alpha(60%));
+    padding: 0 0.75rem;
+    border-left: 1px solid #fff;
+    color: #fff;
+
+    & b {
+      display: none;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-weight: 300;
+
+      @media (min-width: 768px) {
+        display: inline;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: color(var(--primary) alpha(85%));
+    }
+  }
+}

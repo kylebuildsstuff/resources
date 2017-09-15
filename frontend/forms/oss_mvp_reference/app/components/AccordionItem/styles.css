@@ -1,0 +1,30 @@
+.accordionItem {
+  & h4 {
+    margin: 0 0 0.5rem;
+    border-bottom: 1px solid color(var(--primary) lightness(85%));
+  }
+
+  & h3 {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & div {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 100ms ease-out;
+
+    & p:last-child,
+    & ul:last-child {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &.itemToggled {
+    & div {
+      max-height: 3500px;
+      transition: all 1000ms ease-out;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.accountNav {
+  background-color: #fff;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  box-shadow: 0 1px 5px 1px color(var(--primary) alpha(30%));
+  & a {
+    display: inline-block;
+    color: #909090;
+    padding: 0.1rem 0.75rem;
+    text-decoration: none;
+    border-right: 1px solid color(var(--primary) alpha(10%));
+    font-size: 1.25rem;
+    & span {
+      &.title {
+        font-size: 0.9rem;
+        display: none;
+        @media (min-width: 768px) {
+          display: inline;
+        }
+      }
+    }
+    &:last-child,
+    &:nth-child(4) {
+      border: none;
+    }
+    &:hover {
+      color: color(var(--primary) lightness(50%));
+    }
+
+    &.current {
+      color: var(--primary);
+    }
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}

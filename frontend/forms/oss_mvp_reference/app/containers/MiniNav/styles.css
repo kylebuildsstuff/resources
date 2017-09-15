@@ -1,0 +1,93 @@
+.miniNav {
+  position: absolute;
+  background: #fff;
+  top: 3.25rem;
+  right: 1rem;
+  width: 200px;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 8px 0 color(#000 alpha(35%));
+  display: none;
+  & h5 {
+    margin: 0;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    & li {
+      & a,
+      & button {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        text-decoration: none;
+        font-weight: 400;
+        background-color: #fff;
+        transition: all 191ms ease-out;
+        width: 100%;
+        text-align: left;
+        color: var(--primary);
+        &::after {
+          font-family: FontAwesome;
+          content: '▸';
+          float: right;
+          font-size: 0.8rem;
+          font-weight: 300;
+          color: #fff;
+          margin-right: 8px;
+          transition: margin-right 191ms ease-out;
+        }
+        &:hover {
+          background-color: var(--secondary);
+          color: #fff;
+          cursor: pointer;
+          &::after {
+            margin-right: 0;
+          }
+          & span {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &::before {
+    position: absolute;
+    top: -9px;
+    right: 0.6rem;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid var(--primary);
+  }
+  &::after {
+    position: absolute;
+    top: -8px;
+    right: 0.6rem;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid white;
+  }
+  & .login,
+  & .signup {
+    & a {
+      & span {
+        color: #999;
+      }
+    }
+  }
+  &.active {
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}
