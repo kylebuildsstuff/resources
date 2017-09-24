@@ -1,0 +1,17 @@
+{
+  "name": "api-postgres-aug-2017",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.3.2",
+    "knex": "^0.13.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "pg": "^7.3.0"
+  },
+  "scripts": {
+    "start": "node ./src/server/index.js"
+  }
+}
