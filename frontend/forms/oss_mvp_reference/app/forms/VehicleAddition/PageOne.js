@@ -15,7 +15,8 @@ import LessorLienInfoFields from './fields/LessorLienInfoFields';
 import VehCoverageFields from './fields/VehCoverageFields';
 import schema from './schema';
 
-class PageOne extends React.Component { // eslint-disable-line
+class PageOne extends React.Component {
+  // eslint-disable-line
   componentDidMount() {
     this.props.setFormInProgress(true);
   }
@@ -24,8 +25,8 @@ class PageOne extends React.Component { // eslint-disable-line
     // Using componentDidUpdate rather than componentDidMount because getFormValues is passed as undefined initially and doesn't update, which errors out other fields that relies on getFormValues being a Map... would be nice to fix this hack.
     if (prevProps.getFormValues !== this.props.getFormValues) {
       const policyNumber = this.props.getFormValues.get('policy_number');
-      let policy = this.props.policies.filter((pol) => {
-        if (pol.policy_number && (pol.policy_number === policyNumber)) {
+      let policy = this.props.policies.filter(pol => {
+        if (pol.policy_number && pol.policy_number === policyNumber) {
           return true;
         }
         return false;
@@ -34,35 +35,42 @@ class PageOne extends React.Component { // eslint-disable-line
 
       this.props.autofill(
         schema.registered_province.name,
-        this.props.getFormValues.get(
-          schema.registered_province.name
-        ) || policy.province
+        this.props.getFormValues.get(schema.registered_province.name) ||
+          policy.province,
       );
     }
   }
 
-  returnValidAutoPolicies = (policies) => {
+  returnValidAutoPolicies = policies => {
     const validPolicies = [];
-    policies.map((policy) => { // eslint-disable-line
+    policies.map(policy => {
+      // eslint-disable-line
       if (policy.type === 'auto') {
         validPolicies.push(policy);
       }
     });
     return validPolicies;
-  }
+  };
 
   changeField = (name, value) => {
     this.props.change(name, value);
-  }
+  };
 
   handleClick = () => {
     window.setTimeout(() => {
       // wait one tick so DOM loads
-      if (document.getElementById('app').getElementsByClassName('form-group invalid')[0]) {
-        document.getElementById('app').getElementsByClassName('form-group invalid')[0].scrollIntoView();
+      if (
+        document
+          .getElementById('app')
+          .getElementsByClassName('form-group invalid')[0]
+      ) {
+        document
+          .getElementById('app')
+          .getElementsByClassName('form-group invalid')[0]
+          .scrollIntoView();
       }
     }, 1);
-  }
+  };
 
   render() {
     const {

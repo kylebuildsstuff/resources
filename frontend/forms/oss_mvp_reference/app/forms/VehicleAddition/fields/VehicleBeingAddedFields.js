@@ -49,12 +49,10 @@ function VehicleBeingAddedFields(props) {
             />
 
             {props.getFormValues &&
-              Number(props.getFormValues.get(
-                schema.adding_vehicle_year.name
-              )) >= 1000 &&
-            Number(props.getFormValues.get(
-              schema.adding_vehicle_year.name
-            )) <= 1981 ? (
+            Number(props.getFormValues.get(schema.adding_vehicle_year.name)) >=
+              1000 &&
+            Number(props.getFormValues.get(schema.adding_vehicle_year.name)) <=
+              1981 ? (
               <Field
                 component={TextInput}
                 label={schema.adding_old_vehicle_name.label}
@@ -65,12 +63,11 @@ function VehicleBeingAddedFields(props) {
                 type={schema.adding_old_vehicle_name.type}
               />
             ) : (
-              <div></div>
+              <div />
             )}
 
-            {Number(props.getFormValues.get(
-              schema.adding_vehicle_year.name
-            )) >= 1982 ? (
+            {Number(props.getFormValues.get(schema.adding_vehicle_year.name)) >=
+            1982 ? (
               <Field
                 component={VehMakesSelect}
                 fetchVehModels={props.fetchVehModels}
@@ -84,12 +81,10 @@ function VehicleBeingAddedFields(props) {
                 year={props.getFormValues.get(schema.adding_vehicle_year.name)}
               />
             ) : (
-              <div></div>
+              <div />
             )}
 
-            {props.getFormValues.get(
-              schema.adding_vehicle_make.name
-            ) ? (
+            {props.getFormValues.get(schema.adding_vehicle_make.name) ? (
               <Field
                 component={VehModelsSelect}
                 label={schema.adding_vehicle_model.label}
@@ -101,7 +96,7 @@ function VehicleBeingAddedFields(props) {
                 valuesList={props.vehModels}
               />
             ) : (
-              <div></div>
+              <div />
             )}
 
             <Field
@@ -113,13 +108,14 @@ function VehicleBeingAddedFields(props) {
               placeholder={schema.adding_vin.placeholder}
               type={schema.adding_vin.type}
             />
-
           </div>
           <div className="form-section">
             <Field
               changeField={props.changeField}
               component={DateInput}
-              disabledDays={disabledDays.greaterThanCurrentLessThanThirtyDaysFuture}
+              disabledDays={
+                disabledDays.greaterThanCurrentLessThanThirtyDaysFuture
+              }
               label={schema.take_possession_date.label}
               helpText={schema.take_possession_date.helpText}
               isRequired={schema.take_possession_date.required}
@@ -139,12 +135,13 @@ function VehicleBeingAddedFields(props) {
               valuesList={provinces}
             />
 
-            {(Number(props.getFormValues.get(
-              schema.adding_vehicle_year.name
-            ) > 1981 &&
-            Number(props.getFormValues.get(
-              schema.adding_vehicle_year.name
-            ) < new Date().getFullYear() - 1))) ? (
+            {Number(
+              props.getFormValues.get(schema.adding_vehicle_year.name) > 1981 &&
+                Number(
+                  props.getFormValues.get(schema.adding_vehicle_year.name) <
+                    new Date().getFullYear() - 1,
+                ),
+            ) ? (
               <EmptyFieldChanger
                 changeField={props.changeField}
                 fieldNameToChange={schema.vehicle_condition.name}
@@ -158,7 +155,9 @@ function VehicleBeingAddedFields(props) {
                   component={Select}
                   label={schema.vehicle_condition.label}
                   defaultOverride
-                  defaultOverrideVal={props.getFormValues.get(schema.vehicle_condition.name) || ''}
+                  defaultOverrideVal={
+                    props.getFormValues.get(schema.vehicle_condition.name) || ''
+                  }
                   isRequired={schema.vehicle_condition.required}
                   helpText={schema.vehicle_condition.helpText}
                   name={schema.vehicle_condition.name}
@@ -169,12 +168,10 @@ function VehicleBeingAddedFields(props) {
               </div>
             )}
 
-            {(props.getFormValues.get(
-              schema.vehicle_condition.name
-            ) === VEHICLE_CONDITIONS.new ||
-            props.getFormValues.get(
-              schema.vehicle_condition.name
-            ) === VEHICLE_CONDITIONS.demo) ? (
+            {props.getFormValues.get(schema.vehicle_condition.name) ===
+              VEHICLE_CONDITIONS.new ||
+            props.getFormValues.get(schema.vehicle_condition.name) ===
+              VEHICLE_CONDITIONS.demo ? (
               <Field
                 component={TextInput}
                 label={schema.kms_at_purchase.label}
@@ -185,7 +182,7 @@ function VehicleBeingAddedFields(props) {
                 type={schema.kms_at_purchase.type}
               />
             ) : (
-              <div></div>
+              <div />
             )}
 
             <Field
@@ -234,9 +231,8 @@ function VehicleBeingAddedFields(props) {
               type={schema.vehicle_annual_kms.type}
             />
 
-            {props.getFormValues.get(
-              schema.vehicle_usage.name
-            ) === VEHICLE_USAGES.business ? (
+            {props.getFormValues.get(schema.vehicle_usage.name) ===
+            VEHICLE_USAGES.business ? (
               <Field
                 component={TextInput}
                 label={schema.business_vehicle_annual_kms.label}
@@ -248,7 +244,7 @@ function VehicleBeingAddedFields(props) {
                 type={schema.business_vehicle_annual_kms.type}
               />
             ) : (
-              <div></div>
+              <div />
             )}
 
             <Field
@@ -288,9 +284,8 @@ function VehicleBeingAddedFields(props) {
             displayValues={['Yes', 'No']}
           />
 
-          {props.getFormValues.get(
-            schema.vehicle_condition.name
-          ) === VEHICLE_CONDITIONS.new ? (
+          {props.getFormValues.get(schema.vehicle_condition.name) ===
+          VEHICLE_CONDITIONS.new ? (
             <EmptyFieldChanger
               changeField={props.changeField}
               fieldNameToChange={schema.existing_damage.name}
