@@ -21,10 +21,10 @@ kind: Service
 metadata:
   name: hello-world-svc
 spec:
-  ports:
-    - port: 8080
-      protocol: TCP
-      targetPort: 8080
+  type: NodePort
   selector:
     app: hello-world
-  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

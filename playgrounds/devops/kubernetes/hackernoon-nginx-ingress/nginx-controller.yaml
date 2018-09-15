@@ -10,15 +10,11 @@ spec:
       labels:
         k8s-app: nginx-ingress-lb
     spec:
-      terminationGracePeriodSeconds: 60
-      volumes:
-        - name: tls-dhparam-vol
-          secret:
-            secretName: tls-dhparam
       containers:
         - args:
             - /nginx-ingress-controller
             - '--default-backend-service=$(POD_NAMESPACE)/default-http-backend'
+            - '--default-ssl-certificate=$(POD_NAMESPACE)/tls-certificate'
           env:
             - name: POD_NAME
               valueFrom:
@@ -48,6 +44,11 @@ spec:
           volumeMounts:
             - mountPath: /etc/nginx-ssl/dhparam
               name: tls-dhparam-vol
+      terminationGracePeriodSeconds: 60
+      volumes:
+        - name: tls-dhparam-vol
+          secret:
+            secretName: tls-dhparam
 ---
 apiVersion: v1
 kind: Service
