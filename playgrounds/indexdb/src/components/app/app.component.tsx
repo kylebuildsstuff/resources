@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { GenericObject } from 'src/shared/shared.types';
-import * as components from '../components/components.component';
+import * as pages from 'src/pages';
 
 export const App = ({ page }: GenericObject) => {
-  const Component = components[page];
+  const Component = pages[page];
   return <Component />;
 };
 

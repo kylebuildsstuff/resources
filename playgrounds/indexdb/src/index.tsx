@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/store.utils';
-import App from './app/app.container';
+import App from './components/app/app.container';
 
 const { store, firstRoute } = configureStore();
 

@@ -5940,6 +5940,10 @@ redux-devtools-extension@^2.13.8:
   version "2.13.8"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz#37b982688626e5e4993ff87220c9bbb7cd2d96e1"
 
+redux-observable@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.0.0.tgz#780ff2455493eedcef806616fe286b454fd15d91"
+
 redux@^4.0.0, redux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
@@ -6206,6 +6210,12 @@ rx-lite-aggregates@^4.0.8:
 rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
+
+rxjs@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
+  dependencies:
+    tslib "^1.9.0"
 
 safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -6957,7 +6967,7 @@ tsconfig-paths@^3.1.1:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
