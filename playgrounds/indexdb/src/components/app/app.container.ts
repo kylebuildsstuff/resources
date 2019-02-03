@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
+import { StoreState } from 'src/core/store/store.types';
+
 import App from './app.component';
-import { StoreState } from 'src/store/store.types';
 
 const mapStateToProps = (state: StoreState) => {
   return {

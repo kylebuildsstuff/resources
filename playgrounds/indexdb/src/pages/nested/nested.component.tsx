@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-interface AboutProps {
+interface NestedProps {
   visitHome: () => void;
 }
 
-export const About: React.SFC<AboutProps> = ({ visitHome }) => {
+export const Nested: React.SFC<NestedProps> = ({ visitHome }) => {
   return (
     <React.Fragment>
-      <div>I am the about page</div>
+      <div>I am the nested page</div>
       <button onClick={visitHome}>visitHome</button>
     </React.Fragment>
   );

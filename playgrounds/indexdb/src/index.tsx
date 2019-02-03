@@ -5,7 +5,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import registerServiceWorker from './registerServiceWorker';
-import configureStore from './store/store.utils';
+import configureStore from './core/store/store.utils';
 import App from './components/app/app.container';
 
 const { store, firstRoute } = configureStore();

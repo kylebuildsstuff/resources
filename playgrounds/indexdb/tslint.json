@@ -6,7 +6,9 @@
     "object-literal-sort-keys": false,
     "interface-name": false,
     "no-var-requires": false,
-    "no-console": false
+    "no-console": false,
+    "jsx-no-lambda": false,
+    "no-empty-interface": false
   },
   "linterOptions": {
     "exclude": [

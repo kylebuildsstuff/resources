@@ -3,8 +3,8 @@ import { createRouter } from '@respond-framework/rudy';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { combineReducers, Action } from 'redux';
 
-import { appRoutes } from 'src/routes/routes.constants';
-import { pageReducer } from 'src/routes/page.reducers';
+import { appRoutes } from 'src/core/routes/routes.constants';
+import { pageReducer } from 'src/core/routes/page.reducers';
 import { GenericObject } from 'src/shared/shared.types';
 
 import {
