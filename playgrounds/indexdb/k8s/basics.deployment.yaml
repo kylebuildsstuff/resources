@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: basics
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: basics
+  template:
+    metadata:
+      labels:
+        app: basics
+    spec:
+      containers:
+        - name: basics
+          image: gcr.io/kubernetes-e2e-test-images/echoserver:2.1
+          ports:
+            - containerPort: 8080
