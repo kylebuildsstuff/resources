@@ -1,3 +1,3 @@
 # Resources
 
-<p>A graveyard of old, old code that no one should ever read again.</p>
+<p>A graveyard of old code that no one should ever read again.</p>
