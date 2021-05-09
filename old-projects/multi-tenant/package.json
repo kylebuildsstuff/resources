@@ -9,7 +9,7 @@
     "enzyme-to-json": "^1.5.1",
     "font-awesome": "^4.7.0",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
