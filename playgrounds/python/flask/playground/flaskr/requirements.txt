@@ -11,7 +11,7 @@ django-modelcluster==2.0
 django-taggit==0.18.3
 django-treebeard==4.0.1
 djangorestframework==3.6.2
-Flask==0.12.1
+Flask==1.0
 html5lib==0.999999
 itsdangerous==0.24
 jasmine-client==0.0.12
