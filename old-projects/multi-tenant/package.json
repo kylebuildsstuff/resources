@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.21.1",
     "bundle-loader": "^0.5.5",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
