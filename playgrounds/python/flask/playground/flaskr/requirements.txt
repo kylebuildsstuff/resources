@@ -24,7 +24,7 @@ Pillow==3.3.1
 pytz==2016.6.1
 requests==2.13.0
 six==1.10.0
-ujson==1.35
+ujson==5.4.0
 Unidecode==0.4.19
 wagtail==1.6.3
 Werkzeug==0.12.1
