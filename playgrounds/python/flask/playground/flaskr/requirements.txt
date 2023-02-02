@@ -27,5 +27,5 @@ six==1.10.0
 ujson==1.35
 Unidecode==0.4.19
 wagtail==1.6.3
-Werkzeug==0.12.1
+Werkzeug==0.15.5
 Willow==0.3.1
